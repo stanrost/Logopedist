@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/addExercise"
+        android:title="Oefening toevoegen"/>
+    <item
+        android:id="@+id/changePatient"
+        android:title="Patiënt veranderen"/>
+    <item
+        android:id="@+id/removePatient"
+        android:title="Patiënt verwijderen"/>
+</menu>

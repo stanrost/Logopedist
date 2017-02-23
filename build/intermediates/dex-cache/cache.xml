@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_961e274225a11a0070e69970a351b9860797c49c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_90d0bc10413a894b0fe78660fbe457a03682d57d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cc3c4f7dfda10082b626f7a7d1ff012abdbf38aa">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_f9fe159257387a334dc69e555e034fe5725b9f40\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_dbf025312bbfc94d74e61117d11da98371cf2ace\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_7197ada05091dee9eafc1cc2f9195a1fc74d212a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_1a306fa5dee192f881d8b319ba330693305d1d8e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_21e700d047436f5a8b21eb71604b26f28655f1e0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_ca2eba5dc41146d7c6550f6233f1bda0487a06a1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_4a3f6b84e462da51034e8748277bd470c8bc2be9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_6108016ac0d40d043f65669ab256f4f245d2aeae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_ae12cc680177ae3c863a3b414729c4ccdcbab209\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_f133672ed1fa2bf1938e473e1bd6b154a50f6598\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.1_d35ea1e4744b47ef4ac8433647bf7d85b9880e64\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9495e2d31076c3b2349229a4635d40cca35197de">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_293cf8ac9c7ad3e7bf96cce9b13951345cdad9f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_1f6cf68968d4ab60846fa34307a4b7f9edb6622d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.1_7c96fcf05e050441d8456ab7bf18146cc6ae0893\classes.dex" />
+    </item>
+
+</items>
