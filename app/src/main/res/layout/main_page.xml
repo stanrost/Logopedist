@@ -12,16 +12,16 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
         android:layout_marginTop="11dp"
-        android:id="@+id/editText"
+        android:id="@+id/searchList"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
+        android:layout_below="@+id/searchList"
+        android:layout_alignLeft="@+id/searchList"
+        android:layout_alignStart="@+id/searchList"
         android:layout_marginTop="23dp"
         android:headerDividersEnabled="false"
         android:footerDividersEnabled="false"

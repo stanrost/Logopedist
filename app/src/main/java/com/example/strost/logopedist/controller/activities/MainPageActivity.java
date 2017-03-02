@@ -3,6 +3,9 @@ package com.example.strost.logopedist.controller.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,14 +13,16 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
+import com.example.strost.logopedist.model.entities.Caregiver;
 import com.example.strost.logopedist.model.entities.Patient;
 import com.example.strost.logopedist.R;
-import com.example.strost.logopedist.model.entities.Zorgverlener;
-import com.example.strost.logopedist.model.request.GetZorgverlenerRequest;
+import com.example.strost.logopedist.model.request.GetCaregiverRequest;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,54 +30,117 @@ import java.util.List;
  */
 
 public class MainPageActivity extends AppCompatActivity {
-    private int patientId;
+
+    private List<Caregiver> caregivers = new ArrayList<Caregiver>();
+    private List<Patient> patients = new ArrayList<Patient>();
+    private ArrayList<String> listItems = new ArrayList<String>();
+    private String[] items;
+    private ArrayAdapter<String> adapter;
+
+    private int patientId, caregiverId;
+
+    private ListView lv;
+    private EditText searchtext;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-        ListView lv = (ListView) findViewById(R.id.patient_listview);
+        lv = (ListView) findViewById(R.id.patient_listview);
+        searchtext = (EditText) findViewById(R.id.searchList);
+        caregiverId = getIntent().getExtras().getInt("caregiverId");
 
-        // Instanciating an array list (you don't need to do this,
-        // you already have yours).
+        getZorgverlender();
+        Caregiver z1 = null;
 
-        GetZorgverlenerRequest zr = new GetZorgverlenerRequest();
-        Zorgverlener z1 = zr.getZorgverlener(this);
-        List<Patient> patients = new ArrayList<Patient>();
+        Log.e("caregiverId", "" + caregiverId);
+        for (int i = 0; i < caregivers.size(); i++) {
+            if (caregiverId == caregivers.get(i).getId()) {
+                z1 = caregivers.get(i);
+            }
+        }
+
         patients = z1.getPatients();
+        initList();
+        searchtext.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    searchItem(s.toString());
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
 
-        // This is the array adapter, it takes the context of the activity as a
-        // first parameter, the type of list view as a second parameter and your
-        // array as a third parameter.
-        ArrayAdapter<Patient> arrayAdapter = new ArrayAdapter<Patient>(
-                this, android.R.layout.simple_list_item_1, patients);
+            }
+        });
+    }
 
-        lv.setAdapter(arrayAdapter);
+    public void searchItem(String textToSearch){
+        for (String item : items){
+            if(!item.toUpperCase().contains(textToSearch.toUpperCase())){
+                listItems.remove(item);
+            }
 
+            if(item.toUpperCase().contains(textToSearch.toUpperCase()) && !listItems.contains(item)){
+                listItems.add(item);
+            }
+        }
+        Collections.sort(listItems);
+        adapter.notifyDataSetChanged();
+    }
+
+    public void initList(){
+
+        for(Patient p : patients){
+            listItems.add(p.getId() + ".  " + p.getName());
+        }
+        Collections.sort(listItems);
+        items = listItems.toArray(new String[listItems.size()]);
+
+        adapter = new ArrayAdapter<String>(
+                this, R.layout.list_item, R.id.txtitem, listItems);
+
+        lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
                 String filename = ""+ parent.getItemAtPosition(position);     // full file name
                 String[] parts = filename.split("\\."); // String array, each element is text between dots
-
                 String beforeFirstDot = parts[0];
                 patientId = Integer.parseInt(beforeFirstDot);
 
-
-                goToPatientPage();
-
-
+                goToPatientPage(caregiverId);
             }
         });
 
-
     }
 
-    public void goToPatientPage(){
+
+    public void getZorgverlender(){
+    final GetCaregiverRequest gzr = new GetCaregiverRequest();
+    Runnable runnable = new Runnable() {
+        public void run() {
+            caregivers = gzr.getCaregiver();
+        }
+    };
+
+    Thread mythread = new Thread(runnable);
+    mythread.start();
+    try {
+        mythread.join();
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+}
+
+    public void goToPatientPage(int caregiverId){
         Intent detailIntent = new Intent(this, PatientActivity.class);
-        detailIntent.putExtra("id", patientId);
+        detailIntent.putExtra("caregiverId", caregiverId);
+        detailIntent.putExtra("patientid", patientId);
         startActivity(detailIntent);
         finish();
 
@@ -84,10 +152,17 @@ public class MainPageActivity extends AppCompatActivity {
     }
 
     public void goToAddPatientActivity(){
-        finish();
-        Intent detailIntent = new Intent(this, AddPatientActivity.class);
-        startActivity(detailIntent);
 
+        Intent detailIntent = new Intent(this, AddPatientActivity.class);
+        detailIntent.putExtra("caregiverId", caregiverId);
+        startActivity(detailIntent);
+        finish();
+    }
+
+    public void goToSettingsActvivity(){
+        Intent detailIntent = new Intent(this, SettingsActivity.class);
+        startActivity(detailIntent);
+        finish();
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -101,7 +176,7 @@ public class MainPageActivity extends AppCompatActivity {
             goToAddPatientActivity();
         }
         if (id == R.id.settings) {
-            return true;
+            goToSettingsActvivity();
         }
 
         return super.onOptionsItemSelected(item);

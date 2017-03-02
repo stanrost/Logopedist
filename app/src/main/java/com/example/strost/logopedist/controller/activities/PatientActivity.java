@@ -17,13 +17,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.strost.logopedist.model.entities.Opdracht;
+import com.example.strost.logopedist.model.entities.Exercise;
 import com.example.strost.logopedist.model.entities.Patient;
 import com.example.strost.logopedist.R;
-import com.example.strost.logopedist.model.entities.Zorgverlener;
-import com.example.strost.logopedist.model.request.GetZorgverlenerRequest;
-import com.example.strost.logopedist.model.request.SetZorgverlenerRequest;
-
+import com.example.strost.logopedist.model.entities.Caregiver;
+import com.example.strost.logopedist.model.request.GetPatiënt;
+import com.example.strost.logopedist.model.request.GetCaregiverRequest;
+import com.example.strost.logopedist.model.request.RemovePatientRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,28 +33,29 @@ import java.util.List;
 
 
 public class PatientActivity extends AppCompatActivity {
-    private List<Patient> patients = new ArrayList<Patient>();
-    private List<Opdracht> opdrachten = new ArrayList<Opdracht>();
+    private List<Exercise> exercises = new ArrayList<Exercise>();
+    private List<Caregiver> caregivers = new ArrayList<Caregiver>();
     private Patient rightPatient;
-    Zorgverlener obj;
+    private int caregiverId;
+    private Caregiver caregiver, newCaregiver;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.patient_page);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        int id = getIntent().getExtras().getInt("id");
+        int id = getIntent().getExtras().getInt("patientid");
+        caregiverId = getIntent().getExtras().getInt("caregiverId");
+        getZorgverlender();
 
-        GetZorgverlenerRequest zr = new GetZorgverlenerRequest();
-        obj = zr.getZorgverlener(this);
-        patients = obj.getPatients();
-
-        for (int i = 0; i < patients.size(); i++) {
-            if (id == patients.get(i).getId()) {
-                 rightPatient = patients.get(i);
+        for (int i = 0; i < caregivers.size(); i++) {
+            if (caregiverId == caregivers.get(i).getId()) {
+                caregiver = caregivers.get(i);
             }
         }
 
+        GetPatiënt gp = new GetPatiënt();
+        rightPatient = gp.getPatient(id, caregiverId);
 
         EditText setId = (EditText) findViewById(R.id.patientId);
         EditText setName = (EditText) findViewById(R.id.patientName);
@@ -62,12 +63,12 @@ public class PatientActivity extends AppCompatActivity {
         setId.setText(rightPatient.getId()+ "");
         setName.setText(rightPatient.getName() + "");
 
-        ListView lv = (ListView) findViewById(R.id.opdrachtenView);
+        ListView lv = (ListView) findViewById(R.id.Exercise_View);
 
-        opdrachten = rightPatient.getList();
+        exercises = rightPatient.getExercises();
 
-        ArrayAdapter<Opdracht> arrayAdapter = new ArrayAdapter<Opdracht>(
-                this, android.R.layout.simple_list_item_1, opdrachten);
+        ArrayAdapter<Exercise> arrayAdapter = new ArrayAdapter<Exercise>(
+                this, android.R.layout.simple_list_item_1, exercises);
 
         lv.setAdapter(arrayAdapter);
 
@@ -97,6 +98,7 @@ public class PatientActivity extends AppCompatActivity {
 
     public void goToAddExerciseActivity(){
         Intent detailIntent = new Intent(this, AddExerciseActvitiy.class);
+        detailIntent.putExtra("caregiverId", caregiverId);
         detailIntent.putExtra("id", rightPatient.getId());
         startActivity(detailIntent);
         finish();
@@ -104,6 +106,7 @@ public class PatientActivity extends AppCompatActivity {
 
     public void goToExerciseActivity(int exerciseId) {
         Intent detailIntent = new Intent(this, ExerciseActivity.class);
+        detailIntent.putExtra("caregiverId", caregiverId);
         detailIntent.putExtra("patientId", rightPatient.getId());
         detailIntent.putExtra("exerciseId", exerciseId);
         startActivity(detailIntent);
@@ -112,6 +115,7 @@ public class PatientActivity extends AppCompatActivity {
 
     public void goToChangePatientActivity(){
         Intent detailIntent = new Intent(this, ChangePatientActivity.class);
+        detailIntent.putExtra("caregiverId", caregiverId);
         detailIntent.putExtra("id", rightPatient.getId());
         startActivity(detailIntent);
         finish();
@@ -124,13 +128,27 @@ public class PatientActivity extends AppCompatActivity {
     }
 
     public void addToFile(){
-        SetZorgverlenerRequest sZR = new SetZorgverlenerRequest();
-        sZR.setZorgverlener(obj, this);
+        final RemovePatientRequest rpr = new RemovePatientRequest();
+
+        Runnable runnable = new Runnable() {
+            public void run() {
+                rpr.removePatient(rightPatient);
+            }
+        };
+
+        Thread mythread = new Thread(runnable);
+        mythread.start();
+        try {
+            mythread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
     public void goBack(){
         Intent detailIntent = new Intent(this, MainPageActivity.class);
+        detailIntent.putExtra("caregiverId", caregiverId);
         startActivity(detailIntent);
         finish();
     }
@@ -157,15 +175,16 @@ public class PatientActivity extends AppCompatActivity {
 
     public void openDialog(){
 
-
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 switch (which){
                     case DialogInterface.BUTTON_POSITIVE:
 
-                        obj.removePatient(rightPatient);
-                        Toast.makeText(PatientActivity.this, "Patient is verwijderd", Toast.LENGTH_LONG).show();
+                        newCaregiver = caregiver;
+
+                        newCaregiver.removePatient(rightPatient);
+                        Toast.makeText(PatientActivity.this, getString(R.string.removed_patient), Toast.LENGTH_LONG).show();
                         addToFile();
                         goBack();
                         break;
@@ -178,14 +197,30 @@ public class PatientActivity extends AppCompatActivity {
         };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Weet u zeker dat u de Patiënt wilt verwijderen?").setPositiveButton("Ja", dialogClickListener)
-                .setNegativeButton("Nee", dialogClickListener).show();
+        builder.setMessage(getString(R.string.message_remove_patient)).setPositiveButton(getString(R.string.yes), dialogClickListener)
+                .setNegativeButton(getString(R.string.no), dialogClickListener).show();
+    }
+
+    public void getZorgverlender() {
+        final GetCaregiverRequest gzr = new GetCaregiverRequest();
+        Runnable runnable = new Runnable() {
+            public void run() {
+                caregivers = gzr.getCaregiver();
+            }
+        };
+
+        Thread mythread = new Thread(runnable);
+        mythread.start();
+        try {
+            mythread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onBackPressed() {
-        Intent detailIntent = new Intent(this, MainPageActivity.class);
-        startActivity(detailIntent);
+        goBack();
         finish();
         return;
     }

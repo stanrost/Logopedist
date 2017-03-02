@@ -10,41 +10,53 @@ import java.util.List;
 public class Patient {
     private int id;
     private String name;
-    List<Opdracht> opdrachten  = new ArrayList<Opdracht>();
+    private String email;
+    private String password;
 
-    public Patient(int id, String name) {
-        super();
-        this.id = id;
-        this.name = name;
-    }
+   List<Exercise> exercises = new ArrayList<Exercise>();
 
     public int getId(){
         return id;
-    }
-
-    public String getName(){
-        return name;
     }
 
     public void setId(int id){
         this.id = id;
     }
 
+    public String getName(){
+        return name;
+    }
+
     public void setName(String name){
         this.name = name;
     }
-    public void addOpdracht(int opdrachtId, String opdrachtTitle)
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public List<Exercise> getExercises(){
+        return exercises;
+    }
+
+    public void setExercises(List<Exercise> exercises) {
+        this.exercises = exercises;
+    }
+
+    public void removeExcersice(Exercise exercise){
+        exercises.remove(exercise);
+    }
+
+    public void addExercise(int exerciseId, String exerciseTitle)
     {
-        Opdracht o1 = new Opdracht(opdrachtId, opdrachtTitle);
-        opdrachten.add(o1);
-    }
-
-    public List<Opdracht> getList(){
-        return opdrachten;
-    }
-
-    public void removeExcersice(Opdracht opdracht){
-        opdrachten.remove(opdracht);
+        Exercise o1 = new Exercise();
+        o1.setId(exerciseId);
+        o1.setTitle(exerciseTitle);
+        exercises.add(o1);
     }
 
     @Override
@@ -52,4 +64,12 @@ public class Patient {
         return this.id + ". " + this.name;
     }
 
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

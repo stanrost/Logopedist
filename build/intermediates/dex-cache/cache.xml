@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="cc3c4f7dfda10082b626f7a7d1ff012abdbf38aa">
+        sha1="18c87baeb06d81b5a98de9e201c84d033b8902f1">
         <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_f9fe159257387a334dc69e555e034fe5725b9f40\classes.dex" />
     </item>
     <item
@@ -124,8 +124,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="9495e2d31076c3b2349229a4635d40cca35197de">
+        sha1="a47ad431a9d14261cc219175efb0c1fc6a5401af">
         <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_293cf8ac9c7ad3e7bf96cce9b13951345cdad9f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.gradle\caches\modules-2\files-2.1\com.backendless\backendless\3.0.11\fbdf1b3f7412ec5029822879e19e1031008cb4f9\backendless-3.0.11.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fbdf1b3f7412ec5029822879e19e1031008cb4f9">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\backendless-3.0.11_a937ea3b8897808c2258002419cff19897985f0c\classes.dex" />
     </item>
     <item
         is-multidex="true"

@@ -13,14 +13,11 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.strost.logopedist.R;
-import com.example.strost.logopedist.model.entities.Opdracht;
+import com.example.strost.logopedist.model.entities.Exercise;
 import com.example.strost.logopedist.model.entities.Patient;
-import com.example.strost.logopedist.model.entities.Zorgverlener;
-import com.example.strost.logopedist.model.request.GetZorgverlenerRequest;
-import com.example.strost.logopedist.model.request.SetZorgverlenerRequest;
-
+import com.example.strost.logopedist.model.request.GetPatiënt;
+import com.example.strost.logopedist.model.request.RemoveExerciseRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,50 +26,42 @@ import java.util.List;
  */
 
 public class ExerciseActivity extends AppCompatActivity {
-    private List<Patient> patients = new ArrayList<Patient>();
-    private List<Opdracht> opdrachten = new ArrayList<Opdracht>();
+    private List<Exercise> exercises = new ArrayList<Exercise>();
     private Patient rightPatient;
-    private Opdracht rightOpdracht;
-    private Zorgverlener obj;
+    private Exercise rightExercise;
+    private int caregiverId = 0, patientId = 0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exercise_page);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        int patientId = getIntent().getExtras().getInt("patientId");
+        patientId = getIntent().getExtras().getInt("patientId");
+        caregiverId = getIntent().getExtras().getInt("caregiverId");
         int exerciseId = getIntent().getExtras().getInt("exerciseId");
 
-        GetZorgverlenerRequest zr = new GetZorgverlenerRequest();
-        obj = zr.getZorgverlener(this);
-        patients = obj.getPatients();
+        GetPatiënt gp = new GetPatiënt();
+        rightPatient = gp.getPatient(patientId, caregiverId);
+        exercises = rightPatient.getExercises();
 
-        for (int i = 0; i < patients.size(); i++) {
-            if (patientId == patients.get(i).getId()) {
-                 rightPatient = patients.get(i);
-            }
-        }
-
-        opdrachten = rightPatient.getList();
-
-        for (int i = 0; i < opdrachten.size(); i++) {
-            if (exerciseId == opdrachten.get(i).getId()) {
-               rightOpdracht = opdrachten.get(i);
+        for (int i = 0; i < exercises.size(); i++) {
+            if (exerciseId == exercises.get(i).getId()) {
+               rightExercise = exercises.get(i);
             }
         }
         EditText setId = (EditText) findViewById(R.id.exerciseId);
         final EditText setName = (EditText) findViewById(R.id.exerciseName);
 
         setId.setText(exerciseId+"");
-        setName.setText(rightOpdracht.getTitle());
+        setName.setText(rightExercise.getTitle());
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rightOpdracht.setTitle(setName.getText().toString());
-                Toast.makeText(ExerciseActivity.this, "Opdracht is veranderd", Toast.LENGTH_LONG).show();
+                rightExercise.setTitle(setName.getText().toString());
+                Toast.makeText(ExerciseActivity.this, getString(R.string.changed_exercise), Toast.LENGTH_LONG).show();
                 addToFile();
                 goBack();
             }
@@ -80,14 +69,27 @@ public class ExerciseActivity extends AppCompatActivity {
     }
 
     public void addToFile(){
-        SetZorgverlenerRequest sZR = new SetZorgverlenerRequest();
-        sZR.setZorgverlener(obj, this);
+        final RemoveExerciseRequest rer = new RemoveExerciseRequest();
+        Runnable runnable = new Runnable() {
+            public void run() {
+                rer.removeExercise(rightExercise);
+            }
+        };
+
+        Thread mythread = new Thread(runnable);
+        mythread.start();
+        try {
+            mythread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
     public void goBack(){
         Intent detailIntent = new Intent(this, PatientActivity.class);
-        detailIntent.putExtra("id", rightPatient.getId());
+        detailIntent.putExtra("caregiverId", caregiverId);
+        detailIntent.putExtra("patientid", patientId);
         startActivity(detailIntent);
         finish();
     }
@@ -105,20 +107,14 @@ public class ExerciseActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.removeExercies) {
             openDialog();
         }
-
         return super.onOptionsItemSelected(item);
     }
     public void openDialog(){
-
 
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
@@ -126,8 +122,8 @@ public class ExerciseActivity extends AppCompatActivity {
                 switch (which){
                     case DialogInterface.BUTTON_POSITIVE:
 
-                        rightPatient.removeExcersice(rightOpdracht);
-                        Toast.makeText(ExerciseActivity.this, "Opdracht is Verwijderd", Toast.LENGTH_LONG).show();
+                      //  rightPatient.removeExcersice(rightExercise);
+                        Toast.makeText(ExerciseActivity.this, getString(R.string.removed_exercise), Toast.LENGTH_LONG).show();
 
                         addToFile();
                         goBack();
@@ -141,8 +137,8 @@ public class ExerciseActivity extends AppCompatActivity {
         };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Weet u zeker dat u de Opdracht wilt verwijderen?").setPositiveButton("Ja", dialogClickListener)
-                .setNegativeButton("Nee", dialogClickListener).show();
+        builder.setMessage(getString(R.string.message_remove_exercies)).setPositiveButton(getString(R.string.yes), dialogClickListener)
+                .setNegativeButton(getString(R.string.no), dialogClickListener).show();
     }
 
 

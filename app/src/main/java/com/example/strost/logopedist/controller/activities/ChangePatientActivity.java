@@ -10,10 +10,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.strost.logopedist.R;
+import com.example.strost.logopedist.model.entities.Caregiver;
 import com.example.strost.logopedist.model.entities.Patient;
-import com.example.strost.logopedist.model.entities.Zorgverlener;
-import com.example.strost.logopedist.model.request.GetZorgverlenerRequest;
-import com.example.strost.logopedist.model.request.SetZorgverlenerRequest;
+import com.example.strost.logopedist.model.request.GetCaregiverRequest;
+import com.example.strost.logopedist.model.request.UpdateCaregiverRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,30 +23,47 @@ import java.util.List;
  */
 
 public class ChangePatientActivity extends AppCompatActivity {
-
-    Zorgverlener obj;
     private List<Patient> patients = new ArrayList<Patient>();
-    Patient rightPatient;
-    EditText name;
+    private List<Caregiver> caregivers = new ArrayList<Caregiver>();
+    private int caregiverId;
+    private Caregiver caregiver = null, newCaregiver = null;
+    private Patient rightPatient;
+    private EditText name;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.changepatient_page);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        GetZorgverlenerRequest gZR = new GetZorgverlenerRequest();
-        obj = gZR.getZorgverlener(this);
+        final GetCaregiverRequest gzr = new GetCaregiverRequest();
+        caregiverId = getIntent().getExtras().getInt("caregiverId");
+        final int patientId = getIntent().getExtras().getInt("id");
+
+        Runnable runnable = new Runnable() {
+            public void run() {
+                caregivers = gzr.getCaregiver();
+            }
+        };
+        Thread mythread = new Thread(runnable);
+        mythread.start();
+        try {
+            mythread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 0; i < caregivers.size(); i++) {
+            if (caregiverId == caregivers.get(i).getId()) {
+                caregiver = caregivers.get(i);
+            }
+        }
 
         name = (EditText) findViewById(R.id.changePatientName);
-
-        final int id = getIntent().getExtras().getInt("id");
-
-        GetZorgverlenerRequest zr = new GetZorgverlenerRequest();
-        obj = zr.getZorgverlener(this);
-        patients = obj.getPatients();
+        newCaregiver = caregiver;
+        patients = newCaregiver.getPatients();
 
         for (int i = 0; i < patients.size(); i++) {
-            if (id == patients.get(i).getId()) {
+            if (patientId == patients.get(i).getId()) {
                 rightPatient = patients.get(i);
             }
         }
@@ -57,7 +74,7 @@ public class ChangePatientActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 changeObj();
-                Toast.makeText(ChangePatientActivity.this, "Patient is gewijzigd", Toast.LENGTH_LONG).show();
+                Toast.makeText(ChangePatientActivity.this, getString(R.string.changed_patient), Toast.LENGTH_LONG).show();
                 addToFile();
                 goBack();
 
@@ -66,18 +83,29 @@ public class ChangePatientActivity extends AppCompatActivity {
     }
 
     public void changeObj(){
-        obj.changePatient(rightPatient.getId(), name.getText().toString());
+        newCaregiver.changePatient(rightPatient.getId(), name.getText().toString());
     }
 
     public void addToFile(){
-        SetZorgverlenerRequest sZR = new SetZorgverlenerRequest();
-        sZR.setZorgverlener(obj, this);
-
+        final UpdateCaregiverRequest uzr = new UpdateCaregiverRequest();
+        Runnable runnable = new Runnable() {
+            public void run() {
+                uzr.updateCaregiver(caregiver, newCaregiver);
+            }
+        };
+        Thread mythread = new Thread(runnable);
+        mythread.start();
+        try {
+            mythread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void goBack(){
         Intent detailIntent = new Intent(this, PatientActivity.class);
-        detailIntent.putExtra("id", rightPatient.getId());
+        detailIntent.putExtra("patientid", rightPatient.getId());
+        detailIntent.putExtra("caregiverId", caregiverId);
         startActivity(detailIntent);
         finish();
     }

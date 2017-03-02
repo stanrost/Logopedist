@@ -4,18 +4,17 @@ package com.example.strost.logopedist.model.entities;
  * Created by strost on 17-2-2017.
  */
 
-public class Opdracht {
+public class Exercise {
     private int id;
     private String title;
 
 
-    public Opdracht (int id, String title){
-        this.id = id;
-        this.title = title;
-    }
-
     public int getId(){
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle(){
@@ -29,5 +28,6 @@ public class Opdracht {
     public String toString() {
         return this.id + ". " + this.title;
     }
+
 
 }

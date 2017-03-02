@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Logopedist</string>
+
+    <string name="added_patient">Patiënt is toegevoegd</string>
+    <string name="changed_patient">Patiënt is gewijzigd</string>
+    <string name="removed_patient">Patiënt is veranderd</string>
+    <string name="message_remove_patient">Weet u zeker dat u de Patiënt wilt verwijderen?</string>
+
+    <string name="added_exercise">Oefening is toegevoegd</string>
+    <string name="changed_exercise">Oefening is toegevoegd</string>
+    <string name="removed_exercise">Oefening is Verwijderd</string>
+    <string name="message_remove_exercies">Weet u zeker dat u de Exercise wilt verwijderen?</string>
+
+    <string name="logged_in">U bent ingelogd</string>
+    <string name="wrong_credentials">U heeft de verkeerde gegevens ingevuld</string>
+
+    <string name="logged_out">U bent uitgelogd</string>
+    <string name="message_logout">Weet u zeker dat u wilt uitloggen?</string>
+
+    <string name="yes">Ja</string>
+    <string name="no">No</string>
 </resources>
