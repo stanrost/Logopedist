@@ -1,6 +1,7 @@
 package com.example.strost.logopedist.controller.activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.strost.logopedist.R;
-import com.example.strost.logopedist.model.request.SaveSharedPreference;
+import com.example.strost.logopedist.SaveSharedPreference;
 
 /**
  * Created by strost on 28-2-2017.
@@ -18,10 +19,13 @@ import com.example.strost.logopedist.model.request.SaveSharedPreference;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    private int caregiverId;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_page);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        caregiverId = getIntent().getExtras().getInt("caregiverId");
 
         final Button button = (Button) findViewById(R.id.LogoutButton);
         button.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +33,19 @@ public class SettingsActivity extends AppCompatActivity {
                 openDialog();
             }
         });
+
+        Button changepassword = (Button) findViewById(R.id.change_password_button);
+        changepassword.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+               goToChangePassword();
+            }
+        });
+    }
+
+    public void goToChangePassword(){
+        Intent detailIntent = new Intent(this, ChangePasswordActivity.class);
+        detailIntent.putExtra("caregiverId", caregiverId);
+        startActivity(detailIntent);
     }
 
     public void openDialog() {
@@ -58,5 +75,19 @@ public class SettingsActivity extends AppCompatActivity {
     public void logout(){
         SaveSharedPreference sp = new SaveSharedPreference();
         sp.setCaretakerId(this, "");
+    }
+
+    public void goBack(){
+        Intent detailIntent = new Intent(this, MainPageActivity.class);
+        detailIntent.putExtra("caregiverId", caregiverId);
+        startActivity(detailIntent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        goBack();
+        finish();
+        return;
     }
 }

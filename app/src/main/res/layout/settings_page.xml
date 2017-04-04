@@ -4,6 +4,12 @@
     android:layout_height="match_parent">
 
     <Button
+        android:text="Verander wachtwoord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/change_password_button" />
+
+    <Button
         android:text="Uitloggen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

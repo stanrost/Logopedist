@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.backendless.Backendless;
 import com.example.strost.logopedist.R;
-import com.example.strost.logopedist.model.request.SaveSharedPreference;
+import com.example.strost.logopedist.SaveSharedPreference;
 
 public class MainActivity extends AppCompatActivity{
 

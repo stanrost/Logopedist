@@ -1,8 +1,14 @@
 package com.example.strost.logopedist.controller.activities;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -16,14 +22,30 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.backendless.Backendless;
+import com.backendless.messaging.DeliveryOptions;
+import com.backendless.messaging.PublishOptions;
+import com.backendless.services.messaging.MessageStatus;
+import com.example.strost.logopedist.controller.adapter.DataAdapter;
 import com.example.strost.logopedist.model.entities.Caregiver;
+import com.example.strost.logopedist.model.entities.CaregiverResponse;
+import com.example.strost.logopedist.model.entities.Exercise;
 import com.example.strost.logopedist.model.entities.Patient;
 import com.example.strost.logopedist.R;
+import com.example.strost.logopedist.model.request.GetCaregiverHttpRequest;
 import com.example.strost.logopedist.model.request.GetCaregiverRequest;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.observers.DisposableObserver;
+import io.reactivex.schedulers.Schedulers;
+
+import static com.example.strost.logopedist.application.ApplicationEx.restAdapter;
 
 /**
  * Created by strost on 16-2-2017.
@@ -33,6 +55,8 @@ public class MainPageActivity extends AppCompatActivity {
 
     private List<Caregiver> caregivers = new ArrayList<Caregiver>();
     private List<Patient> patients = new ArrayList<Patient>();
+    private ArrayList<Patient> patientslist = new ArrayList<Patient>();
+
     private ArrayList<String> listItems = new ArrayList<String>();
     private String[] items;
     private ArrayAdapter<String> adapter;
@@ -42,102 +66,110 @@ public class MainPageActivity extends AppCompatActivity {
     private ListView lv;
     private EditText searchtext;
 
+
+    private RecyclerView mRecyclerView;
+
+    private CompositeDisposable mCompositeDisposable;
+
+    private DataAdapter mAdapter;
+    private List<Patient> mAndroidArrayList;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-        lv = (ListView) findViewById(R.id.patient_listview);
-        searchtext = (EditText) findViewById(R.id.searchList);
+        //lv = (ListView) findViewById(R.id.patient_listview);
         caregiverId = getIntent().getExtras().getInt("caregiverId");
-
+        initRecyclerView();
         getZorgverlender();
-        Caregiver z1 = null;
 
-        Log.e("caregiverId", "" + caregiverId);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToAddPatientActivity();
+            }
+        });
+
+    }
+
+
+    public void searchItem(String textToSearch) {
+
+        for (Patient p : patients) {
+            if (p.getName().toUpperCase().contains(textToSearch.toUpperCase()) && !mAndroidArrayList.contains(p)) {
+                mAndroidArrayList.add(p);
+            }
+        }
+        for (int i = 0; i < patients.size(); i++) {
+            if (!patients.get(i).getName().toUpperCase().contains(textToSearch.toUpperCase())) {
+                mAndroidArrayList.remove(i);
+            }
+        }
+
+        mAdapter.notifyDataSetChanged();
+    }
+
+
+    private void initRecyclerView() {
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        mRecyclerView.setLayoutManager(layoutManager);
+    }
+
+    public void getZorgverlender() {
+        GetCaregiverHttpRequest gcr = new GetCaregiverHttpRequest();
+        caregivers = gcr.getCaregiver();
+
+        CompositeDisposable mCompositeDisposable = new CompositeDisposable();
+        mCompositeDisposable.add(restAdapter.getCaregivers()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribeWith(new DisposableObserver<CaregiverResponse>() {
+                    @Override
+                    public void onNext(CaregiverResponse value) {
+                        caregivers = value.getData();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        setPatientsList();
+                    }
+                }));
+
+
+    }
+
+
+    public void setPatientsList() {
+        Caregiver z1 = null;
         for (int i = 0; i < caregivers.size(); i++) {
             if (caregiverId == caregivers.get(i).getId()) {
                 z1 = caregivers.get(i);
             }
         }
-
         patients = z1.getPatients();
-        initList();
-        searchtext.addTextChangedListener(new TextWatcher() {
+        Collections.sort(patients, new Comparator<Patient>() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    searchItem(s.toString());
-            }
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-    }
-
-    public void searchItem(String textToSearch){
-        for (String item : items){
-            if(!item.toUpperCase().contains(textToSearch.toUpperCase())){
-                listItems.remove(item);
-            }
-
-            if(item.toUpperCase().contains(textToSearch.toUpperCase()) && !listItems.contains(item)){
-                listItems.add(item);
-            }
-        }
-        Collections.sort(listItems);
-        adapter.notifyDataSetChanged();
-    }
-
-    public void initList(){
-
-        for(Patient p : patients){
-            listItems.add(p.getId() + ".  " + p.getName());
-        }
-        Collections.sort(listItems);
-        items = listItems.toArray(new String[listItems.size()]);
-
-        adapter = new ArrayAdapter<String>(
-                this, R.layout.list_item, R.id.txtitem, listItems);
-
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-
-                String filename = ""+ parent.getItemAtPosition(position);     // full file name
-                String[] parts = filename.split("\\."); // String array, each element is text between dots
-                String beforeFirstDot = parts[0];
-                patientId = Integer.parseInt(beforeFirstDot);
-
-                goToPatientPage(caregiverId);
+            public int compare(Patient patient1, Patient patient2) {
+                String id1 = patient1.getName() + "";
+                String id2 = patient2.getName() + "";
+                return id1.compareTo(id2);
             }
         });
 
+        mAndroidArrayList = patients;
+        patientslist = (ArrayList<Patient>) patients;
+        mAdapter = new DataAdapter((ArrayList<Patient>) mAndroidArrayList, z1);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
-
-    public void getZorgverlender(){
-    final GetCaregiverRequest gzr = new GetCaregiverRequest();
-    Runnable runnable = new Runnable() {
-        public void run() {
-            caregivers = gzr.getCaregiver();
-        }
-    };
-
-    Thread mythread = new Thread(runnable);
-    mythread.start();
-    try {
-        mythread.join();
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    }
-}
-
-    public void goToPatientPage(int caregiverId){
+    public void goToPatientPage(int patientId) {
         Intent detailIntent = new Intent(this, PatientActivity.class);
         detailIntent.putExtra("caregiverId", caregiverId);
         detailIntent.putExtra("patientid", patientId);
@@ -145,13 +177,8 @@ public class MainPageActivity extends AppCompatActivity {
         finish();
 
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.zorgverlener_menu, menu);
-        return true;
-    }
 
-    public void goToAddPatientActivity(){
+    public void goToAddPatientActivity() {
 
         Intent detailIntent = new Intent(this, AddPatientActivity.class);
         detailIntent.putExtra("caregiverId", caregiverId);
@@ -159,11 +186,37 @@ public class MainPageActivity extends AppCompatActivity {
         finish();
     }
 
-    public void goToSettingsActvivity(){
+    public void goToSettingsActvivity() {
         Intent detailIntent = new Intent(this, SettingsActivity.class);
+        detailIntent.putExtra("caregiverId", caregiverId);
         startActivity(detailIntent);
         finish();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                //TODO write your code what you want to perform on search
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                searchItem(query.toString());
+                return true;
+            }
+        });
+        return true;
+    }
+
 
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -172,9 +225,7 @@ public class MainPageActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.addPatiënt) {
-            goToAddPatientActivity();
-        }
+
         if (id == R.id.settings) {
             goToSettingsActvivity();
         }

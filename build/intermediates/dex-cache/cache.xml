@@ -3,21 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jar="C:\Users\strost\.android\build-cache\3b13e35c2f55ee12a609fdba6413fc965db0449e\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_961e274225a11a0070e69970a351b9860797c49c\classes.dex" />
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9b12c89d335e29f180579705928218727a356706\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jar="C:\Users\strost\.android\build-cache\03d0f5d9446abf3e431b986dd767d9696beed856\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_90d0bc10413a894b0fe78660fbe457a03682d57d\classes.dex" />
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ef748a4cb6ada2fcb5db256696663c37d46a2db1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.android\build-cache\e4e819c13ff09160d51097cc39fbcfff6162d792\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c454e3914dbcec876bd473dec9d964da57459eb1\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -25,26 +34,26 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="18c87baeb06d81b5a98de9e201c84d033b8902f1">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_f9fe159257387a334dc69e555e034fe5725b9f40\classes.dex" />
+        sha1="355ccb0315f96c08543e0980239431deea2ddc47">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_f9fe159257387a334dc69e555e034fe5725b9f40\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jar="C:\Users\strost\.android\build-cache\39a273e8cc28492237b7a5cc73ddac38fd2a1e8f\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_dbf025312bbfc94d74e61117d11da98371cf2ace\classes.dex" />
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_023734d8a673eb36df41bc3ece4919aaca401ba5\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        jar="C:\Users\strost\.android\build-cache\e33c297d3624b1a13100aa3371c2baf2ae5985de\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_7197ada05091dee9eafc1cc2f9195a1fc74d212a\classes.dex" />
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e191bd3ba785574084665f3dbff7b31ceea536e0\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -57,21 +66,30 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
+        jar="C:\Users\strost\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.11.0\840897fcd7223a8143f1d9b6f69714e7be34fd50\okio-1.11.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_21e700d047436f5a8b21eb71604b26f28655f1e0\classes.dex" />
+        sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.11.0_6f1b4f64fb553d81289e117b43e405d8c2fb66e4\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
+        jar="C:\Users\strost\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_ca2eba5dc41146d7c6550f6233f1bda0487a06a1\classes.dex" />
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_0f8ca5516954421d8583a94502d65a586edaccc3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.android\build-cache\3bddc4ead653cc4cb62bced1f3bc1fb6a3ddff8f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_47db0d7481f64d79d064c094b10fb5eda942860f\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -84,39 +102,93 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jar="C:\Users\strost\.android\build-cache\51fd567e6e43ce529cd6f3389ec922255a872ec5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7dfb87e5eb653106115e348126523df9853c3e12\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.6.0\81887458b69ddc32722df7e4c35235fd74e6a8ba\logging-interceptor-3.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="81887458b69ddc32722df7e4c35235fd74e6a8ba">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\logging-interceptor-3.6.0_55055820f03ccebc5c782a364f06041a13b4b42b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.gradle\caches\modules-2\files-2.1\org.reactivestreams\reactive-streams\1.0.0\14b8c877d98005ba3941c9257cfe09f6ed0e0d74\reactive-streams-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\reactive-streams-1.0.0_e8f0cccabebc2d438b1ecb34fb11477638805ae8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.android\build-cache\ac4b52b3d9058bfeb83027c228c91a83c1c8c7a8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fc26bc9758d51e5373e4c8d0350e035a0dd682bc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.android\build-cache\3878951d246b9b280cf72a7cc1b6e1e0835a82d0\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2a3e073fda2abc58862f90b0312013daaa3ca466\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.android\build-cache\f307dd2e0d9aa0a9f2cd6a041b69f7ea23efea19\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d854696923a619d7ff08554ccaafea09e2e5282d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.android\build-cache\9db23c84b42f65b8521c3f1a81c6bb48e2f8d86f\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_6108016ac0d40d043f65669ab256f4f245d2aeae\classes.dex" />
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7567a6eefcfc9eab78259f7d6f825f7313483d70\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jar="C:\Users\strost\.android\build-cache\fb03230b32ed781a7c4606f094bc89485f8265ad\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_feac71a361e865e2c0a9d3370b440c5f8dec022f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\strost\.android\build-cache\1a31902d09a102b149ca6b275aa5a942d38bd95d\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_ae12cc680177ae3c863a3b414729c4ccdcbab209\classes.dex" />
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f42a0e285ef64b2aa9892e83a92be2f0029e6469\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jar="C:\Users\strost\.gradle\caches\modules-2\files-2.1\io.reactivex.rxjava2\rxjava\2.0.1\57f850a6b317e5582f1dbaff10a9e7d7e1fcdcfb\rxjava-2.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_f133672ed1fa2bf1938e473e1bd6b154a50f6598\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.1_d35ea1e4744b47ef4ac8433647bf7d85b9880e64\classes.dex" />
+        sha1="57f850a6b317e5582f1dbaff10a9e7d7e1fcdcfb">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\rxjava-2.0.1_04e55b229851bc4e0906efd154d98bc4f9c64ed0\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -124,35 +196,26 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a47ad431a9d14261cc219175efb0c1fc6a5401af">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_293cf8ac9c7ad3e7bf96cce9b13951345cdad9f5\classes.dex" />
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_293cf8ac9c7ad3e7bf96cce9b13951345cdad9f5\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\strost\.gradle\caches\modules-2\files-2.1\com.backendless\backendless\3.0.11\fbdf1b3f7412ec5029822879e19e1031008cb4f9\backendless-3.0.11.jar"
+        jar="C:\Users\strost\.gradle\caches\modules-2\files-2.1\com.jakewharton.retrofit\retrofit2-rxjava2-adapter\1.0.0\e117362a2103f8ec01091ebd2f40aca4e1ada599\retrofit2-rxjava2-adapter-1.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="fbdf1b3f7412ec5029822879e19e1031008cb4f9">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\backendless-3.0.11_a937ea3b8897808c2258002419cff19897985f0c\classes.dex" />
+        sha1="e117362a2103f8ec01091ebd2f40aca4e1ada599">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit2-rxjava2-adapter-1.0.0_de1b245198fbe741ba3b0e6a9a554a0f01730ad6\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jar="C:\Users\strost\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_1f6cf68968d4ab60846fa34307a4b7f9edb6622d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.1_7c96fcf05e050441d8456ab7bf18146cc6ae0893\classes.dex" />
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="D:\Users\strost\Documents\Project\Logopedist\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.6.0_369787e7dee32540368dc2c44af793f2869517c2\classes.dex" />
     </item>
 
 </items>

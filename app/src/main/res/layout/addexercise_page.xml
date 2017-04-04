@@ -1,14 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
+    <android.support.v4.widget.NestedScrollView android:layout_height="wrap_content" android:layout_width="wrap_content">
+        <RelativeLayout android:layout_height="wrap_content" android:layout_width="wrap_content">
+            <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titel:" />
 
-    <TextView
-        android:text="Titel:"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView5" />
+            <TextView
+                android:id="@+id/beschrijving"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="beschrijving:"
+                android:layout_below="@+id/recoderbuttons"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/exerciseTitle"
+                android:layout_below="@+id/textView14"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/exerciseTitle"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginEnd="25dp" />
+
+            <Button
+                android:id="@+id/button_image"
+                android:layout_width="250dp"
+                android:layout_height="48dp"
+                android:layout_alignBottom="@+id/imageview"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:onClick="takePicture"
+                android:text="Maak foto van opdracht" />
+
+            <EditText
+                android:id="@+id/description_text"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:minLines="6"
+                android:layout_below="@+id/beschrijving"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:id="@+id/checkhelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="hulp:"
+                android:layout_below="@+id/button_image"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Switch
+                android:id="@+id/help_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/checkhelp"
+                android:layout_alignLeft="@+id/imageview"
+                android:layout_alignStart="@+id/imageview" />
+
+            <TextView
+                android:id="@+id/voicerecorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Voorbeeld uitspraak opnemen:"
+                android:layout_below="@+id/checkhelp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <LinearLayout
+                android:id="@+id/recoderbuttons"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/voicerecorder">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnStart"
+                    android:text="Start"
+                    android:layout_weight="1.0"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnStop"
+                    android:text="Stop"
+                    android:layout_weight="1.0"/>
+
+
+                <Button
+                    android:id="@+id/play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="afspelen" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -18,19 +140,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_gravity="end|bottom"
-        android:src="@drawable/ic_create"
+        android:src="@drawable/ic_action_name"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
 
         />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/exerciseTitle"
-        android:layout_below="@+id/textView5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

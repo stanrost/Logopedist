@@ -1,11 +1,16 @@
 package com.example.strost.logopedist.controller.activities;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,7 +19,9 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.strost.logopedist.model.entities.Exercise;
@@ -24,7 +31,12 @@ import com.example.strost.logopedist.model.entities.Caregiver;
 import com.example.strost.logopedist.model.request.GetPatiënt;
 import com.example.strost.logopedist.model.request.GetCaregiverRequest;
 import com.example.strost.logopedist.model.request.RemovePatientRequest;
+
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -39,10 +51,13 @@ public class PatientActivity extends AppCompatActivity {
     private int caregiverId;
     private Caregiver caregiver, newCaregiver;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.patient_page);
+        setContentView(R.layout.activity_scrolling);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         int id = getIntent().getExtras().getInt("patientid");
         caregiverId = getIntent().getExtras().getInt("caregiverId");
@@ -57,42 +72,63 @@ public class PatientActivity extends AppCompatActivity {
         GetPatiënt gp = new GetPatiënt();
         rightPatient = gp.getPatient(id, caregiverId);
 
-        EditText setId = (EditText) findViewById(R.id.patientId);
-        EditText setName = (EditText) findViewById(R.id.patientName);
-
-        setId.setText(rightPatient.getId()+ "");
-        setName.setText(rightPatient.getName() + "");
-
-        ListView lv = (ListView) findViewById(R.id.Exercise_View);
-
+        //ListView lv = (ListView) findViewById(R.id.Exercise_View);
         exercises = rightPatient.getExercises();
-
-        ArrayAdapter<Exercise> arrayAdapter = new ArrayAdapter<Exercise>(
-                this, android.R.layout.simple_list_item_1, exercises);
-
-        lv.setAdapter(arrayAdapter);
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-
-                String filename = ""+ parent.getItemAtPosition(position);     // full file name
-                String[] parts = filename.split("\\."); // String array, each element is text between dots
-
-                String beforeFirstDot = parts[0];
-                int exerciseId = Integer.parseInt(beforeFirstDot);
-
-                goToExerciseActivity(exerciseId);
-
+        Collections.sort(exercises, new Comparator<Exercise>() {
+            @Override
+            public int compare(Exercise exercise1, Exercise exercise2)
+            {
+                int id1 = exercise1.getId();
+                int id2 = exercise2.getId();
+                return id2 > id1 ? +1 : id2 < id1 ? -1 : 0;
             }
         });
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        //Creating a custom ArrayAdapter
+        ArrayAdapter adapt2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, exercises);
+
+        //Pointing to the LinearLayout
+        LinearLayout testContainer = (LinearLayout) findViewById(R.id.Exercise_Views);
+        final int adapterCount = adapt2.getCount();
+
+        //adding each adapter item to the LinearLayout
+        for (int i = 0; i < adapterCount; i++) {
+            View item = adapt2.getView(i, null, null);
+
+            testContainer.addView(item);
+            final int man = i;
+            item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    goToExerciseActivity(exercises.get(man));
+
+                }
+                }
+
+            );
+        }
+
+
+
+
+        FloatingActionButton addEx = (FloatingActionButton) findViewById(R.id.addEx);
+        addEx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToAddExerciseActivity();
             }
         });
+
+        FloatingActionButton changePatient = (FloatingActionButton) findViewById(R.id.fab);
+        changePatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToChangePatientActivity();
+            }
+        });
+
+        setTitle(rightPatient.getName());
+
 
     }
 
@@ -104,11 +140,9 @@ public class PatientActivity extends AppCompatActivity {
         finish();
     }
 
-    public void goToExerciseActivity(int exerciseId) {
+    public void goToExerciseActivity(Exercise exercise) {
         Intent detailIntent = new Intent(this, ExerciseActivity.class);
-        detailIntent.putExtra("caregiverId", caregiverId);
-        detailIntent.putExtra("patientId", rightPatient.getId());
-        detailIntent.putExtra("exerciseId", exerciseId);
+        detailIntent.putExtra("Exercise", exercise);
         startActivity(detailIntent);
         finish();
     }
