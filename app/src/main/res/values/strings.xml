@@ -107,7 +107,7 @@
     <string name="forgot_password">Wachtwoord vergeten?</string>
     <string name="cancel">Annuleren</string>
     <string name="email_is_send_to">Email is verzonden naar:</string>
-    <string name="wrong_email">Het email adres in onjuist</string>
+    <string name="wrong_email">Het email adres is onjuist</string>
     <!--number of times overview-->
     <string name="last_five_exercises">laatste 5 opdrachten</string>
     <string name="last_ten_exercises">laatste 10 opdrachten</string>
