@@ -2,8 +2,7 @@ package com.example.strost.logopedist.model.entities;
 
 import com.google.gson.annotations.SerializedName;
 
-import org.w3c.dom.Text;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +10,17 @@ import java.util.List;
  * Created by strost on 16-2-2017.
  */
 
-public class Patient {
+public class Patient implements Serializable {
     @SerializedName("id")
     private int id;
-    @SerializedName("name")
-    private String name;
+    @SerializedName("firstName")
+    private String firstName;
+    @SerializedName("lastName")
+    private String lastName;
+    @SerializedName("gender")
+    private String gender;
+    @SerializedName("problem")
+    private String problem;
     @SerializedName("email")
     private String email;
     @SerializedName("password")
@@ -26,6 +31,8 @@ public class Patient {
     List<Exercise> exercises = new ArrayList<Exercise>();
     @SerializedName("devices")
     List<Device> devices = new ArrayList<Device>();
+    @SerializedName("changedGeneratedPassword")
+    private Boolean changedGeneratedPassword;
 
     public int getId(){
         return id;
@@ -35,12 +42,12 @@ public class Patient {
         this.id = id;
     }
 
-    public String getName(){
-        return name;
+    public String getFirstName(){
+        return firstName;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
     }
 
     public void setEmail(String email){
@@ -55,15 +62,7 @@ public class Patient {
         return exercises;
     }
 
-    public void setExercises(List<Exercise> exercises) {
-        this.exercises = exercises;
-    }
-
-    public void removeExcersice(Exercise exercise){
-        exercises.remove(exercise);
-    }
-
-    public void addExercise(int exerciseId, String exerciseTitle, String exercisePicture, Boolean help, String description)
+    public void addExercise(int exerciseId, String exerciseTitle, String exercisePicture, Boolean help, String description, String exerciseRecord, String endDate)
     {
         Exercise o1 = new Exercise();
         o1.setId(exerciseId);
@@ -71,14 +70,16 @@ public class Patient {
         o1.setPicture(exercisePicture);
         o1.setHelp(help);
         o1.setDescription(description);
+        o1.setRecord(exerciseRecord);
+        o1.setEndDate(endDate);
+
         exercises.add(o1);
     }
 
     @Override
     public String toString() {
-        return this.id + ". " + this.name;
+        return this.id + ". " + this.firstName;
     }
-
 
     public String getPassword() {
         return password;
@@ -102,5 +103,41 @@ public class Patient {
 
     public void setDevices(List<Device> devices) {
         this.devices = devices;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getProblem() {
+        return problem;
+    }
+
+    public void setProblem(String problem) {
+        this.problem = problem;
+    }
+
+    public void setExercises(List<Exercise> exercises) {
+        this.exercises = exercises;
+    }
+
+    public Boolean getChangedGeneratedPassword() {
+        return changedGeneratedPassword;
+    }
+
+    public void setChangedGeneratedPassword(Boolean changedGeneratedPassword) {
+        this.changedGeneratedPassword = changedGeneratedPassword;
     }
 }

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.strost.logopedist.R;
 import com.example.strost.logopedist.SaveSharedPreference;
+import com.example.strost.logopedist.model.entities.Caregiver;
 
 /**
  * Created by strost on 28-2-2017.
@@ -19,22 +20,27 @@ import com.example.strost.logopedist.SaveSharedPreference;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private int caregiverId;
+    private int mCaregiverId;
+    private Caregiver mCaregiver;
+
+    private final String CAREGIVER_KEY = "Caregiver";
+    private final String CAREGIVER_ID_KEY = "caregiverId";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings_page);
+        setContentView(R.layout.activity_settings);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-        caregiverId = getIntent().getExtras().getInt("caregiverId");
+        mCaregiver = (Caregiver) getIntent().getSerializableExtra(CAREGIVER_KEY);
+        mCaregiverId = mCaregiver.getId();
 
-        final Button button = (Button) findViewById(R.id.LogoutButton);
+        final Button button = (Button) findViewById(R.id.btnLogout);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 openDialog();
             }
         });
 
-        Button changepassword = (Button) findViewById(R.id.change_password_button);
+        Button changepassword = (Button) findViewById(R.id.btnChangePassword);
         changepassword.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                goToChangePassword();
@@ -44,7 +50,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void goToChangePassword(){
         Intent detailIntent = new Intent(this, ChangePasswordActivity.class);
-        detailIntent.putExtra("caregiverId", caregiverId);
+        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         startActivity(detailIntent);
     }
 
@@ -57,7 +63,6 @@ public class SettingsActivity extends AppCompatActivity {
                     case DialogInterface.BUTTON_POSITIVE:
                         logout();
                         Toast.makeText(SettingsActivity.this, getString(R.string.logged_out), Toast.LENGTH_LONG).show();
-                        finish();
                         break;
 
                     case DialogInterface.BUTTON_NEGATIVE:
@@ -75,11 +80,14 @@ public class SettingsActivity extends AppCompatActivity {
     public void logout(){
         SaveSharedPreference sp = new SaveSharedPreference();
         sp.setCaretakerId(this, "");
+        Intent detailIntent = new Intent(this, LoginActivity.class);
+        startActivity(detailIntent);
+        finish();
     }
 
     public void goBack(){
         Intent detailIntent = new Intent(this, MainPageActivity.class);
-        detailIntent.putExtra("caregiverId", caregiverId);
+        detailIntent.putExtra(CAREGIVER_ID_KEY, mCaregiverId);
         startActivity(detailIntent);
         finish();
     }
@@ -87,7 +95,6 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         goBack();
-        finish();
         return;
     }
 }

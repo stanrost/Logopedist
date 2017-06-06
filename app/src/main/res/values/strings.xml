@@ -3,20 +3,147 @@
 
     <string name="added_patient">Patiënt is toegevoegd</string>
     <string name="changed_patient">Patiënt is gewijzigd</string>
-    <string name="removed_patient">Patiënt is veranderd</string>
+    <string name="removed_patient">Patiënt is verwijderd</string>
     <string name="message_remove_patient">Weet u zeker dat u de Patiënt wilt verwijderen?</string>
 
-    <string name="added_exercise">Oefening is toegevoegd</string>
-    <string name="changed_exercise">Oefening is toegevoegd</string>
-    <string name="removed_exercise">Oefening is Verwijderd</string>
-    <string name="message_remove_exercies">Weet u zeker dat u de Exercise wilt verwijderen?</string>
+    <string name="added_caregiver">Logopedist is toegevoegd</string>
+    <string name="changed_caregiver">Logopedist is gewijzigd</string>
+
+    <string name="added_exercise">Opdracht is toegevoegd</string>
+    <string name="changed_exercise">Opdracht is toegevoegd</string>
+    <string name="removed_exercise">Opdracht is verwijderd</string>
+    <string name="message_remove_exercies">Weet u zeker dat u de opdracht wilt verwijderen?</string>
 
     <string name="logged_in">U bent ingelogd</string>
     <string name="wrong_credentials">U heeft de verkeerde gegevens ingevuld</string>
+    <string name="reminder_diaglog">Houdt rekening met uw geheimhoudingsplicht</string>
 
     <string name="logged_out">U bent uitgelogd</string>
     <string name="message_logout">Weet u zeker dat u wilt uitloggen?</string>
 
     <string name="yes">Ja</string>
     <string name="no">Nee</string>
+
+    <string name="wrong_old_password">Uw oude wachtwoord is fout!</string>
+    <string name="new_passwords_are_not_equal">Uw nieuwe wachtwoorden zijn niet hetzelfde!</string>
+    <string name="incomplete_form">Niet alle velden zijn ingevuld</string>
+
+    <string name="email_will_be_send_to">Er wordt een nieuw wachtwoord verstuurd naar:</string>
+    <string name="email_title">Inloggegevens Logopedieapp</string>
+    <string name="email_greeting">Hi </string>
+    <string name="email_body_part_1">Je nieuwe inloggegevens voor de Logopedieapp zijn:</string>
+    <string name="email_body_part_2">Email: </string>
+    <string name="email_body_part_3">Tijdelijk wachtwoord: </string>
+    <string name="email_body_part_4">Bij de eerste keer inloggen kan je het wachtwoord veranderen. </string>
+    <string name="email_body_part_5">Met vriendelijke groet, </string>
+    <string name="email_body_part_6">Logopedie </string>
+
+    <string name="exercise">Opdracht</string>
+    <string name="fill_exercise">Ingevulde feedback</string>
+
+    <string name="upload_picture">Foto uploaden...</string>
+    <string name="notification_will_be_removed">De notificatie verdwijnt als de foto is geupload</string>
+
+    <string name="start_recording">start opnemen</string>
+    <string name="stop_recording">stop opnemen</string>
+
+    <string name="password_is_changed">Uw wachtwoord is veranderd</string>
+    <string name="password_is_wrong">Uw oude wachtwoord is fout!</string>
+    <string name="passwords_are_not_the_same">Uw nieuwe wachtwoorden zijn niet hetzelfde!</string>
+    <string name="fields_are_not_filled_in">Niet alle velden zijn ingevuld</string>
+    <string name="email_is_not_correct">Email met een "@" en een "." bevatten</string>
+
+    <string name="ok">ok</string>
+    <string name="title_activity_patient_overview">Patiënt overzicht</string>
+    <string name="action_settings">Settings</string>
+
+    <!--add exercise-->
+    <string name="title">Titel:</string>
+    <string name="description">Beschrijving:</string>
+    <string name="enddate">Einddatum:</string>
+    <string name="take_picture">Maak foto van opdracht</string>
+    <string name="help">Hulp:</string>
+    <string name="record">Voorbeeld uitspraak opnemen:</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="play">Afspelen</string>
+
+    <string name="you_got_a_notification">Je hebt een notificatie!</string>
+    <string name="you_got_a_new_exercise">"Je hebt een nieuwe opdracht</string>
+    <string name="the_exercise">De opdracht:</string>
+    <string name="is_added">is toegevoegd</string>
+    <string name="uploading_picture">Foto uploaden...</string>
+    <string name="notification_will_disappear">De notificatie verdwijnt als de foto is geupload</string>
+
+
+    <!--add patient--><!--change patient-->
+    <string name="firstName">Voornaam:</string>
+    <string name="lastName">Achternaam:</string>
+    <string name="email">Email:</string>
+    <string name="password">Wachtwoord:</string>
+    <string name="problem">Klacht:</string>
+    <string name="gender">Geslacht:</string>
+    <string name="man">Man</string>
+    <string name="woman">Vrouw</string>
+    <!--change password-->
+    <string name="old_password">Oud wachtwoord:</string>
+    <string name="new_password">Nieuw wachtwoord:</string>
+    <string name="repeat_new_password">Herhaling nieuw wachtwoord:</string>
+    <!--exercise rating overview-->
+    <string name="rating_overview">Beoordeling overzicht</string>
+    <string name="from_enddate">van einddatum:</string>
+    <string name="rating">Rating</string>
+    <!--individual feedback-->
+    <string name="date">Datum: </string>
+    <string name="difficulty_of_exercise">Hoe goed ging de opdracht:</string>
+    <string name="result">Resultaat:</string>
+    <string name="listen_to_record">Luister ingesproken tekst</string>
+    <string name="made_with_help">Gemaakt met hulp:</string>
+    <string name="note">Notities(van ouder):</string>
+    <!--login-->
+    <string name="login_email">Email</string>
+    <string name="login_password">Wachtwoord</string>
+    <string name="login">Inloggen</string>
+    <string name="forgot_password">Wachtwoord vergeten?</string>
+    <string name="cancel">Annuleren</string>
+    <string name="email_is_send_to">Email is verzonden naar:</string>
+    <string name="wrong_email">Het email adres in onjuist</string>
+    <!--number of times overview-->
+    <string name="last_five_exercises">laatste 5 opdrachten</string>
+    <string name="last_ten_exercises">laatste 10 opdrachten</string>
+    <string name="last_fifteen_exercises">laatste 15 opdrachten</string>
+    <string name="number_of_times">Aantal keer</string>
+    <!--patient page-->
+    <string name="exercises">Opdrachten:</string>
+    <!--settings-->
+    <string name="change_password">Wachtwoord wijzigen</string>
+    <string name="logout">Uitloggen</string>
+    <!--exercise tab-->
+    <string name="exercise_id">Id:</string>
+    <string name="exercise_name">Naam:</string>
+    <string name="need_help">Heeft hulp nodig:</string>
+    <string name="exercise_discription">Beschrijving:</string>
+    <string name="audio_instruction">Luister audio instructie</string>
+    <string name="picture">Foto:</string>
+    <!--caregiver-->
+    <string name="caregiver_firstName">Voornaam:</string>
+    <string name="caregiver_lastName">Achternaam:</string>
+    <string name="caregiver_email">Email:</string>
+    <string name="activated">Geactiveerd:</string>
+    <string name="administrator">Is adiministrator:</string>
+
+    <string name="no_internet_connection">Je hebt geen internet, controller je verbinding</string>
+    <string name="login_no_internet_connection">Je hebt geen internet, controller je verbinding. \nZonder internet kan je niet inloggen.</string>
+
+    <!--menus-->
+    <string name="delete_caregiver">Logopedist vewijderen</string>
+    <string name="delete_exercise">Opdracht verwijderen</string>
+    <string name="settings">Instellingen</string>
+    <string name="admin_overview">Administrator opties</string>
+    <string name="search">Zoeken</string>
+    <string name="add_patient">Patient toevoegen</string>
+
+    <string name="add_exercise">Opdracht toevoegen</string>
+    <string name="change_patient">Patiënt veranderen</string>
+    <string name="delete_patient">Patiënt verwijderen</string>
 </resources>

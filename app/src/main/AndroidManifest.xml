@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.strost.logopedist">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
+
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
@@ -14,7 +17,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -22,82 +24,135 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".controller.activities.MainActivity">
+        <activity
+            android:name=".controller.activities.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.activities.LoginActivity">
+        <activity
+            android:name=".controller.activities.LoginActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.activities.MainPageActivity" android:label="Patiënten">
+        <activity
+            android:name=".controller.activities.MainPageActivity"
+            android:label="Patiënten"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.activities.PatientActivity" android:label="Patiënt" android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".controller.activities.PatientActivity"
+            android:label="Patiënt"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.activities.AddExerciseActvitiy"
-            android:label="Oefening toevoegen">
+        <activity
+            android:name=".controller.activities.AddExerciseActvitiy"
+            android:label="Opdracht toevoegen"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.activities.AddPatientActivity" android:label="Patiënt toevoegen">
+        <activity
+            android:name=".controller.activities.AddPatientActivity"
+            android:label="Patiënt toevoegen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.activities.ChangePatientActivity" android:label="Patiënt wijzigen">
+        <activity
+            android:name=".controller.activities.ChangePatientActivity"
+            android:label="Patiënt wijzigen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.activities.ExerciseActivity" android:label="Oefening bekijken" android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".controller.activities.ExerciseActivity"
+            android:label="Opdracht bekijken"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".controller.activities.SettingsActivity" android:label="Instellingen">
+        <activity
+            android:name=".controller.activities.SettingsActivity"
+            android:label="Instellingen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".controller.activities.ChangePasswordActivity" android:label="Wachtwoord veranderen">
+        <activity
+            android:name=".controller.activities.ChangePasswordActivity"
+            android:label="Wachtwoord wijzigen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".controller.activities.ViewImageActivity"
+            android:label="Opdracht"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionAndStatusBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".controller.activities.IndividualFeedbackActivity"
+            android:label="Ingevulde opdracht"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".controller.activities.ExerciseRatingOverviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".controller.activities.NumberOfTimesOverviewActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".controller.activities.admin.CaregiverListActivity" />
+        <activity android:name=".controller.activities.admin.CaregiverActivity" />
+        <activity android:name=".controller.activities.admin.AddCaregiverActivity"></activity>
     </application>
 
 </manifest>

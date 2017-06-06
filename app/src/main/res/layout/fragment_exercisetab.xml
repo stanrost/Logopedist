@@ -4,153 +4,173 @@
     android:layout_height="match_parent"
     tools:context="com.example.strost.logopedist.controller.activities.ExerciseActivity">
 
-    <com.example.strost.logopedist.NetworkImageView
-        android:id="@+id/fullImage"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
-
-
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/scrollview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        >
+        android:layout_alignParentTop="true">
+
         <RelativeLayout
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
             <TextView
-                android:text="Id:"
+                android:id="@+id/tvId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView8"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/exercise_id" />
 
             <TextView
-                android:text="Naam:"
+                android:id="@+id/tvFistName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/exerciseId"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:id="@+id/textView9" />
+                android:layout_below="@+id/etExerciseId"
+                android:text="@string/exercise_name" />
 
             <EditText
+                android:id="@+id/etExerciseId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/exerciseId"
-                android:enabled="false"
-                android:layout_below="@+id/textView8"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="none|textPersonName"
-                android:ems="10"
-                android:id="@+id/exerciseName"
-                android:layout_below="@+id/textView9"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvId"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textPersonName" />
 
             <TextView
-                android:text="Heeft hulp nodig:"
+                android:id="@+id/tvExerciseName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/help"
-                android:layout_below="@+id/exerciseName"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvFistName"
+                android:ems="10"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tvExerciseName"
+                android:layout_marginTop="8dp"
+                android:background="@color/cardview_shadow_start_color" />
 
             <TextView
-                android:text=""
+                android:id="@+id/tvHelp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/needhelp"
-                android:textStyle="bold"
-                android:layout_below="@+id/exerciseName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvExerciseName"
+                android:layout_marginTop="16dp"
+                android:text="@string/need_help" />
+
+            <TextView
+                android:id="@+id/tvNeedhelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvExerciseName"
                 android:layout_marginLeft="150dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tvHelp"
+                android:layout_marginTop="8dp"
+                android:background="@color/cardview_shadow_start_color" />
 
             <TextView
-                android:id="@+id/beschrijving"
+                android:id="@+id/tvDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="beschrijving:"
-                android:layout_below="@+id/help"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvHelp"
+                android:layout_marginTop="16dp"
+                android:text="@string/exercise_discription" />
 
-            <EditText
-                android:id="@+id/notesText"
+            <TextView
+                android:id="@+id/tvCaregiverNote"
                 android:layout_width="wrap_content"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvDescription"
                 android:layout_marginTop="10dp"
                 android:ems="10"
                 android:gravity="top"
-                android:inputType="textMultiLine"
                 android:minLines="6"
-                android:layout_below="@+id/beschrijving"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnPlayAudio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCaregiverNote"
+                android:layout_marginTop="10dp"
+                android:text="@string/audio_instruction"
+                android:visibility="gone" />
 
             <TextView
-                android:id="@+id/picture"
+                android:id="@+id/tvPicture"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Foto:"
-                android:layout_below="@+id/notesText"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <com.example.strost.logopedist.NetworkImageView
-                android:id="@+id/image"
-                android:layout_width="match_parent"
-                android:layout_height="200dip"
-                android:layout_marginTop="10dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:layout_below="@+id/btnPlayAudio"
+                android:layout_marginTop="10dp"
+                android:text="@string/picture" />
+
+
+            <com.example.strost.logopedist.NetworkImageView
+                android:id="@+id/ivCaregiverImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@+id/picture" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvPicture"
+                android:layout_marginTop="10dp" />
 
             <FrameLayout
-                android:layout_below="@+id/exerciseName"
-                android:id="@+id/fragment_container"
+                android:id="@+id/fragmentContainer"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent" />
+                android:layout_below="@+id/tvExerciseName"
+                android:background="@color/cardview_shadow_start_color" />
 
+            <ProgressBar
+                android:id="@+id/pbLoadingImage"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ivCaregiverImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="47dp"
+                android:visibility="gone" />
 
         </RelativeLayout>
 
-
-
     </android.support.v4.widget.NestedScrollView>
-
-
-
 
 </RelativeLayout>

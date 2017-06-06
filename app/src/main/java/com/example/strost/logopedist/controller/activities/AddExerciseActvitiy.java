@@ -1,8 +1,8 @@
 package com.example.strost.logopedist.controller.activities;
 
 import android.Manifest;
+import android.app.DatePickerDialog;
 import android.app.NotificationManager;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -10,7 +10,6 @@ import android.graphics.Matrix;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -20,16 +19,15 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.CompoundButton;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.backendless.Backendless;
@@ -41,107 +39,131 @@ import com.example.strost.logopedist.model.entities.Device;
 import com.example.strost.logopedist.model.entities.Patient;
 import com.example.strost.logopedist.model.entities.Caregiver;
 import com.example.strost.logopedist.model.request.AddPictureRequest;
-import com.example.strost.logopedist.model.request.GetCaregiverRequest;
-import com.example.strost.logopedist.model.request.UpdateCaregiverRequest;
+import com.example.strost.logopedist.model.request.AddRecordRequest;
+import com.example.strost.logopedist.model.request.PutPatientHttpRequest;
+import com.example.strost.logopedist.model.request.SendPushNotification;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 
 public class AddExerciseActvitiy extends AppCompatActivity {
-    private List<Patient> patients = new ArrayList<Patient>();
-    private Patient patient;
-    private List<Caregiver> caregivers = new ArrayList<Caregiver>();
-    private int caregiverId;
-    private Caregiver caregiver, newCaregiver;
-    EditText title;
+    private Patient mPatient;
+    private Caregiver mCaregiver;
+    EditText title, pickDate;
     // take picture
     private Button takePictureButton;
     private ImageView imageView;
     private Uri file = null;
     private Boolean help = false;
     // voice recoder
-    private MediaRecorder recorder = null;
     private static final String AUDIO_RECORDER_FOLDER = "AudioRecorder";
-    private boolean permissionToRecordAccepted = false;
-    private boolean permissionToWriteAccepted = false;
-    String recordedFileName;
+    private MediaRecorder recorder = null;
+
+    private int currentFormat = 0;
+    private int output_formats[] = {MediaRecorder.OutputFormat.MPEG_4, MediaRecorder.OutputFormat.THREE_GPP};
+
+    private String mAudioFilename;
+    private String mOriginalAdioFileName = null;
+
+
+    private final String AUDIOFILE_URL = "https://api.backendless.com/e5a95319-dfee-9344-ff32-50448355ec00/v1/files/media/recorded/";
+    private final String PICTURE_URL = "https://api.backendless.com/e5a95319-dfee-9344-ff32-50448355ec00/v1/files/media/";
+
+    private final String AUDIOFILE_TYPE = ".wma";
+    private final String PICTURE_TYPE = ".png";
+
+    private final String PATIENT_KEY = "Patient";
+    private final String CAREGIVER_KEY = "Caregiver";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.addexercise_page);
+        setContentView(R.layout.activity_addexercise);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        final int patientId = getIntent().getExtras().getInt("id");
-        caregiverId = getIntent().getExtras().getInt("caregiverId");
+        mPatient = (Patient) getIntent().getSerializableExtra("Patient");
+        mCaregiver = (Caregiver) getIntent().getSerializableExtra("Caregiver");
 
-        Button play  = (Button) findViewById(R.id.play);
         title = (EditText) findViewById(R.id.exerciseTitle);
+        pickDate = (EditText) findViewById(R.id.etPickDate);
         // help switch
         final Switch helpSwitch = (Switch) findViewById(R.id.help_switch);
         // description
         final EditText description = (EditText) findViewById(R.id.description_text);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabAddPatient);
         // take picture
         takePictureButton = (Button) findViewById(R.id.button_image);
         imageView = (ImageView) findViewById(R.id.imageview);
 
-        getZorgverlender();
-
-        for (int i = 0; i < caregivers.size(); i++) {
-            if (caregiverId == caregivers.get(i).getId()) {
-                caregiver = caregivers.get(i);
-            }
-        }
-
-        newCaregiver = caregiver;
-        patients = newCaregiver.getPatients();
-
-        for (int i = 0; i < patients.size(); i++) {
-            if (patientId == patients.get(i).getId()) {
-                patient = patients.get(i);
-            }
-        }
-
         int maxId = 0;
-        for (int i = 0; i < patient.getExercises().size(); i++)
-        {
-            if (patient.getExercises().get(i).getId() > maxId)
-            {
-                maxId = patient.getExercises().get(i).getId();
+        for (int i = 0; i < mPatient.getExercises().size(); i++) {
+            if (mPatient.getExercises().get(i).getId() > maxId) {
+                maxId = mPatient.getExercises().get(i).getId();
             }
         }
         final int newId = maxId + 1;
 
+        Button stop = (Button) findViewById(R.id.btnStop);
+        Button play = (Button) findViewById(R.id.btnPlay);
+        Button start = (Button) findViewById(R.id.btnStart);
 
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                audioPlayer();
+            }
+        });
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startRecord();
+            }
+        });
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopRecord();
+            }
+        });
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 help = helpSwitch.isChecked();
+
+                String mPictureUrl = null;
+                String mAudioUrl = null;
+
+                String currentTime = System.currentTimeMillis() + "";
+
                 if (file != null) {
-                    patient.addExercise(newId, title.getText().toString(), "https://develop.backendless.com/console/E5A95319-DFEE-9344-FF32-50448355EC00/appversion/F6785B8A-A5DD-8B45-FF46-80B5C2177500/jgdkmiwssukvghdidcejkhfufsdlgldaxbhi/files/view/media/" + title.getText().toString().replace(" ", "") + ".png", help, description.getText().toString());
+                    mPictureUrl = PICTURE_URL + title.getText().toString().replace(" ", "") + "_" + currentTime + PICTURE_TYPE;
                 }
-                else {
-                    patient.addExercise(newId, title.getText().toString(), null, help, description.getText().toString());
+                if (mOriginalAdioFileName != null) {
+                    mAudioUrl = AUDIOFILE_URL + mOriginalAdioFileName + AUDIOFILE_TYPE;
+                    addRecord();
                 }
+
+                mPatient.addExercise(newId, title.getText().toString(), mPictureUrl, help, description.getText().toString(), mAudioUrl, pickDate.getText().toString());
                 Toast.makeText(AddExerciseActvitiy.this, getString(R.string.added_exercise), Toast.LENGTH_LONG).show();
+
                 try {
-                    addToFile();
+                    addToFile(currentTime);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                if(patient.getDevices().size() != 0){
+                if (mPatient.getDevices().size() != 0) {
                     sendPushNotification();
                 }
+
+                PutPatientHttpRequest pPR = new PutPatientHttpRequest();
+                pPR.putPatient(mPatient);
 
                 goBack();
             }
         });
-
 
         //take picture
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -149,44 +171,64 @@ public class AddExerciseActvitiy extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO}, 0);
         }
 
+        //select date
+        pickDate.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
 
+                new DatePickerDialog(AddExerciseActvitiy.this, date, myCalendar
+                        .get(cal.YEAR), myCalendar.get(cal.MONTH),
+                        cal.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
     }
 
+    Calendar myCalendar = Calendar.getInstance();
 
-    public void sendPushNotification(){
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
-        for (Device d : patient.getDevices()){
-            final DeliveryOptions deliveryOptions = new DeliveryOptions();
-            deliveryOptions.addPushSinglecast(d.getDeviceId());
-
-            final PublishOptions publishOptions = new PublishOptions();
-            publishOptions.putHeader( "android-ticker-text", "You just got a private push notification!" );
-            publishOptions.putHeader( "android-content-title", "Je hebt een nieuwe opdracht" );
-            publishOptions.putHeader( "android-content-text", "De opdracht: " +title.getText().toString() + " is toegevoegd" );
-
-
-            Runnable runnable = new Runnable() {
-                public void run() {
-                    try {
-                        MessageStatus status = Backendless.Messaging.publish( "this is a private message!", publishOptions, deliveryOptions );  } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            };
-            Thread mythread = new Thread(runnable);
-            mythread.start();
-            try {
-                mythread.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateLabel();
         }
 
+    };
+
+    Date endDate = null;
+
+    private void updateLabel() {
+
+        String myFormat = "dd/MM/yy";
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat);
+        endDate = myCalendar.getTime();
+        pickDate.setText(sdf.format(myCalendar.getTime()));
     }
 
 
-    public void addToFile() throws IOException {
+    public void sendPushNotification() {
+        final DeliveryOptions deliveryOptions = new DeliveryOptions();
+        for (Device d : mPatient.getDevices()) {
+            deliveryOptions.addPushSinglecast(d.getDeviceId());
+        }
+        mPatient.getDevices().clear();
+
+        final PublishOptions publishOptions = new PublishOptions();
+        publishOptions.putHeader("android-ticker-text", getString(R.string.you_got_a_notification));
+        publishOptions.putHeader("android-content-title", getString(R.string.you_got_a_new_exercise));
+        publishOptions.putHeader("android-content-text", getString(R.string.the_exercise) + " " + title.getText().toString() + " " + getString(R.string.is_added));
+
+        SendPushNotification spn = new SendPushNotification();
+        spn.sendPushNotificaation(deliveryOptions, publishOptions);
+    }
+
+
+    public void addToFile(final String currentTime) throws IOException {
 
         if (file != null) {
             Bitmap mBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), file);
@@ -199,8 +241,8 @@ public class AddExerciseActvitiy extends AppCompatActivity {
             NotificationCompat.Builder mBuilder =
                     new NotificationCompat.Builder(this)
                             .setSmallIcon(R.drawable.ic_action_name)
-                            .setContentTitle("Foto uploaden...")
-                            .setContentText("De notificatie verdwijnt als de foto is geupload");
+                            .setContentTitle(getString(R.string.upload_picture))
+                            .setContentText(getString(R.string.notification_will_disappear));
 
 
             final NotificationManager mNotifyMgr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -211,7 +253,7 @@ public class AddExerciseActvitiy extends AppCompatActivity {
             Runnable runnable = new Runnable() {
                 public void run() {
                     try {
-                        apr.AddPicture(finalMBitmap, "https://develop.backendless.com/console/E5A95319-DFEE-9344-FF32-50448355EC00/appversion/F6785B8A-A5DD-8B45-FF46-80B5C2177500/jgdkmiwssukvghdidcejkhfufsdlgldaxbhi/files/view/media" + title.getText().toString().replace(" ", ""), title.getText().toString().toString().replace(" ", ""), mNotifyMgr);
+                        apr.AddPicture(finalMBitmap, title.getText().toString().replace(" ", "") + "_" + currentTime, mNotifyMgr);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -225,42 +267,12 @@ public class AddExerciseActvitiy extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-        final UpdateCaregiverRequest uzr = new UpdateCaregiverRequest();
-        Runnable runnable2 = new Runnable() {
-            public void run() {
-                uzr.updateCaregiver(caregiver, newCaregiver);
-            }
-        };
-        Thread mythread2 = new Thread(runnable2);
-        mythread2.start();
-        try {
-            mythread2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
-
-    public void getZorgverlender() {
-        final GetCaregiverRequest gzr = new GetCaregiverRequest();
-        Runnable runnable = new Runnable() {
-            public void run() {
-                caregivers = gzr.getCaregiver();
-            }
-        };
-        Thread mythread = new Thread(runnable);
-        mythread.start();
-        try {
-            mythread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     public void goBack() {
         Intent detailIntent = new Intent(this, PatientActivity.class);
-        detailIntent.putExtra("patientid", patient.getId());
-        detailIntent.putExtra("caregiverId", caregiverId);
+        detailIntent.putExtra(PATIENT_KEY, mPatient);
+        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         startActivity(detailIntent);
         finish();
     }
@@ -280,7 +292,6 @@ public class AddExerciseActvitiy extends AppCompatActivity {
                 takePictureButton.setEnabled(true);
             }
         }
-
     }
 
     public void takePicture(View view) {
@@ -301,25 +312,141 @@ public class AddExerciseActvitiy extends AppCompatActivity {
         if (requestCode == 100) {
             if (resultCode == RESULT_OK) {
                 imageView.setImageURI(file);
-                imageView.setRotation(imageView.getRotation()+90);
+                imageView.setRotation(imageView.getRotation() + 90);
             }
         }
     }
 
-    private static File getOutputMediaFile(){
+    private static File getOutputMediaFile() {
         File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES), "CameraDemo");
 
-        if (!mediaStorageDir.exists()){
-            if (!mediaStorageDir.mkdirs()){
+        if (!mediaStorageDir.exists()) {
+            if (!mediaStorageDir.mkdirs()) {
                 return null;
             }
         }
 
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         return new File(mediaStorageDir.getPath() + File.separator +
-                "IMG_"+ timeStamp + ".jpg");
+                "IMG_" + timeStamp + ".jpg");
     }
+
+    public void addRecord() {
+        final AddRecordRequest aRR = new AddRecordRequest();
+        Runnable runnable = new Runnable() {
+            public void run() {
+                try {
+                    aRR.AddRecord(mAudioFilename, "media/recorded");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        Thread mythread = new Thread(runnable);
+        mythread.start();
+        try {
+            mythread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void enableButton(int id, boolean isEnable) {
+        ((Button) findViewById(id)).setEnabled(isEnable);
+    }
+
+    private void enableButtons(boolean isRecording) {
+        enableButton(R.id.btnStart, !isRecording);
+        enableButton(R.id.btnStop, isRecording);
+    }
+
+    private String getmAudioFilename() {
+        String filepath = Environment.getExternalStorageDirectory().getPath();
+        File file = new File(filepath, AUDIO_RECORDER_FOLDER);
+
+
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+
+        mOriginalAdioFileName = System.currentTimeMillis() + "";
+        return (file.getAbsolutePath() + "/" + System.currentTimeMillis() + AUDIOFILE_TYPE);
+    }
+
+    private void startRecording() {
+        recorder = new MediaRecorder();
+        recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        recorder.setOutputFormat(output_formats[currentFormat]);
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        mAudioFilename = getmAudioFilename();
+        recorder.setOutputFile(mAudioFilename);
+        recorder.setOnErrorListener(errorListener);
+        recorder.setOnInfoListener(infoListener);
+        try {
+            recorder.prepare();
+            recorder.start();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void stopRecording() {
+        if (null != recorder) {
+            recorder.stop();
+            recorder.reset();
+            recorder.release();
+            recorder = null;
+        }
+    }
+
+
+    private MediaRecorder.OnErrorListener errorListener = new MediaRecorder.OnErrorListener() {
+        @Override
+        public void onError(MediaRecorder mr, int what, int extra) {
+        }
+    };
+
+    private MediaRecorder.OnInfoListener infoListener = new MediaRecorder.OnInfoListener() {
+        @Override
+        public void onInfo(MediaRecorder mr, int what, int extra) {
+        }
+    };
+
+    public void startRecord() {
+
+        Toast.makeText(AddExerciseActvitiy.this, getString(R.string.start_recording), Toast.LENGTH_SHORT).show();
+        enableButtons(true);
+        startRecording();
+
+    }
+
+    public void stopRecord() {
+
+        Toast.makeText(AddExerciseActvitiy.this, getString(R.string.stop_recording), Toast.LENGTH_SHORT).show();
+        enableButtons(false);
+        stopRecording();
+    }
+
+    public void audioPlayer() {
+        MediaPlayer mp = new MediaPlayer();
+        try {
+            mp.setDataSource(mAudioFilename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            mp.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        mp.start();
+
+    }
+
 
 }
 

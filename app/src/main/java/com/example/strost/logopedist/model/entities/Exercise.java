@@ -3,7 +3,9 @@ package com.example.strost.logopedist.model.entities;
 import org.w3c.dom.Text;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by strost on 17-2-2017.
@@ -15,8 +17,11 @@ public class Exercise implements Serializable {
     private String picture;
     private Boolean help;
     private String description;
-    private Date endDate;
+    private String endDate;
     private int numberOfTimes;
+    private String objectId;
+    private String record;
+    List<Feedback> feedback = new ArrayList<Feedback>();
 
     public String getObjectId() {
         return objectId;
@@ -26,15 +31,7 @@ public class Exercise implements Serializable {
         this.objectId = objectId;
     }
 
-    private String objectId;
-
-    private int patientRating;
-    private String patientPicture;
-    private Boolean patientHelp;
-    private int patientNumberOfTimes;
-    private String patientNotes;
-
-    public int getId(){
+    public int getId() {
         return id;
     }
 
@@ -42,18 +39,17 @@ public class Exercise implements Serializable {
         this.id = id;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title){
+    public void setTitle(String title) {
         this.title = title;
     }
 
     public String toString() {
         return this.id + ". " + this.title;
     }
-
 
     public String getPicture() {
         return picture;
@@ -79,11 +75,11 @@ public class Exercise implements Serializable {
         this.description = description;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -95,43 +91,20 @@ public class Exercise implements Serializable {
         this.numberOfTimes = numberOfTimes;
     }
 
-    public int getPatientRating() {
-        return patientRating;
+    public String getRecord() {
+        return record;
     }
 
-    public void setPatientRating(int patientRating) {
-        this.patientRating = patientRating;
+    public void setRecord(String record) {
+        this.record = record;
     }
 
-    public String getPatientPicture() {
-        return patientPicture;
+    public List<Feedback> getFeedback() {
+        return feedback;
     }
 
-    public void setPatientPicture(String patientPicture) {
-        this.patientPicture = patientPicture;
+    public void setFeedback(List<Feedback> feedback) {
+        this.feedback = feedback;
     }
 
-    public Boolean getPatientHelp() {
-        return patientHelp;
-    }
-
-    public void setPatientHelp(Boolean patientHelp) {
-        this.patientHelp = patientHelp;
-    }
-
-    public int getPatientNumberOfTimes() {
-        return patientNumberOfTimes;
-    }
-
-    public void setPatientNumberOfTimes(int patientNumberOfTimes) {
-        this.patientNumberOfTimes = patientNumberOfTimes;
-    }
-
-    public String getPatientNotes() {
-        return patientNotes;
-    }
-
-    public void setPatientNotes(String patientNotes) {
-        this.patientNotes = patientNotes;
-    }
 }

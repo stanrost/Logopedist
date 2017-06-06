@@ -1,7 +1,6 @@
 package com.example.strost.logopedist.model.request;
 
 import com.backendless.Backendless;
-import com.backendless.services.messaging.MessageStatus;
 import com.example.strost.logopedist.model.entities.Patient;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ public class SendEmailPatient {
         final ArrayList<String> patients = new ArrayList<String>();
         patients.add( patient.getEmail());
 
-        final String mailBody = "Hi "+patient.getName()+ ",<br><br> Je inloggegevens voor de Logopedieapp zijn: <br><br> Email: "+patient.getEmail()+"<br> Tijdelijk wachtwoord: "+password+" <br><br> bij de eerste keer inloggen kan je je eigen wachtwoord kiezen </b><br> Met vriendelijke groet, <br> Logopedie";
+        final String mailBody = "Hi "+patient.getFirstName()+" " +patient.getLastName()+ ",<br><br> Je inloggegevens voor de Logopedieapp zijn: <br><br> Email: "+patient.getEmail()+"<br> Tijdelijk wachtwoord: "+password+" <br><br> bij de eerste keer inloggen kan je je eigen wachtwoord kiezen </b><br> Met vriendelijke groet, <br> Logopedie";
         Runnable runnable = new Runnable() {
             public void run() {
                 Backendless.Messaging.sendHTMLEmail( "Inloggegevens Logopedieapp", mailBody, patients );

@@ -7,12 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
+
 import com.example.strost.logopedist.R;
 import com.example.strost.logopedist.model.entities.Caregiver;
 import com.example.strost.logopedist.PasswordEncryption;
 import com.example.strost.logopedist.model.entities.Patient;
-import com.example.strost.logopedist.model.request.GetCaregiverRequest;
 import com.example.strost.logopedist.model.request.SendEmailPatient;
 import com.example.strost.logopedist.model.request.UpdateCaregiverRequest;
 
@@ -22,104 +23,87 @@ import java.util.List;
 /**
  * Created by strost on 20-2-2017.
  */
-public class AddPatientActivity extends AppCompatActivity{
-    private List<Patient> patients = new ArrayList<Patient>();
-    private List<Caregiver> caregivers = new ArrayList<Caregiver>();
-    private int caregiverId;
-    private Caregiver caregiver = null, newCaregiver = null;
-    private Patient p;
-    private EditText password;
+public class AddPatientActivity extends AppCompatActivity {
+    private List<Patient> mPatients = new ArrayList<Patient>();
+    private int mCaregiverId;
+    private Caregiver mCaregiver = null, mNewCaregiver = null;
+    private Patient mPatient;
+    private EditText mPasswordText;
+    private RadioGroup mGender;
+
+    private final String CAREGIVER_KEY = "Caregiver";
+    private final String CAREGIVER_ID_KEY = "caregiverId";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.addpatient_page);
+        setContentView(R.layout.activity_addpatient);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-        caregiverId = getIntent().getExtras().getInt("caregiverId");
+        mCaregiver = (Caregiver) getIntent().getSerializableExtra(CAREGIVER_KEY);
+        mCaregiverId = mCaregiver.getId();
+        mPatients = mCaregiver.getPatients();
 
-        final GetCaregiverRequest gzr = new GetCaregiverRequest();
-        Runnable runnable = new Runnable() {
-            public void run() {
-                caregivers = gzr.getCaregiver();
-            }
-        };
+        final EditText firstName = (EditText) findViewById(R.id.etAddPatientFistName);
+        final EditText lastName = (EditText) findViewById(R.id.etAddPatientLastName);
+        final EditText problem = (EditText) findViewById(R.id.etAddPatientProblem);
+        final EditText email = (EditText) findViewById(R.id.etAddPatientEmail);
 
-        Thread mythread = new Thread(runnable);
-        mythread.start();
-        try {
-            mythread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        mPasswordText = (EditText) findViewById(R.id.etPatientPassword);
+        mGender = (RadioGroup) findViewById(R.id.rgGender);
 
-        for (int i = 0; i < caregivers.size(); i++) {
-            if (caregiverId == caregivers.get(i).getId()) {
-                caregiver = caregivers.get(i);
-            }
-        }
-
-        patients = caregiver.getPatients();
-
-        final EditText name = (EditText) findViewById(R.id.AddPatientName);
-        final EditText email = (EditText) findViewById(R.id.addEmail);
-        password = (EditText) findViewById(R.id.patientPassword);
         int maxId = 0;
-
-        for (int i = 0; i < patients.size(); i++)
-        {
-            if (patients.get(i).getId() > maxId)
-            {
-                maxId = patients.get(i).getId();
+        for (int i = 0; i < mPatients.size(); i++) {
+            if (mPatients.get(i).getId() > maxId) {
+                maxId = mPatients.get(i).getId();
             }
         }
-        final int id = maxId + 1;
 
-        newCaregiver = caregiver;
+        final int id = maxId + 1;
+        mNewCaregiver = mCaregiver;
         final PasswordEncryption pE = new PasswordEncryption();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabAddPatient);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pE.encryptPassword(password.getText().toString());
-                p = new Patient();
-                p.setId(id);
-                p.setName(name.getText().toString());
-                p.setEmail(email.getText().toString());
-                p.setPassword(pE.encryptPassword(password.getText().toString()));
-                newCaregiver.addPatient(p);
-                Toast.makeText(AddPatientActivity.this, getString(R.string.added_patient), Toast.LENGTH_LONG).show();
-                addToFile();
-                sendEmail();
-                goBack();
-
+                if (!email.getText().toString().equals("") && !firstName.getText().toString().equals("") && !mPasswordText.getText().toString().equals("")) {
+                    if (email.getText().toString().contains("@") && email.getText().toString().contains(".")) {
+                        pE.encryptPassword(mPasswordText.getText().toString());
+                        mPatient = new Patient();
+                        mPatient.setId(id);
+                        mPatient.setFirstName(firstName.getText().toString());
+                        mPatient.setLastName(lastName.getText().toString());
+                        mPatient.setProblem(problem.getText().toString());
+                        mPatient.setEmail(email.getText().toString());
+                        mPatient.setPassword(pE.encryptPassword(mPasswordText.getText().toString()));
+                        mPatient.setGender(getGender());
+                        mNewCaregiver.addPatient(mPatient);
+                        Toast.makeText(AddPatientActivity.this, getString(R.string.added_patient), Toast.LENGTH_LONG).show();
+                        addToFile();
+                        sendEmail();
+                        goBack();
+                    } else {
+                        Toast.makeText(AddPatientActivity.this, getString(R.string.email_is_not_correct), Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(AddPatientActivity.this, getString(R.string.fields_are_not_filled_in), Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
 
-    public void sendEmail(){
+    public void sendEmail() {
         SendEmailPatient sep = new SendEmailPatient();
-        sep.sendEmail(password.getText().toString(), p);
+        sep.sendEmail(mPasswordText.getText().toString(), mPatient);
     }
 
-    public void addToFile(){
+    public void addToFile() {
         final UpdateCaregiverRequest uzr = new UpdateCaregiverRequest();
-        Runnable runnable = new Runnable() {
-            public void run() {
-                uzr.updateCaregiver(caregiver, newCaregiver);
-            }
-        };
-        Thread mythread = new Thread(runnable);
-        mythread.start();
-        try {
-            mythread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        uzr.updateCaregiver(mNewCaregiver);
     }
 
-    public void goBack(){
+    public void goBack() {
         Intent detailIntent = new Intent(this, MainPageActivity.class);
-        detailIntent.putExtra("caregiverId", caregiverId);
+        detailIntent.putExtra(CAREGIVER_ID_KEY, mCaregiverId);
         startActivity(detailIntent);
         finish();
     }
@@ -128,6 +112,21 @@ public class AddPatientActivity extends AppCompatActivity{
     public void onBackPressed() {
         goBack();
         return;
+    }
+
+    public String getGender() {
+        int rgid = mGender.getCheckedRadioButtonId();
+
+        String gender = "";
+        if (rgid == R.id.rbMan) {
+            gender = "man";
+        }
+
+        if (rgid == R.id.rbMan) {
+            gender = "woman";
+        }
+
+        return gender;
     }
 
 }

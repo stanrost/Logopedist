@@ -26,16 +26,7 @@ import java.net.URLConnection;
  */
 
 public class AddPictureRequest {
-
-
-    public void AddPicture(Bitmap file, String path, String title, final NotificationManager mNotifyMgr) throws Exception {
-
-        //Log.e("foto", file.getPath());
-
-
-        Log.e("waar moet je naartoe", path);
-
-
+    public void AddPicture(Bitmap file, String title, final NotificationManager mNotifyMgr) throws Exception {
         Backendless.Files.Android.upload( file,
                 Bitmap.CompressFormat.PNG,
                 100,
@@ -44,13 +35,11 @@ public class AddPictureRequest {
                 new AsyncCallback<BackendlessFile>() {
             @Override
             public void handleResponse(BackendlessFile response) {
-               Log.e("hij doet het", "JJJJJJAAAAAAAAAAAAAa") ;
-                mNotifyMgr.cancel(001);
+               mNotifyMgr.cancel(001);
             }
 
             @Override
             public void handleFault(BackendlessFault fault) {
-                Log.e("hij doet het niet", fault.getDetail() + " " + fault.getCode() + " " + fault.getMessage()) ;
             }
         });
     }

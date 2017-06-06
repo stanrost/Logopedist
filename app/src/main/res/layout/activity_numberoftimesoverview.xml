@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.strost.logopedist.controller.activities.NumberOfTimesOverviewActivity">
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
+
+    <RadioGroup
+        android:id="@+id/rgNumberOfExercises"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chart"
+        android:enabled="false"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbFiveExercises"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/last_five_exercises" />
+
+        <RadioButton
+            android:id="@+id/rbTenExercises"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/last_ten_exercises" />
+
+        <RadioButton
+            android:id="@+id/rbFifteenExercises"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/last_fifteen_exercises" />
+    </RadioGroup>
+</RelativeLayout>

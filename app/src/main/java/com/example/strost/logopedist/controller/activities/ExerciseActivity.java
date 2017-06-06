@@ -1,24 +1,28 @@
 package com.example.strost.logopedist.controller.activities;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.example.strost.logopedist.R;
-import com.example.strost.logopedist.controller.fragments.ExerciseFillTabFragment;
+import com.example.strost.logopedist.controller.fragments.ExerciseFeedbackTabFragment;
 import com.example.strost.logopedist.controller.fragments.ExerciseTabFragment;
+import com.example.strost.logopedist.model.entities.Caregiver;
 import com.example.strost.logopedist.model.entities.Exercise;
+import com.example.strost.logopedist.model.entities.Patient;
 
 /**
  * Created by strost on 22-3-2017.
@@ -26,56 +30,59 @@ import com.example.strost.logopedist.model.entities.Exercise;
 
 public class ExerciseActivity extends AppCompatActivity {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
+
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     private ViewPager mViewPager;
-    private Exercise rightExercise;
+    private Exercise mExercise;
+    private Patient mPatient;
+    private Caregiver mCaregiver;
 
+    private final String PATIENT_KEY = "Patient";
+    private final String EXERCISE_KEY = "Exercise";
+    private final String CAREGIVER_KEY = "Caregiver";
+    FloatingActionButton mPatientOverview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.exercise_page);
+        setContentView(R.layout.activity_exercise);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        rightExercise = (Exercise) getIntent().getSerializableExtra("Exercise");
+        mExercise = (Exercise) getIntent().getSerializableExtra(EXERCISE_KEY);
+        mPatient = (Patient) getIntent().getSerializableExtra(PATIENT_KEY);
+        mCaregiver = (Caregiver) getIntent().getSerializableExtra(CAREGIVER_KEY);
 
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
+
+        mPatientOverview = (FloatingActionButton) findViewById(R.id.fabExerciseOverview);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO}, 0);
+        }
+
+        mPatientOverview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToPatientOverviewActivity();
+            }
+        });
 
     }
 
+    public void goToPatientOverviewActivity() {
+        Intent detailIntent = new Intent(this, ExerciseRatingOverviewActivity.class);
+        detailIntent.putExtra(EXERCISE_KEY, mExercise);
+        startActivity(detailIntent);
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
+    }
 
-    // deleted placeholderfragment
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -88,11 +95,13 @@ public class ExerciseActivity extends AppCompatActivity {
             switch (position){
                 case 0:
                     ExerciseTabFragment tab1 = new ExerciseTabFragment();
-                    tab1.setExercise(rightExercise);
+                    tab1.setExercise(mExercise);
+                    mPatientOverview.hide();
                     return tab1;
                 case 1:
-                    ExerciseFillTabFragment tab2 = new ExerciseFillTabFragment();
-                    tab2.setExercise(rightExercise);
+                    ExerciseFeedbackTabFragment tab2 = new ExerciseFeedbackTabFragment();
+                    tab2.setExercise(mExercise);
+                    mPatientOverview.show();
                     return tab2;
                 default:
                     return null;
@@ -101,7 +110,6 @@ public class ExerciseActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
             return 2;
         }
 
@@ -109,12 +117,52 @@ public class ExerciseActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Opdracht";
+                    return getString(R.string.exercise);
                 case 1:
-                    return "Ingevulde opdracht";
+                    return getString(R.string.fill_exercise);
             }
             return null;
         }
+    }
+
+    public void audioPlayer(String type) {
+        //set up MediaPlayer
+        MediaPlayer mp = new MediaPlayer();
+        String patientRec = "";
+
+        try {
+                patientRec = mExercise.getRecord();
+            } catch (Exception e) {
+
+            }
+
+        try {
+            if (!patientRec.equals("")) {
+                try {
+                    mp.prepare();
+                    mp.start();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }catch (NullPointerException e){
+
+        }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        goBack();
+        return;
+    }
+
+    public void goBack(){
+        Intent detailIntent = new Intent(this, PatientActivity.class);
+        detailIntent.putExtra(PATIENT_KEY, mPatient);
+        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
+        startActivity(detailIntent);
+        finish();
     }
 
 

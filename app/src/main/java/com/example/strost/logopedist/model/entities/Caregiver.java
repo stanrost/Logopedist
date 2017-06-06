@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.strost.logopedist.model.entities.Patient;
 
+import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +13,26 @@ import java.util.List;
  * Created by strost on 16-2-2017.
  */
 
-public class Caregiver {
+public class Caregiver implements Serializable{
     private int id;
     private String objectId;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
+    private boolean isAdmin;
+    private boolean activated;
     List<Patient> patients = new ArrayList<Patient>();
+    private boolean changedGenaratedPassword;
+
+    public boolean getChangedGenaratedPassword() {
+        return changedGenaratedPassword;
+    }
+
+    public void setChangedGenaratedPassword(boolean changedGenaratedPassword) {
+        this.changedGenaratedPassword = changedGenaratedPassword;
+    }
+
 
 
     public String getObjectId() {
@@ -29,8 +43,8 @@ public class Caregiver {
         this.objectId = objectId;
     }
 
-   public String getName(){
-        return name;
+    public String getFirstName(){
+        return firstName;
     }
 
     public List<Patient> getPatients(){
@@ -44,23 +58,6 @@ public class Caregiver {
     public void addPatient(Patient p){
 
         patients.add(p);
-    }
-
-    public void changePatient(int ChangeId, String ChangeName){
-        Patient p = getPatient(ChangeId);
-
-        p.setName(ChangeName);
-    }
-
-    public Patient getPatient(int id){
-        Patient rightPatient = null;
-        for (int i = 0; i < patients.size(); i++) {
-            if (id == patients.get(i).getId()) {
-                Log.e("hoi", "" + (patients.get(i).toString()));
-                rightPatient = patients.get(i);
-            }
-        }
-        return rightPatient;
     }
 
     public void removePatient(Patient patient){
@@ -83,8 +80,8 @@ public class Caregiver {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = name;
     }
 
     public void setEmail(String email) {
@@ -97,5 +94,30 @@ public class Caregiver {
 
     public void setPatients(List<Patient> patients) {
         this.patients = patients;
+    }
+
+    public boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+
+    public boolean getActivated() {
+        return activated;
+    }
+
+    public void setActivated(boolean activated) {
+        this.activated = activated;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

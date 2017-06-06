@@ -1,6 +1,5 @@
 package com.example.strost.logopedist.controller.activities;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
@@ -10,29 +9,21 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.strost.logopedist.model.entities.Exercise;
 import com.example.strost.logopedist.model.entities.Patient;
 import com.example.strost.logopedist.R;
 import com.example.strost.logopedist.model.entities.Caregiver;
-import com.example.strost.logopedist.model.request.GetPatiënt;
-import com.example.strost.logopedist.model.request.GetCaregiverRequest;
-import com.example.strost.logopedist.model.request.RemovePatientRequest;
-
-import org.w3c.dom.Text;
+import com.example.strost.logopedist.model.request.GetPatientHttpRequest;
+import com.example.strost.logopedist.model.request.DeletePatientHttpRequest;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,10 +37,14 @@ import java.util.List;
 
 public class PatientActivity extends AppCompatActivity {
     private List<Exercise> exercises = new ArrayList<Exercise>();
-    private List<Caregiver> caregivers = new ArrayList<Caregiver>();
-    private Patient rightPatient;
-    private int caregiverId;
-    private Caregiver caregiver, newCaregiver;
+    private Patient mPatient, mOldPatient;
+    private Caregiver mCaregiver, newCaregiver;
+    private int mCaregiverId;
+
+    private final String EXERCISE_KEY = "Exercise";
+    private final String CAREGIVER_KEY = "Caregiver";
+    private final String CAREGIVER_ID_KEY = "caregiverId";
+    private final String PATIENT_KEY = "Patient";
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,114 +54,138 @@ public class PatientActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        int id = getIntent().getExtras().getInt("patientid");
-        caregiverId = getIntent().getExtras().getInt("caregiverId");
-        getZorgverlender();
+        mOldPatient = (Patient) getIntent().getSerializableExtra(PATIENT_KEY);
+        mCaregiver = (Caregiver) getIntent().getSerializableExtra(CAREGIVER_KEY);
+        mCaregiverId = mCaregiver.getId();
 
-        for (int i = 0; i < caregivers.size(); i++) {
-            if (caregiverId == caregivers.get(i).getId()) {
-                caregiver = caregivers.get(i);
+        FloatingActionButton mAddExercise = (FloatingActionButton) findViewById(R.id.fabAddExercise);
+        LinearLayout testContainer = (LinearLayout) findViewById(R.id.llExercises);
+        FloatingActionButton mChangePatient = (FloatingActionButton) findViewById(R.id.fabChangePatient);
+        FloatingActionButton mFABPatientOverview = (FloatingActionButton) findViewById(R.id.fabOverviewPatient);
+
+
+        GetPatientHttpRequest gPR = new GetPatientHttpRequest();
+        mPatient = gPR.getPatient(mOldPatient);
+
+        try {
+            exercises = mPatient.getExercises();
+            if(mPatient.getExercises().size() == 0){
+                mFABPatientOverview.setVisibility(View.GONE);
+            }
+        }catch(NullPointerException e){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(getString(R.string.no_internet_connection))
+                    .setCancelable(false)
+                    .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
+            exercises = mOldPatient.getExercises();
+            mPatient = mOldPatient;
+            if(mOldPatient.getExercises().size() == 0){
+                mFABPatientOverview.setVisibility(View.GONE);
             }
         }
 
-        GetPatiënt gp = new GetPatiënt();
-        rightPatient = gp.getPatient(id, caregiverId);
 
-        //ListView lv = (ListView) findViewById(R.id.Exercise_View);
-        exercises = rightPatient.getExercises();
         Collections.sort(exercises, new Comparator<Exercise>() {
             @Override
-            public int compare(Exercise exercise1, Exercise exercise2)
-            {
-                int id1 = exercise1.getId();
-                int id2 = exercise2.getId();
-                return id2 > id1 ? +1 : id2 < id1 ? -1 : 0;
+            public int compare(Exercise exercise1, Exercise exercise2) {
+                int exerciseId1 = exercise1.getId();
+                int exercieseId2 = exercise2.getId();
+                return exercieseId2 > exerciseId1 ? +1 : exercieseId2 < exerciseId1 ? -1 : 0;
             }
         });
 
-        //Creating a custom ArrayAdapter
-        ArrayAdapter adapt2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, exercises);
+        ArrayAdapter exercisesAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, exercises);
 
-        //Pointing to the LinearLayout
-        LinearLayout testContainer = (LinearLayout) findViewById(R.id.Exercise_Views);
-        final int adapterCount = adapt2.getCount();
+        final int adapterCount = exercisesAdapter.getCount();
 
-        //adding each adapter item to the LinearLayout
         for (int i = 0; i < adapterCount; i++) {
-            View item = adapt2.getView(i, null, null);
+            View item = exercisesAdapter.getView(i, null, null);
 
             testContainer.addView(item);
-            final int man = i;
+            final int exerciseIndex = i;
             item.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    goToExerciseActivity(exercises.get(man));
-
-                }
-                }
-
+                                        @Override
+                                        public void onClick(View view) {
+                                            goToExerciseActivity(exercises.get(exerciseIndex));
+                                        }
+                                    }
             );
         }
 
-
-
-
-        FloatingActionButton addEx = (FloatingActionButton) findViewById(R.id.addEx);
-        addEx.setOnClickListener(new View.OnClickListener() {
+        mAddExercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToAddExerciseActivity();
             }
         });
-
-        FloatingActionButton changePatient = (FloatingActionButton) findViewById(R.id.fab);
-        changePatient.setOnClickListener(new View.OnClickListener() {
+        mChangePatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToChangePatientActivity();
             }
         });
 
-        setTitle(rightPatient.getName());
 
+        mFABPatientOverview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToPatientOverviewActivity();
+            }
+        });
+
+        setTitle(mPatient.getFirstName() + " " + mPatient.getLastName() );
 
     }
 
-    public void goToAddExerciseActivity(){
+    public void goToPatientOverviewActivity() {
+        Intent detailIntent = new Intent(this, NumberOfTimesOverviewActivity.class);
+        detailIntent.putExtra(PATIENT_KEY, mPatient);
+        startActivity(detailIntent);
+    }
+
+    public void goToAddExerciseActivity() {
         Intent detailIntent = new Intent(this, AddExerciseActvitiy.class);
-        detailIntent.putExtra("caregiverId", caregiverId);
-        detailIntent.putExtra("id", rightPatient.getId());
+        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
+        detailIntent.putExtra(PATIENT_KEY, mPatient);
         startActivity(detailIntent);
         finish();
     }
 
     public void goToExerciseActivity(Exercise exercise) {
         Intent detailIntent = new Intent(this, ExerciseActivity.class);
-        detailIntent.putExtra("Exercise", exercise);
+        detailIntent.putExtra(EXERCISE_KEY, exercise);
+        detailIntent.putExtra(PATIENT_KEY, mPatient);
+        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         startActivity(detailIntent);
         finish();
     }
 
-    public void goToChangePatientActivity(){
+    public void goToChangePatientActivity() {
         Intent detailIntent = new Intent(this, ChangePatientActivity.class);
-        detailIntent.putExtra("caregiverId", caregiverId);
-        detailIntent.putExtra("id", rightPatient.getId());
+        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
+        detailIntent.putExtra(PATIENT_KEY, mPatient);
         startActivity(detailIntent);
         finish();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.zorgverlener_patientmenu, menu);
+        inflater.inflate(R.menu.menu_caregiverandpatient, menu);
         return true;
     }
 
-    public void addToFile(){
-        final RemovePatientRequest rpr = new RemovePatientRequest();
+    public void addToFile() {
+        final DeletePatientHttpRequest rpr = new DeletePatientHttpRequest();
 
         Runnable runnable = new Runnable() {
             public void run() {
-                rpr.removePatient(rightPatient);
+                rpr.removePatient(mPatient);
             }
         };
 
@@ -180,20 +199,16 @@ public class PatientActivity extends AppCompatActivity {
 
     }
 
-    public void goBack(){
+    public void goBack() {
         Intent detailIntent = new Intent(this, MainPageActivity.class);
-        detailIntent.putExtra("caregiverId", caregiverId);
+        detailIntent.putExtra(CAREGIVER_ID_KEY, mCaregiverId);
         startActivity(detailIntent);
         finish();
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.addExercise) {
             goToAddExerciseActivity();
         }
@@ -207,17 +222,15 @@ public class PatientActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void openDialog(){
+    public void openDialog() {
 
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                switch (which){
+                switch (which) {
                     case DialogInterface.BUTTON_POSITIVE:
-
-                        newCaregiver = caregiver;
-
-                        newCaregiver.removePatient(rightPatient);
+                        newCaregiver = mCaregiver;
+                        newCaregiver.removePatient(mPatient);
                         Toast.makeText(PatientActivity.this, getString(R.string.removed_patient), Toast.LENGTH_LONG).show();
                         addToFile();
                         goBack();
@@ -233,23 +246,6 @@ public class PatientActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(getString(R.string.message_remove_patient)).setPositiveButton(getString(R.string.yes), dialogClickListener)
                 .setNegativeButton(getString(R.string.no), dialogClickListener).show();
-    }
-
-    public void getZorgverlender() {
-        final GetCaregiverRequest gzr = new GetCaregiverRequest();
-        Runnable runnable = new Runnable() {
-            public void run() {
-                caregivers = gzr.getCaregiver();
-            }
-        };
-
-        Thread mythread = new Thread(runnable);
-        mythread.start();
-        try {
-            mythread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override

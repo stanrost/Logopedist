@@ -7,74 +7,52 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.strost.logopedist.R;
 import com.example.strost.logopedist.model.entities.Caregiver;
 import com.example.strost.logopedist.model.entities.Patient;
-import com.example.strost.logopedist.model.request.GetCaregiverRequest;
-import com.example.strost.logopedist.model.request.UpdateCaregiverRequest;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.strost.logopedist.model.request.PutPatientHttpRequest;
 
 /**
  * Created by strost on 20-2-2017.
  */
 
 public class ChangePatientActivity extends AppCompatActivity {
-    private List<Patient> patients = new ArrayList<Patient>();
-    private List<Caregiver> caregivers = new ArrayList<Caregiver>();
-    private int caregiverId;
-    private Caregiver caregiver = null, newCaregiver = null;
-    private Patient rightPatient;
-    private EditText name;
+    private Caregiver mCaregiver = null;
+    private Patient mPatient;
+    private EditText mFirstName, mLastName, mProblem, mEmail;
+    private final String PATIENT_KEY = "Patient";
+    private final String CAREGIVER_KEY = "Caregiver";
+    private RadioGroup mGender;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.changepatient_page);
+        setContentView(R.layout.activity_changepatient);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        final GetCaregiverRequest gzr = new GetCaregiverRequest();
-        caregiverId = getIntent().getExtras().getInt("caregiverId");
-        final int patientId = getIntent().getExtras().getInt("id");
+        mPatient = (Patient) getIntent().getSerializableExtra(PATIENT_KEY);
+        mCaregiver = (Caregiver) getIntent().getSerializableExtra(CAREGIVER_KEY);
+        mGender = (RadioGroup) findViewById(R.id.rgGender);
+        FloatingActionButton fabAddPatient = (FloatingActionButton) findViewById(R.id.fabAddPatient);
+        mFirstName = (EditText) findViewById(R.id.etPatientFistName);
+        mLastName = (EditText) findViewById(R.id.etAddPatientLastName);
+        mProblem = (EditText) findViewById(R.id.etAddPatientProblem);
+        mEmail = (EditText) findViewById(R.id.etAddPatientEmail);
+        mFirstName.setText(mPatient.getFirstName());
+        mLastName.setText(mPatient.getLastName());
+        mProblem.setText(mPatient.getProblem());
+        mEmail.setText(mPatient.getEmail());
 
-        Runnable runnable = new Runnable() {
-            public void run() {
-                caregivers = gzr.getCaregiver();
-            }
-        };
-        Thread mythread = new Thread(runnable);
-        mythread.start();
-        try {
-            mythread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        setIndexRating(mPatient.getGender());
 
-        for (int i = 0; i < caregivers.size(); i++) {
-            if (caregiverId == caregivers.get(i).getId()) {
-                caregiver = caregivers.get(i);
-            }
-        }
-
-        name = (EditText) findViewById(R.id.changePatientName);
-        newCaregiver = caregiver;
-        patients = newCaregiver.getPatients();
-
-        for (int i = 0; i < patients.size(); i++) {
-            if (patientId == patients.get(i).getId()) {
-                rightPatient = patients.get(i);
-            }
-        }
-        name.setText(rightPatient.getName());
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fabAddPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeObj();
                 Toast.makeText(ChangePatientActivity.this, getString(R.string.changed_patient), Toast.LENGTH_LONG).show();
+                changePatient();
                 addToFile();
                 goBack();
 
@@ -82,30 +60,23 @@ public class ChangePatientActivity extends AppCompatActivity {
         });
     }
 
-    public void changeObj(){
-        newCaregiver.changePatient(rightPatient.getId(), name.getText().toString());
+    public void changePatient(){
+        mPatient.setFirstName(mFirstName.getText().toString());
+        mPatient.setLastName(mLastName.getText().toString());
+        mPatient.setProblem(mProblem.getText().toString());
+        mPatient.setEmail(mEmail.getText().toString());
+        mPatient.setGender(getGender());
     }
 
     public void addToFile(){
-        final UpdateCaregiverRequest uzr = new UpdateCaregiverRequest();
-        Runnable runnable = new Runnable() {
-            public void run() {
-                uzr.updateCaregiver(caregiver, newCaregiver);
-            }
-        };
-        Thread mythread = new Thread(runnable);
-        mythread.start();
-        try {
-            mythread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        final PutPatientHttpRequest pPHR = new PutPatientHttpRequest();
+        pPHR.putPatient(mPatient);
     }
 
     public void goBack(){
         Intent detailIntent = new Intent(this, PatientActivity.class);
-        detailIntent.putExtra("patientid", rightPatient.getId());
-        detailIntent.putExtra("caregiverId", caregiverId);
+        detailIntent.putExtra(PATIENT_KEY, mPatient);
+        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         startActivity(detailIntent);
         finish();
     }
@@ -114,6 +85,36 @@ public class ChangePatientActivity extends AppCompatActivity {
     public void onBackPressed() {
         goBack();
         return;
+    }
+
+
+    public String getGender() {
+        int rgid = mGender.getCheckedRadioButtonId();
+
+        String gender = "";
+        if (rgid == R.id.rbMan) {
+            gender = "man";
+        }
+
+        if (rgid == R.id.rbWoman) {
+            gender = "woman";
+        }
+
+        return gender;
+    }
+
+    public void setIndexRating(String gender) {
+        switch (gender) {
+            case "man":
+                RadioButton ra1 = (RadioButton) this.findViewById(R.id.rbMan);
+                ra1.setChecked(true);
+                break;
+            case "woman":
+                RadioButton ra2 = (RadioButton) this.findViewById(R.id.rbWoman);
+                ra2.setChecked(true);
+                break;
+        }
+
     }
 
 }

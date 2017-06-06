@@ -14,70 +14,84 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57f9d999-f7b5-42f7-95a1-96108d968753" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_7.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/backendless_3_0_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_media_compat_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/LoginV2Activity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/LoginFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/login_fragement.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/loginv2_page.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_fragment.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/DeletePatientHttpRequest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ExerciseFillTabFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetCaregiverRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetPatiënt.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/RemoveExerciseRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/RemovePatientRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_action_name.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/happy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/natural.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/reallyhappy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/reallysad.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/sad.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/loading_icon.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/view_pressed.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_fillexersicetab.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/proguard-rules.pro" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/Netwerk/Requests.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/Netwerk/Requests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddExerciseActvitiy.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddExerciseActvitiy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddPatientActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddPatientActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePasswordActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePasswordActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePatientActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePatientActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ExerciseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ExerciseActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/LoginActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainPageActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainPageActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/PatientActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/PatientActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/SettingsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/SettingsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ExerciseTabFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ExerciseTabFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Caregiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Caregiver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Device.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Device.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Exercise.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Exercise.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Patient.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Patient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/AddPictureRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/AddPictureRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetCaregiverHttpRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetCaregiverHttpRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetPatientHttpRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetPatientHttpRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendEmailPatient.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendEmailPatient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/UpdateCaregiverRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/UpdateCaregiverRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/addexercise_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/addexercise_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/addpatient_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/addpatient_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/changepassword_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/changepassword_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/exercise_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/exercise_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/login_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/login_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/patient_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/patient_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/settings_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/settings_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_scrolling.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_scrolling.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_exercisetab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_exercisetab.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/PasswordEncryption.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/PasswordEncryption.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SaveSharedPreference.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/SaveSharedPreference.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradlew" afterPath="$PROJECT_DIR$/gradlew" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/adapter/DataAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/adapter/PatientDataAdapter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/addexercise_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_addexercise.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/addpatient_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_addpatient.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/changepassword_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_changepassword.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/changepatient_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_changepatient.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/exercise_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercise.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/login_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_mainpage.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/patient_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_patient.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/recycler_row.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_person.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/settings_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/menu/exercise_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_exercise.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_search.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/menu/zorgverlener_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_caregiver.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/menu/zorgverlener_patientmenu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_caregiverandpatient.xml" />
     </list>
     <ignored path="Logopedist.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,415 +123,99 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="search_menu.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml">
+      <file leaf-file-name="AddExerciseActvitiy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddExerciseActvitiy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="69" selection-start-line="9" selection-start-column="4" selection-end-line="14" selection-end-column="69" />
-              <folding />
+            <state relative-caret-position="132">
+              <caret line="182" column="47" selection-start-line="182" selection-start-column="46" selection-end-line="182" selection-end-column="47" />
+              <folding>
+                <element signature="e#6962#7346#0" expanded="true" />
+                <element signature="e#7345#7346#0" expanded="true" />
+                <element signature="e#7453#7849#0" expanded="true" />
+                <element signature="e#7848#7849#0" expanded="true" />
+              </folding>
             </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExerciseActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExerciseActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ExerciseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+            <state relative-caret-position="132">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExerciseFillTabFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ExerciseFillTabFragment.java">
+      <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="65" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainPageActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainPageActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+            <state relative-caret-position="442">
+              <caret line="59" column="9" selection-start-line="57" selection-start-column="8" selection-end-line="59" selection-end-column="9" />
               <folding>
-                <element signature="e#5033#5034#0" expanded="true" />
-                <element signature="e#5098#5099#0" expanded="true" />
+                <element signature="e#1021#1029#0" expanded="true" />
+                <element signature="e#3587#4482#0" expanded="true" />
+                <element signature="e#4481#4482#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_page.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_page.xml">
+      <file leaf-file-name="PatientActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/PatientActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            <state relative-caret-position="425">
+              <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="92" column="39" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecyclerView.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/25.1.1/recyclerview-v7-25.1.1-sources.jar!/android/support/v7/widget/RecyclerView.java">
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
-              <caret line="150" column="13" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
+            <state relative-caret-position="353">
+              <caret line="148" column="12" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_addexercise.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_addexercise.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="143" column="43" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
               <folding>
-                <element signature="e#0#540843#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#23034#23035#0" expanded="false" />
-                <element signature="e#23069#23070#0" expanded="false" />
-                <element signature="e#23143#23144#0" expanded="false" />
-                <element signature="e#23182#23183#0" expanded="false" />
-                <element signature="e#30451#30452#0" expanded="false" />
-                <element signature="e#30523#30524#0" expanded="false" />
-                <element signature="e#30792#30793#0" expanded="false" />
-                <element signature="e#30867#30868#0" expanded="false" />
-                <element signature="e#31258#31259#0" expanded="false" />
-                <element signature="e#31333#31334#0" expanded="false" />
-                <element signature="e#31728#31729#0" expanded="false" />
-                <element signature="e#31794#31795#0" expanded="false" />
-                <element signature="e#35693#35694#0" expanded="false" />
-                <element signature="e#35743#35744#0" expanded="false" />
-                <element signature="e#36750#36751#0" expanded="false" />
-                <element signature="e#36800#36801#0" expanded="false" />
-                <element signature="e#38085#38086#0" expanded="false" />
-                <element signature="e#38129#38130#0" expanded="false" />
-                <element signature="e#38317#38318#0" expanded="false" />
-                <element signature="e#38353#38354#0" expanded="false" />
-                <element signature="e#39317#39318#0" expanded="false" />
-                <element signature="e#39354#39355#0" expanded="false" />
-                <element signature="e#44570#44571#0" expanded="false" />
-                <element signature="e#44601#44602#0" expanded="false" />
-                <element signature="e#45132#45133#0" expanded="false" />
-                <element signature="e#45176#45177#0" expanded="false" />
-                <element signature="e#50029#50030#0" expanded="false" />
-                <element signature="e#50068#50069#0" expanded="false" />
-                <element signature="e#53500#53501#0" expanded="false" />
-                <element signature="e#53530#53531#0" expanded="false" />
-                <element signature="e#53990#53991#0" expanded="false" />
-                <element signature="e#54044#54045#0" expanded="false" />
-                <element signature="e#54582#54583#0" expanded="false" />
-                <element signature="e#54633#54634#0" expanded="false" />
-                <element signature="e#55629#55630#0" expanded="false" />
-                <element signature="e#55677#55678#0" expanded="false" />
-                <element signature="e#55913#55914#0" expanded="false" />
-                <element signature="e#55948#55949#0" expanded="false" />
-                <element signature="e#58327#58328#0" expanded="false" />
-                <element signature="e#58371#58372#0" expanded="false" />
-                <element signature="e#60493#60494#0" expanded="false" />
-                <element signature="e#60535#60536#0" expanded="false" />
-                <element signature="e#79185#79186#0" expanded="false" />
-                <element signature="e#79221#79222#0" expanded="false" />
-                <element signature="e#79459#79460#0" expanded="false" />
-                <element signature="e#79503#79504#0" expanded="false" />
-                <element signature="e#83421#83422#0" expanded="false" />
-                <element signature="e#83461#83462#0" expanded="false" />
-                <element signature="e#83663#83664#0" expanded="false" />
-                <element signature="e#83703#83704#0" expanded="false" />
-                <element signature="e#88539#88540#0" expanded="false" />
-                <element signature="e#88609#88610#0" expanded="false" />
-                <element signature="e#101445#101446#0" expanded="false" />
-                <element signature="e#101479#101480#0" expanded="false" />
-                <element signature="e#124624#124625#0" expanded="false" />
-                <element signature="e#124665#124666#0" expanded="false" />
-                <element signature="e#126928#126929#0" expanded="false" />
-                <element signature="e#126977#126978#0" expanded="false" />
-                <element signature="e#128688#128689#0" expanded="false" />
-                <element signature="e#128724#128725#0" expanded="false" />
-                <element signature="e#163690#163691#0" expanded="false" />
-                <element signature="e#163763#163764#0" expanded="false" />
-                <element signature="e#173109#173110#0" expanded="false" />
-                <element signature="e#173157#173158#0" expanded="false" />
-                <element signature="e#176387#176388#0" expanded="false" />
-                <element signature="e#176440#176441#0" expanded="false" />
-                <element signature="e#200803#200804#0" expanded="false" />
-                <element signature="e#200855#200856#0" expanded="false" />
-                <element signature="e#211390#211391#0" expanded="false" />
-                <element signature="e#211428#211429#0" expanded="false" />
-                <element signature="e#211453#211454#0" expanded="false" />
-                <element signature="e#211491#211492#0" expanded="false" />
-                <element signature="e#217385#217386#0" expanded="false" />
-                <element signature="e#217442#217443#0" expanded="false" />
-                <element signature="e#225555#225556#0" expanded="false" />
-                <element signature="e#225621#225622#0" expanded="false" />
-                <element signature="e#247927#247928#0" expanded="false" />
-                <element signature="e#247979#247980#0" expanded="false" />
-                <element signature="e#248021#248022#0" expanded="false" />
-                <element signature="e#248086#248087#0" expanded="false" />
-                <element signature="e#272427#272428#0" expanded="false" />
-                <element signature="e#272459#272460#0" expanded="false" />
-                <element signature="e#273564#273565#0" expanded="false" />
-                <element signature="e#273600#273601#0" expanded="false" />
-                <element signature="e#274240#274241#0" expanded="false" />
-                <element signature="e#274284#274285#0" expanded="false" />
-                <element signature="e#277913#277914#0" expanded="false" />
-                <element signature="e#277949#277950#0" expanded="false" />
-                <element signature="e#279256#279257#0" expanded="false" />
-                <element signature="e#279313#279314#0" expanded="false" />
-                <element signature="e#283297#283298#0" expanded="false" />
-                <element signature="e#283348#283349#0" expanded="false" />
-                <element signature="e#309428#309429#0" expanded="false" />
-                <element signature="e#309474#309475#0" expanded="false" />
-                <element signature="e#309851#309852#0" expanded="false" />
-                <element signature="e#309894#309895#0" expanded="false" />
-                <element signature="e#311305#311306#0" expanded="false" />
-                <element signature="e#311341#311342#0" expanded="false" />
-                <element signature="e#313185#313186#0" expanded="false" />
-                <element signature="e#313236#313237#0" expanded="false" />
-                <element signature="e#316764#316765#0" expanded="false" />
-                <element signature="e#316814#316815#0" expanded="false" />
-                <element signature="e#327030#327031#0" expanded="false" />
-                <element signature="e#327071#327072#0" expanded="false" />
-                <element signature="e#329862#329863#0" expanded="false" />
-                <element signature="e#329894#329895#0" expanded="false" />
-                <element signature="e#330764#330765#0" expanded="false" />
-                <element signature="e#330796#330797#0" expanded="false" />
-                <element signature="e#331090#331091#0" expanded="false" />
-                <element signature="e#331126#331127#0" expanded="false" />
-                <element signature="e#331414#331415#0" expanded="false" />
-                <element signature="e#331450#331451#0" expanded="false" />
-                <element signature="e#333904#333905#0" expanded="false" />
-                <element signature="e#333979#333980#0" expanded="false" />
-                <element signature="e#335291#335292#0" expanded="false" />
-                <element signature="e#335345#335346#0" expanded="false" />
-                <element signature="e#336251#336252#0" expanded="false" />
-                <element signature="e#336305#336306#0" expanded="false" />
-                <element signature="e#336645#336646#0" expanded="false" />
-                <element signature="e#336687#336688#0" expanded="false" />
-                <element signature="e#337084#337085#0" expanded="false" />
-                <element signature="e#337139#337140#0" expanded="false" />
-                <element signature="e#340416#340417#0" expanded="false" />
-                <element signature="e#340470#340471#0" expanded="false" />
-                <element signature="e#341863#341864#0" expanded="false" />
-                <element signature="e#341896#341897#0" expanded="false" />
-                <element signature="e#347121#347122#0" expanded="false" />
-                <element signature="e#347189#347190#0" expanded="false" />
-                <element signature="e#349359#349360#0" expanded="false" />
-                <element signature="e#349404#349405#0" expanded="false" />
-                <element signature="e#353572#353573#0" expanded="false" />
-                <element signature="e#353613#353614#0" expanded="false" />
-                <element signature="e#354247#354248#0" expanded="false" />
-                <element signature="e#354289#354290#0" expanded="false" />
-                <element signature="e#354447#354448#0" expanded="false" />
-                <element signature="e#354484#354485#0" expanded="false" />
-                <element signature="e#354645#354646#0" expanded="false" />
-                <element signature="e#354683#354684#0" expanded="false" />
-                <element signature="e#356545#356546#0" expanded="false" />
-                <element signature="e#356626#356627#0" expanded="false" />
-                <element signature="e#356894#356895#0" expanded="false" />
-                <element signature="e#356974#356975#0" expanded="false" />
-                <element signature="e#367579#367580#0" expanded="false" />
-                <element signature="e#367634#367635#0" expanded="false" />
-                <element signature="e#391156#391157#0" expanded="false" />
-                <element signature="e#391191#391192#0" expanded="false" />
-                <element signature="e#401278#401279#0" expanded="false" />
-                <element signature="e#401310#401311#0" expanded="false" />
-                <element signature="e#401865#401866#0" expanded="false" />
-                <element signature="e#401897#401898#0" expanded="false" />
-                <element signature="e#402467#402468#0" expanded="false" />
-                <element signature="e#402499#402500#0" expanded="false" />
-                <element signature="e#403010#403011#0" expanded="false" />
-                <element signature="e#403042#403043#0" expanded="false" />
-                <element signature="e#403589#403590#0" expanded="false" />
-                <element signature="e#403621#403622#0" expanded="false" />
-                <element signature="e#404183#404184#0" expanded="false" />
-                <element signature="e#404215#404216#0" expanded="false" />
-                <element signature="e#405669#405670#0" expanded="false" />
-                <element signature="e#405741#405742#0" expanded="false" />
-                <element signature="e#405881#405882#0" expanded="false" />
-                <element signature="e#405954#405955#0" expanded="false" />
-                <element signature="e#406676#406677#0" expanded="false" />
-                <element signature="e#406711#406712#0" expanded="false" />
-                <element signature="e#415397#415398#0" expanded="false" />
-                <element signature="e#415454#415455#0" expanded="false" />
-                <element signature="e#418794#418795#0" expanded="false" />
-                <element signature="e#418830#418831#0" expanded="false" />
-                <element signature="e#424435#424436#0" expanded="false" />
-                <element signature="e#424471#424472#0" expanded="false" />
-                <element signature="e#426771#426772#0" expanded="false" />
-                <element signature="e#426812#426813#0" expanded="false" />
-                <element signature="e#432587#432588#0" expanded="false" />
-                <element signature="e#432623#432624#0" expanded="false" />
-                <element signature="e#443812#443813#0" expanded="false" />
-                <element signature="e#443870#443871#0" expanded="false" />
-                <element signature="e#448133#448134#0" expanded="false" />
-                <element signature="e#448176#448177#0" expanded="false" />
-                <element signature="e#448422#448423#0" expanded="false" />
-                <element signature="e#448460#448461#0" expanded="false" />
-                <element signature="e#448583#448584#0" expanded="false" />
-                <element signature="e#448627#448628#0" expanded="false" />
-                <element signature="e#448656#448657#0" expanded="false" />
-                <element signature="e#448710#448711#0" expanded="false" />
-                <element signature="e#448736#448737#0" expanded="false" />
-                <element signature="e#448793#448794#0" expanded="false" />
-                <element signature="e#448835#448836#0" expanded="false" />
-                <element signature="e#448906#448907#0" expanded="false" />
-                <element signature="e#448951#448952#0" expanded="false" />
-                <element signature="e#449018#449019#0" expanded="false" />
-                <element signature="e#449055#449056#0" expanded="false" />
-                <element signature="e#449115#449116#0" expanded="false" />
-                <element signature="e#449146#449147#0" expanded="false" />
-                <element signature="e#449200#449201#0" expanded="false" />
-                <element signature="e#449401#449402#0" expanded="false" />
-                <element signature="e#449460#449461#0" expanded="false" />
-                <element signature="e#449493#449494#0" expanded="false" />
-                <element signature="e#449551#449552#0" expanded="false" />
-                <element signature="e#449580#449581#0" expanded="false" />
-                <element signature="e#449637#449638#0" expanded="false" />
-                <element signature="e#449668#449669#0" expanded="false" />
-                <element signature="e#449727#449728#0" expanded="false" />
-                <element signature="e#449774#449775#0" expanded="false" />
-                <element signature="e#449826#449827#0" expanded="false" />
-                <element signature="e#449861#449862#0" expanded="false" />
-                <element signature="e#449925#449926#0" expanded="false" />
-                <element signature="e#450108#450109#0" expanded="false" />
-                <element signature="e#450174#450175#0" expanded="false" />
-                <element signature="e#450210#450211#0" expanded="false" />
-                <element signature="e#450249#450250#0" expanded="false" />
-                <element signature="e#456355#456356#0" expanded="false" />
-                <element signature="e#456421#456422#0" expanded="false" />
-                <element signature="e#456809#456810#0" expanded="false" />
-                <element signature="e#456867#456868#0" expanded="false" />
-                <element signature="e#459212#459213#0" expanded="false" />
-                <element signature="e#459272#459273#0" expanded="false" />
-                <element signature="e#461250#461251#0" expanded="false" />
-                <element signature="e#461289#461290#0" expanded="false" />
-                <element signature="e#461343#461344#0" expanded="false" />
-                <element signature="e#461387#461388#0" expanded="false" />
-                <element signature="e#461445#461446#0" expanded="false" />
-                <element signature="e#461482#461483#0" expanded="false" />
-                <element signature="e#461544#461545#0" expanded="false" />
-                <element signature="e#461581#461582#0" expanded="false" />
-                <element signature="e#461633#461634#0" expanded="false" />
-                <element signature="e#461695#461696#0" expanded="false" />
-                <element signature="e#461988#461989#0" expanded="false" />
-                <element signature="e#462044#462045#0" expanded="false" />
-                <element signature="e#462335#462336#0" expanded="false" />
-                <element signature="e#462389#462390#0" expanded="false" />
-                <element signature="e#462829#462830#0" expanded="false" />
-                <element signature="e#462883#462884#0" expanded="false" />
-                <element signature="e#463303#463304#0" expanded="false" />
-                <element signature="e#463357#463358#0" expanded="false" />
-                <element signature="e#463538#463539#0" expanded="false" />
-                <element signature="e#463594#463595#0" expanded="false" />
-                <element signature="e#463896#463897#0" expanded="false" />
-                <element signature="e#463958#463959#0" expanded="false" />
-                <element signature="e#464395#464396#0" expanded="false" />
-                <element signature="e#464458#464459#0" expanded="false" />
-                <element signature="e#466129#466130#0" expanded="false" />
-                <element signature="e#466188#466189#0" expanded="false" />
-                <element signature="e#467576#467577#0" expanded="false" />
-                <element signature="e#467632#467633#0" expanded="false" />
-                <element signature="e#467882#467883#0" expanded="false" />
-                <element signature="e#467927#467928#0" expanded="false" />
-                <element signature="e#469201#469202#0" expanded="false" />
-                <element signature="e#469250#469251#0" expanded="false" />
-                <element signature="e#469375#469376#0" expanded="false" />
-                <element signature="e#469414#469415#0" expanded="false" />
-                <element signature="e#469678#469679#0" expanded="false" />
-                <element signature="e#469724#469725#0" expanded="false" />
-                <element signature="e#471511#471512#0" expanded="false" />
-                <element signature="e#471579#471580#0" expanded="false" />
-                <element signature="e#475427#475428#0" expanded="false" />
-                <element signature="e#475497#475498#0" expanded="false" />
-                <element signature="e#475781#475782#0" expanded="false" />
-                <element signature="e#475841#475842#0" expanded="false" />
-                <element signature="e#477410#477411#0" expanded="false" />
-                <element signature="e#477474#477475#0" expanded="false" />
-                <element signature="e#477513#477514#0" expanded="false" />
-                <element signature="e#477572#477573#0" expanded="false" />
-                <element signature="e#479563#479564#0" expanded="false" />
-                <element signature="e#479605#479606#0" expanded="false" />
-                <element signature="e#479752#479753#0" expanded="false" />
-                <element signature="e#479794#479795#0" expanded="false" />
-                <element signature="e#479947#479948#0" expanded="false" />
-                <element signature="e#479995#479996#0" expanded="false" />
-                <element signature="e#480185#480186#0" expanded="false" />
-                <element signature="e#480237#480238#0" expanded="false" />
-                <element signature="e#482673#482674#0" expanded="false" />
-                <element signature="e#482725#482726#0" expanded="false" />
-                <element signature="e#486073#486074#0" expanded="false" />
-                <element signature="e#486114#486115#0" expanded="false" />
-                <element signature="e#486343#486344#0" expanded="false" />
-                <element signature="e#486400#486401#0" expanded="false" />
-                <element signature="e#486848#486849#0" expanded="false" />
-                <element signature="e#486923#486924#0" expanded="false" />
-                <element signature="e#492624#492625#0" expanded="false" />
-                <element signature="e#492667#492668#0" expanded="false" />
-                <element signature="e#492777#492778#0" expanded="false" />
-                <element signature="e#492820#492821#0" expanded="false" />
-                <element signature="e#493158#493159#0" expanded="false" />
-                <element signature="e#493213#493214#0" expanded="false" />
-                <element signature="e#493539#493540#0" expanded="false" />
-                <element signature="e#493590#493591#0" expanded="false" />
-                <element signature="e#495563#495564#0" expanded="false" />
-                <element signature="e#495609#495610#0" expanded="false" />
-                <element signature="e#496166#496167#0" expanded="false" />
-                <element signature="e#496214#496215#0" expanded="false" />
-                <element signature="e#505090#505091#0" expanded="false" />
-                <element signature="e#505134#505135#0" expanded="false" />
-                <element signature="e#505345#505346#0" expanded="false" />
-                <element signature="e#505397#505398#0" expanded="false" />
-                <element signature="e#505592#505593#0" expanded="false" />
-                <element signature="e#505635#505636#0" expanded="false" />
-                <element signature="e#505841#505842#0" expanded="false" />
-                <element signature="e#505891#505892#0" expanded="false" />
-                <element signature="e#506095#506096#0" expanded="false" />
-                <element signature="e#506141#506142#0" expanded="false" />
-                <element signature="e#506362#506363#0" expanded="false" />
-                <element signature="e#506418#506419#0" expanded="false" />
-                <element signature="e#506622#506623#0" expanded="false" />
-                <element signature="e#506668#506669#0" expanded="false" />
-                <element signature="e#506889#506890#0" expanded="false" />
-                <element signature="e#506945#506946#0" expanded="false" />
-                <element signature="e#507359#507360#0" expanded="false" />
-                <element signature="e#507403#507404#0" expanded="false" />
-                <element signature="e#532493#532494#0" expanded="false" />
-                <element signature="e#532528#532529#0" expanded="false" />
-                <element signature="e#535345#535346#0" expanded="false" />
-                <element signature="e#535396#535397#0" expanded="false" />
+                <element signature="e#6146#6160#0" expanded="true" />
+                <element signature="e#6429#6443#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/adapter/DataAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recycler_row.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_row.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
+      <file leaf-file-name="activity_individualfeedback.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_individualfeedback.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -526,12 +224,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <file leaf-file-name="activity_exerciseratingoverview.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exerciseratingoverview.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="15" column="41" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="41" />
+              <folding>
+                <element signature="e#940#965#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExerciseRatingOverviewActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ExerciseRatingOverviewActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="48" column="72" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="72" />
+              <folding>
+                <element signature="e#1703#1735#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -543,8 +258,8 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="ASClass" />
-        <option value="resourceFile" />
         <option value="layoutResourceFile_vertical" />
+        <option value="resourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -600,6 +315,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="validateSigningDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support.constraint:constraint-layout:1.0.2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComAndroidSupportConstraintConstraintLayout102Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1104,6 +824,11 @@
                 <option name="name" value="javaPreCompileDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.commit451:PhotoView:1.2.4" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComCommit451PhotoView124Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Run unit tests for the debug build." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="testDebugUnitTest" />
@@ -1344,6 +1069,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="validateSigningDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support.constraint:constraint-layout:1.0.2" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComAndroidSupportConstraintConstraintLayout102Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -1838,6 +1568,11 @@
                 <option name="name" value="javaPreCompileDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.commit451:PhotoView:1.2.4" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComCommit451PhotoView124Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Run unit tests for the debug build." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="testDebugUnitTest" />
@@ -2072,7 +1807,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="D:\Users\strost\Documents\Project\Logopedist" value="4466843492859" />
+        <entry key="D:\Users\strost\Documents\Project\Logopedist" value="4470394250135" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2241,57 +1976,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/settings_page.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/UpdateCaregiverRequest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/AddPictureRequest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/changepassword_page.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/GifMovieView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/image_fragement.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ImageFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/main_fragment.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/SettingsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/login_page.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/RemovePatientRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/DeletePatientHttpRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Feedback.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/adapter/PatientDataAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_scrolling.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/NetworkImageView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/view_pressed.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/ExerciseResponse.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/CaregiverResponse.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetCaregiverRequest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/application/ApplicationEx.java" />
-        <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/recycler_row.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/recycler_row.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/Netwerk/Requests.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/main_page.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/adapter/MyOnClickListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/adapter/DataAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetCaregiverHttpRequest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/zoom.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/zoom.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/exercise_page.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Exercise.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ExerciseTabFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ExerciseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/addpatient_page.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml/provider_paths.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendEmailPatient.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/PatientActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_adminoptions.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/admin/AdminOptions.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/postCaregiverRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/PostCaregiverRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/Netwerk/Requests.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/DeleteCaregiverHttpRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainPageActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_addpatient.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_changepatient.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePatientActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Caregiver.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/adapter/CaregiverDataAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/admincaregiver_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/zorgverlener_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/search_admin_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/exercise_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/caregiver_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_caregiverandpatient.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_caregiver.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_addcaregiver.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ExerciseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/admin/AddCaregiverActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/admin/CaregiverListActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/UpdateCaregiverRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddPatientActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePasswordActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/admin/CaregiverActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/PutPatientHttpRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendEmailCaregiver.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/ForgotPassword.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendPushNotification.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Device.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Patient.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePasswordActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddPatientActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendEmailPatient.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainPageActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_exercisetab.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_fillexersicetab.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/patient_page.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/addexercise_page.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_addexercise.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddExerciseActvitiy.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/PatientActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ExerciseFillTabFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/AddRecordRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ExerciseRatingOverviewActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       </list>
     </option>
   </component>
@@ -2347,6 +2082,8 @@
     <panes>
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2368,6 +2105,64 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2387,17 +2182,191 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Netwerk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="request" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Logopedist" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="Nexus_5_API_24" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../android bestanden/lifecycledemo/LifecycleDemo/.gradle" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -2405,6 +2374,9 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.strost.logopedist.controller.adapter" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.example.strost.logopedist.controller.fragments" />
       <recent name="com.example.strost.logopedist.controller" />
@@ -2415,25 +2387,29 @@
       <recent name="D:\Users\strost\Documents\Project\Logopedist\app\src\main\res\raw" />
       <recent name="D:\Users\strost\Documents\Project\Logopedist\app\src\main\res\drawable-xxhdpi" />
     </key>
+    <key name="android.template.packageName">
+      <recent name="com.example.strost.logopedist.controller.activities.admin" />
+      <recent name="com.example.strost.logopedist.controller.activities" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.strost.logopedist" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\strost\Documents\Project\Logopedist\app\src\main\res\menu" />
+      <recent name="D:\Users\strost\Documents\Project\Logopedist\app\src\main\res\layout" />
+      <recent name="D:\Users\strost\Documents\Project\Logopedist\app\src\main\res\drawable-xxhdpi" />
       <recent name="D:\Users\strost\Documents\Project\Logopedist\app\src\main\res\drawable-mdpi" />
       <recent name="D:\Users\strost\Documents\Project\Logopedist\app\src\main\java\com\example\strost\logopedist\controller\fragments" />
-      <recent name="D:\Users\strost\Documents\Project\Logopedist\app\src\main\res\layout" />
-      <recent name="D:\Users\strost\Documents\Project\Logopedist\app\src\main\res\drawable" />
-      <recent name="D:\Users\strost\Documents\Project\Logopedist\app\src\main\java\com\example\strost\logopedist" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.strost.logopedist.model.entities" />
+      <recent name="com.example.strost.logopedist.model.request" />
       <recent name="com.example.strost.logopedist.controller.adapter" />
-      <recent name="com.example.strost.logopedist.application" />
-      <recent name="com.example.strost.logopedist.Netwerk" />
+      <recent name="com.example.strost.logopedist.controller.fragments" />
+      <recent name="com.example.strost.logopedist.controller.activities" />
       <recent name="com.example.strost.logopedist" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.strost.logopedist.controller.adapter" />
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -2809,45 +2785,82 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32684284" sideWeight="0.4974293" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7043702" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32684284" sideWeight="0.4922879" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40194714" sideWeight="0.50771207" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21279556" sideWeight="0.4922879" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34353268" sideWeight="0.53277636" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32823366" sideWeight="0.4974293" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32684284" sideWeight="0.4922879" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32481363" sideWeight="0.4922879" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3574409" sideWeight="0.51028275" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3567625" sideWeight="0.48971722" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34214187" sideWeight="0.53277636" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32800853" sideWeight="0.4974293" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32545203" sideWeight="0.4922879" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20372751" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23264782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2342918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19054241" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7043702" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49652296" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3574409" sideWeight="0.51028275" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20445062" sideWeight="0.48971722" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.488178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32684284" sideWeight="0.4974293" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7043702" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32481363" sideWeight="0.4922879" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3310153" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout>
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34214187" sideWeight="0.53277636" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32800853" sideWeight="0.4974293" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3257468" sideWeight="0.4922879" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23264782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42976356" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -2865,255 +2878,180 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddPatientActivity.java</url>
-          <line>70</line>
+          <line>55</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainPageActivity.java</url>
-          <line>124</line>
+          <line>71</line>
           <properties />
-          <option name="timeStamp" value="73" />
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddExerciseActvitiy.java</url>
-          <line>137</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ExerciseTabFragment.java</url>
+          <line>69</line>
           <properties />
-          <option name="timeStamp" value="74" />
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ExerciseRatingOverviewActivity.java</url>
+          <line>101</line>
+          <properties />
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/PutPatientHttpRequest.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/LoginActivity.java</url>
+          <line>163</line>
+          <properties />
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/LoginActivity.java</url>
+          <line>114</line>
+          <properties />
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePatientActivity.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePasswordActivity.java</url>
-          <line>112</line>
-          <properties class="com.example.strost.logopedist.controller.activities.ChangePasswordActivity" method="EmptyEditText" />
-          <option name="timeStamp" value="52" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/AddPictureRequest.java</url>
+          <line>28</line>
+          <properties class="com.example.strost.logopedist.model.request.AddPictureRequest" method="AddPicture" />
+          <option name="timeStamp" value="115" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="75" />
+      <option name="time" value="148" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/admin/CaregiverActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        <state relative-caret-position="721">
+          <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1046">
-          <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
-          <folding>
-            <element signature="e#1488#1774#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/admin/AddCaregiverActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="86" column="36" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="36" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/SettingsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/ForgotPassword.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+        <state relative-caret-position="291">
+          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/NetworkImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/PasswordEncryption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/SaveSharedPreference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/UpdateCaregiverRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="10" selection-end-column="37" />
+        <state relative-caret-position="85">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Exercise.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendEmailPatient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendEmailCaregiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="20" selection-end-column="34" />
+        <state relative-caret-position="160">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePasswordActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="100" column="21" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePatientActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="107" column="33" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddPatientActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="96" column="5" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
-          <folding>
-            <element signature="e#2863#3552#0" expanded="false" />
-            <element signature="e#3551#3552#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/PasswordEncryption.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendEmail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/PutPatientHttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/SaveSharedPreference.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/PostCaregiverHttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="322">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/NetworkImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetCaregiverRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetCaregiverHttpRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetPatientHttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="136">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendEmailPatient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="4" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Patient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.backendless/android/3.0.25/11a01e29cd135a393be7ee884a5fc8ca2db1894a/android-3.0.25-sources.jar!/com/backendless/messaging/PushPolicyEnum.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/DeletePatientHttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Device.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/DeleteCaregiverHttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.backendless/android/3.0.25/11a01e29cd135a393be7ee884a5fc8ca2db1894a/android-3.0.25-sources.jar!/com/backendless/messaging/DeliveryOptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.backendless/android/3.0.25/11a01e29cd135a393be7ee884a5fc8ca2db1894a/android-3.0.25-sources.jar!/com/backendless/messaging/PublishOptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/widget/TextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="1683" column="0" selection-start-line="1683" selection-start-column="0" selection-end-line="1683" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/widget/EditText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/text/SpannableStringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="1261" column="0" selection-start-line="1261" selection-start-column="0" selection-end-line="1261" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="69" column="17" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/content/Context.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="621" column="27" selection-start-line="621" selection-start-column="27" selection-end-line="621" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-fragment/25.1.1/support-fragment-25.1.1-sources.jar!/android/support/v4/app/FragmentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="850" column="16" selection-start-line="850" selection-start-column="16" selection-end-line="850" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/content/Intent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="4857" column="11" selection-start-line="4857" selection-start-column="11" selection-end-line="4857" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        <state relative-caret-position="136">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3121,128 +3059,111 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9724">
-          <caret line="696" column="28" selection-start-line="696" selection-start-column="28" selection-end-line="696" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_exercisetab.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="2346">
-          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_fillexersicetab.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="131" column="47" selection-start-line="131" selection-start-column="47" selection-end-line="131" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/patient_page.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_scrolling.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="43" column="42" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="42" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_create.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_action_name.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/addexercise_page.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="142" column="45" selection-start-line="142" selection-start-column="45" selection-end-line="142" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddExerciseActvitiy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#sendPushNotification#0;class#AddExerciseActvitiy#0" expanded="false" />
-            <element signature="method#getZorgverlender#0;class#AddExerciseActvitiy#0" expanded="false" />
-            <element signature="method#goBack#0;class#AddExerciseActvitiy#0" expanded="false" />
-            <element signature="method#onBackPressed#0;class#AddExerciseActvitiy#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/PatientActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="69" selection-start-line="9" selection-start-column="4" selection-end-line="14" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/adapter/DataAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_row.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/SendPushNotification.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state relative-caret-position="229">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePasswordActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-891">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ChangePatientActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/SettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-741">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ViewImageActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/CaregiverResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Caregiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/NumberOfTimesOverviewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainPageActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/GetCaregiverHttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_forgotpassword.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -3250,371 +3171,321 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/25.1.1/recyclerview-v7-25.1.1-sources.jar!/android/support/v7/widget/RecyclerView.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddPatientActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="150" column="13" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
+        <state relative-caret-position="1122">
+          <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
           <folding>
-            <element signature="e#0#540843#0" expanded="false" />
             <element signature="imports" expanded="false" />
-            <element signature="e#23034#23035#0" expanded="false" />
-            <element signature="e#23069#23070#0" expanded="false" />
-            <element signature="e#23143#23144#0" expanded="false" />
-            <element signature="e#23182#23183#0" expanded="false" />
-            <element signature="e#30451#30452#0" expanded="false" />
-            <element signature="e#30523#30524#0" expanded="false" />
-            <element signature="e#30792#30793#0" expanded="false" />
-            <element signature="e#30867#30868#0" expanded="false" />
-            <element signature="e#31258#31259#0" expanded="false" />
-            <element signature="e#31333#31334#0" expanded="false" />
-            <element signature="e#31728#31729#0" expanded="false" />
-            <element signature="e#31794#31795#0" expanded="false" />
-            <element signature="e#35693#35694#0" expanded="false" />
-            <element signature="e#35743#35744#0" expanded="false" />
-            <element signature="e#36750#36751#0" expanded="false" />
-            <element signature="e#36800#36801#0" expanded="false" />
-            <element signature="e#38085#38086#0" expanded="false" />
-            <element signature="e#38129#38130#0" expanded="false" />
-            <element signature="e#38317#38318#0" expanded="false" />
-            <element signature="e#38353#38354#0" expanded="false" />
-            <element signature="e#39317#39318#0" expanded="false" />
-            <element signature="e#39354#39355#0" expanded="false" />
-            <element signature="e#44570#44571#0" expanded="false" />
-            <element signature="e#44601#44602#0" expanded="false" />
-            <element signature="e#45132#45133#0" expanded="false" />
-            <element signature="e#45176#45177#0" expanded="false" />
-            <element signature="e#50029#50030#0" expanded="false" />
-            <element signature="e#50068#50069#0" expanded="false" />
-            <element signature="e#53500#53501#0" expanded="false" />
-            <element signature="e#53530#53531#0" expanded="false" />
-            <element signature="e#53990#53991#0" expanded="false" />
-            <element signature="e#54044#54045#0" expanded="false" />
-            <element signature="e#54582#54583#0" expanded="false" />
-            <element signature="e#54633#54634#0" expanded="false" />
-            <element signature="e#55629#55630#0" expanded="false" />
-            <element signature="e#55677#55678#0" expanded="false" />
-            <element signature="e#55913#55914#0" expanded="false" />
-            <element signature="e#55948#55949#0" expanded="false" />
-            <element signature="e#58327#58328#0" expanded="false" />
-            <element signature="e#58371#58372#0" expanded="false" />
-            <element signature="e#60493#60494#0" expanded="false" />
-            <element signature="e#60535#60536#0" expanded="false" />
-            <element signature="e#79185#79186#0" expanded="false" />
-            <element signature="e#79221#79222#0" expanded="false" />
-            <element signature="e#79459#79460#0" expanded="false" />
-            <element signature="e#79503#79504#0" expanded="false" />
-            <element signature="e#83421#83422#0" expanded="false" />
-            <element signature="e#83461#83462#0" expanded="false" />
-            <element signature="e#83663#83664#0" expanded="false" />
-            <element signature="e#83703#83704#0" expanded="false" />
-            <element signature="e#88539#88540#0" expanded="false" />
-            <element signature="e#88609#88610#0" expanded="false" />
-            <element signature="e#101445#101446#0" expanded="false" />
-            <element signature="e#101479#101480#0" expanded="false" />
-            <element signature="e#124624#124625#0" expanded="false" />
-            <element signature="e#124665#124666#0" expanded="false" />
-            <element signature="e#126928#126929#0" expanded="false" />
-            <element signature="e#126977#126978#0" expanded="false" />
-            <element signature="e#128688#128689#0" expanded="false" />
-            <element signature="e#128724#128725#0" expanded="false" />
-            <element signature="e#163690#163691#0" expanded="false" />
-            <element signature="e#163763#163764#0" expanded="false" />
-            <element signature="e#173109#173110#0" expanded="false" />
-            <element signature="e#173157#173158#0" expanded="false" />
-            <element signature="e#176387#176388#0" expanded="false" />
-            <element signature="e#176440#176441#0" expanded="false" />
-            <element signature="e#200803#200804#0" expanded="false" />
-            <element signature="e#200855#200856#0" expanded="false" />
-            <element signature="e#211390#211391#0" expanded="false" />
-            <element signature="e#211428#211429#0" expanded="false" />
-            <element signature="e#211453#211454#0" expanded="false" />
-            <element signature="e#211491#211492#0" expanded="false" />
-            <element signature="e#217385#217386#0" expanded="false" />
-            <element signature="e#217442#217443#0" expanded="false" />
-            <element signature="e#225555#225556#0" expanded="false" />
-            <element signature="e#225621#225622#0" expanded="false" />
-            <element signature="e#247927#247928#0" expanded="false" />
-            <element signature="e#247979#247980#0" expanded="false" />
-            <element signature="e#248021#248022#0" expanded="false" />
-            <element signature="e#248086#248087#0" expanded="false" />
-            <element signature="e#272427#272428#0" expanded="false" />
-            <element signature="e#272459#272460#0" expanded="false" />
-            <element signature="e#273564#273565#0" expanded="false" />
-            <element signature="e#273600#273601#0" expanded="false" />
-            <element signature="e#274240#274241#0" expanded="false" />
-            <element signature="e#274284#274285#0" expanded="false" />
-            <element signature="e#277913#277914#0" expanded="false" />
-            <element signature="e#277949#277950#0" expanded="false" />
-            <element signature="e#279256#279257#0" expanded="false" />
-            <element signature="e#279313#279314#0" expanded="false" />
-            <element signature="e#283297#283298#0" expanded="false" />
-            <element signature="e#283348#283349#0" expanded="false" />
-            <element signature="e#309428#309429#0" expanded="false" />
-            <element signature="e#309474#309475#0" expanded="false" />
-            <element signature="e#309851#309852#0" expanded="false" />
-            <element signature="e#309894#309895#0" expanded="false" />
-            <element signature="e#311305#311306#0" expanded="false" />
-            <element signature="e#311341#311342#0" expanded="false" />
-            <element signature="e#313185#313186#0" expanded="false" />
-            <element signature="e#313236#313237#0" expanded="false" />
-            <element signature="e#316764#316765#0" expanded="false" />
-            <element signature="e#316814#316815#0" expanded="false" />
-            <element signature="e#327030#327031#0" expanded="false" />
-            <element signature="e#327071#327072#0" expanded="false" />
-            <element signature="e#329862#329863#0" expanded="false" />
-            <element signature="e#329894#329895#0" expanded="false" />
-            <element signature="e#330764#330765#0" expanded="false" />
-            <element signature="e#330796#330797#0" expanded="false" />
-            <element signature="e#331090#331091#0" expanded="false" />
-            <element signature="e#331126#331127#0" expanded="false" />
-            <element signature="e#331414#331415#0" expanded="false" />
-            <element signature="e#331450#331451#0" expanded="false" />
-            <element signature="e#333904#333905#0" expanded="false" />
-            <element signature="e#333979#333980#0" expanded="false" />
-            <element signature="e#335291#335292#0" expanded="false" />
-            <element signature="e#335345#335346#0" expanded="false" />
-            <element signature="e#336251#336252#0" expanded="false" />
-            <element signature="e#336305#336306#0" expanded="false" />
-            <element signature="e#336645#336646#0" expanded="false" />
-            <element signature="e#336687#336688#0" expanded="false" />
-            <element signature="e#337084#337085#0" expanded="false" />
-            <element signature="e#337139#337140#0" expanded="false" />
-            <element signature="e#340416#340417#0" expanded="false" />
-            <element signature="e#340470#340471#0" expanded="false" />
-            <element signature="e#341863#341864#0" expanded="false" />
-            <element signature="e#341896#341897#0" expanded="false" />
-            <element signature="e#347121#347122#0" expanded="false" />
-            <element signature="e#347189#347190#0" expanded="false" />
-            <element signature="e#349359#349360#0" expanded="false" />
-            <element signature="e#349404#349405#0" expanded="false" />
-            <element signature="e#353572#353573#0" expanded="false" />
-            <element signature="e#353613#353614#0" expanded="false" />
-            <element signature="e#354247#354248#0" expanded="false" />
-            <element signature="e#354289#354290#0" expanded="false" />
-            <element signature="e#354447#354448#0" expanded="false" />
-            <element signature="e#354484#354485#0" expanded="false" />
-            <element signature="e#354645#354646#0" expanded="false" />
-            <element signature="e#354683#354684#0" expanded="false" />
-            <element signature="e#356545#356546#0" expanded="false" />
-            <element signature="e#356626#356627#0" expanded="false" />
-            <element signature="e#356894#356895#0" expanded="false" />
-            <element signature="e#356974#356975#0" expanded="false" />
-            <element signature="e#367579#367580#0" expanded="false" />
-            <element signature="e#367634#367635#0" expanded="false" />
-            <element signature="e#391156#391157#0" expanded="false" />
-            <element signature="e#391191#391192#0" expanded="false" />
-            <element signature="e#401278#401279#0" expanded="false" />
-            <element signature="e#401310#401311#0" expanded="false" />
-            <element signature="e#401865#401866#0" expanded="false" />
-            <element signature="e#401897#401898#0" expanded="false" />
-            <element signature="e#402467#402468#0" expanded="false" />
-            <element signature="e#402499#402500#0" expanded="false" />
-            <element signature="e#403010#403011#0" expanded="false" />
-            <element signature="e#403042#403043#0" expanded="false" />
-            <element signature="e#403589#403590#0" expanded="false" />
-            <element signature="e#403621#403622#0" expanded="false" />
-            <element signature="e#404183#404184#0" expanded="false" />
-            <element signature="e#404215#404216#0" expanded="false" />
-            <element signature="e#405669#405670#0" expanded="false" />
-            <element signature="e#405741#405742#0" expanded="false" />
-            <element signature="e#405881#405882#0" expanded="false" />
-            <element signature="e#405954#405955#0" expanded="false" />
-            <element signature="e#406676#406677#0" expanded="false" />
-            <element signature="e#406711#406712#0" expanded="false" />
-            <element signature="e#415397#415398#0" expanded="false" />
-            <element signature="e#415454#415455#0" expanded="false" />
-            <element signature="e#418794#418795#0" expanded="false" />
-            <element signature="e#418830#418831#0" expanded="false" />
-            <element signature="e#424435#424436#0" expanded="false" />
-            <element signature="e#424471#424472#0" expanded="false" />
-            <element signature="e#426771#426772#0" expanded="false" />
-            <element signature="e#426812#426813#0" expanded="false" />
-            <element signature="e#432587#432588#0" expanded="false" />
-            <element signature="e#432623#432624#0" expanded="false" />
-            <element signature="e#443812#443813#0" expanded="false" />
-            <element signature="e#443870#443871#0" expanded="false" />
-            <element signature="e#448133#448134#0" expanded="false" />
-            <element signature="e#448176#448177#0" expanded="false" />
-            <element signature="e#448422#448423#0" expanded="false" />
-            <element signature="e#448460#448461#0" expanded="false" />
-            <element signature="e#448583#448584#0" expanded="false" />
-            <element signature="e#448627#448628#0" expanded="false" />
-            <element signature="e#448656#448657#0" expanded="false" />
-            <element signature="e#448710#448711#0" expanded="false" />
-            <element signature="e#448736#448737#0" expanded="false" />
-            <element signature="e#448793#448794#0" expanded="false" />
-            <element signature="e#448835#448836#0" expanded="false" />
-            <element signature="e#448906#448907#0" expanded="false" />
-            <element signature="e#448951#448952#0" expanded="false" />
-            <element signature="e#449018#449019#0" expanded="false" />
-            <element signature="e#449055#449056#0" expanded="false" />
-            <element signature="e#449115#449116#0" expanded="false" />
-            <element signature="e#449146#449147#0" expanded="false" />
-            <element signature="e#449200#449201#0" expanded="false" />
-            <element signature="e#449401#449402#0" expanded="false" />
-            <element signature="e#449460#449461#0" expanded="false" />
-            <element signature="e#449493#449494#0" expanded="false" />
-            <element signature="e#449551#449552#0" expanded="false" />
-            <element signature="e#449580#449581#0" expanded="false" />
-            <element signature="e#449637#449638#0" expanded="false" />
-            <element signature="e#449668#449669#0" expanded="false" />
-            <element signature="e#449727#449728#0" expanded="false" />
-            <element signature="e#449774#449775#0" expanded="false" />
-            <element signature="e#449826#449827#0" expanded="false" />
-            <element signature="e#449861#449862#0" expanded="false" />
-            <element signature="e#449925#449926#0" expanded="false" />
-            <element signature="e#450108#450109#0" expanded="false" />
-            <element signature="e#450174#450175#0" expanded="false" />
-            <element signature="e#450210#450211#0" expanded="false" />
-            <element signature="e#450249#450250#0" expanded="false" />
-            <element signature="e#456355#456356#0" expanded="false" />
-            <element signature="e#456421#456422#0" expanded="false" />
-            <element signature="e#456809#456810#0" expanded="false" />
-            <element signature="e#456867#456868#0" expanded="false" />
-            <element signature="e#459212#459213#0" expanded="false" />
-            <element signature="e#459272#459273#0" expanded="false" />
-            <element signature="e#461250#461251#0" expanded="false" />
-            <element signature="e#461289#461290#0" expanded="false" />
-            <element signature="e#461343#461344#0" expanded="false" />
-            <element signature="e#461387#461388#0" expanded="false" />
-            <element signature="e#461445#461446#0" expanded="false" />
-            <element signature="e#461482#461483#0" expanded="false" />
-            <element signature="e#461544#461545#0" expanded="false" />
-            <element signature="e#461581#461582#0" expanded="false" />
-            <element signature="e#461633#461634#0" expanded="false" />
-            <element signature="e#461695#461696#0" expanded="false" />
-            <element signature="e#461988#461989#0" expanded="false" />
-            <element signature="e#462044#462045#0" expanded="false" />
-            <element signature="e#462335#462336#0" expanded="false" />
-            <element signature="e#462389#462390#0" expanded="false" />
-            <element signature="e#462829#462830#0" expanded="false" />
-            <element signature="e#462883#462884#0" expanded="false" />
-            <element signature="e#463303#463304#0" expanded="false" />
-            <element signature="e#463357#463358#0" expanded="false" />
-            <element signature="e#463538#463539#0" expanded="false" />
-            <element signature="e#463594#463595#0" expanded="false" />
-            <element signature="e#463896#463897#0" expanded="false" />
-            <element signature="e#463958#463959#0" expanded="false" />
-            <element signature="e#464395#464396#0" expanded="false" />
-            <element signature="e#464458#464459#0" expanded="false" />
-            <element signature="e#466129#466130#0" expanded="false" />
-            <element signature="e#466188#466189#0" expanded="false" />
-            <element signature="e#467576#467577#0" expanded="false" />
-            <element signature="e#467632#467633#0" expanded="false" />
-            <element signature="e#467882#467883#0" expanded="false" />
-            <element signature="e#467927#467928#0" expanded="false" />
-            <element signature="e#469201#469202#0" expanded="false" />
-            <element signature="e#469250#469251#0" expanded="false" />
-            <element signature="e#469375#469376#0" expanded="false" />
-            <element signature="e#469414#469415#0" expanded="false" />
-            <element signature="e#469678#469679#0" expanded="false" />
-            <element signature="e#469724#469725#0" expanded="false" />
-            <element signature="e#471511#471512#0" expanded="false" />
-            <element signature="e#471579#471580#0" expanded="false" />
-            <element signature="e#475427#475428#0" expanded="false" />
-            <element signature="e#475497#475498#0" expanded="false" />
-            <element signature="e#475781#475782#0" expanded="false" />
-            <element signature="e#475841#475842#0" expanded="false" />
-            <element signature="e#477410#477411#0" expanded="false" />
-            <element signature="e#477474#477475#0" expanded="false" />
-            <element signature="e#477513#477514#0" expanded="false" />
-            <element signature="e#477572#477573#0" expanded="false" />
-            <element signature="e#479563#479564#0" expanded="false" />
-            <element signature="e#479605#479606#0" expanded="false" />
-            <element signature="e#479752#479753#0" expanded="false" />
-            <element signature="e#479794#479795#0" expanded="false" />
-            <element signature="e#479947#479948#0" expanded="false" />
-            <element signature="e#479995#479996#0" expanded="false" />
-            <element signature="e#480185#480186#0" expanded="false" />
-            <element signature="e#480237#480238#0" expanded="false" />
-            <element signature="e#482673#482674#0" expanded="false" />
-            <element signature="e#482725#482726#0" expanded="false" />
-            <element signature="e#486073#486074#0" expanded="false" />
-            <element signature="e#486114#486115#0" expanded="false" />
-            <element signature="e#486343#486344#0" expanded="false" />
-            <element signature="e#486400#486401#0" expanded="false" />
-            <element signature="e#486848#486849#0" expanded="false" />
-            <element signature="e#486923#486924#0" expanded="false" />
-            <element signature="e#492624#492625#0" expanded="false" />
-            <element signature="e#492667#492668#0" expanded="false" />
-            <element signature="e#492777#492778#0" expanded="false" />
-            <element signature="e#492820#492821#0" expanded="false" />
-            <element signature="e#493158#493159#0" expanded="false" />
-            <element signature="e#493213#493214#0" expanded="false" />
-            <element signature="e#493539#493540#0" expanded="false" />
-            <element signature="e#493590#493591#0" expanded="false" />
-            <element signature="e#495563#495564#0" expanded="false" />
-            <element signature="e#495609#495610#0" expanded="false" />
-            <element signature="e#496166#496167#0" expanded="false" />
-            <element signature="e#496214#496215#0" expanded="false" />
-            <element signature="e#505090#505091#0" expanded="false" />
-            <element signature="e#505134#505135#0" expanded="false" />
-            <element signature="e#505345#505346#0" expanded="false" />
-            <element signature="e#505397#505398#0" expanded="false" />
-            <element signature="e#505592#505593#0" expanded="false" />
-            <element signature="e#505635#505636#0" expanded="false" />
-            <element signature="e#505841#505842#0" expanded="false" />
-            <element signature="e#505891#505892#0" expanded="false" />
-            <element signature="e#506095#506096#0" expanded="false" />
-            <element signature="e#506141#506142#0" expanded="false" />
-            <element signature="e#506362#506363#0" expanded="false" />
-            <element signature="e#506418#506419#0" expanded="false" />
-            <element signature="e#506622#506623#0" expanded="false" />
-            <element signature="e#506668#506669#0" expanded="false" />
-            <element signature="e#506889#506890#0" expanded="false" />
-            <element signature="e#506945#506946#0" expanded="false" />
-            <element signature="e#507359#507360#0" expanded="false" />
-            <element signature="e#507403#507404#0" expanded="false" />
-            <element signature="e#532493#532494#0" expanded="false" />
-            <element signature="e#532528#532529#0" expanded="false" />
-            <element signature="e#535345#535346#0" expanded="false" />
-            <element signature="e#535396#535397#0" expanded="false" />
+            <element signature="e#956#965#0" expanded="false" />
+            <element signature="e#2625#4303#0" expanded="false" />
+            <element signature="e#4302#4303#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_page.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Exercise.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="136">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#567#577#0" expanded="false" />
+            <element signature="e#614#615#0" expanded="false" />
+            <element signature="e#645#646#0" expanded="false" />
+            <element signature="e#693#694#0" expanded="false" />
+            <element signature="e#733#734#0" expanded="false" />
+            <element signature="e#759#760#0" expanded="false" />
+            <element signature="e#784#785#0" expanded="false" />
+            <element signature="e#817#818#0" expanded="false" />
+            <element signature="e#845#846#0" expanded="false" />
+            <element signature="e#877#878#0" expanded="false" />
+            <element signature="e#905#906#0" expanded="false" />
+            <element signature="e#947#948#0" expanded="false" />
+            <element signature="e#981#982#0" expanded="false" />
+            <element signature="e#1013#1014#0" expanded="false" />
+            <element signature="e#1063#1064#0" expanded="false" />
+            <element signature="e#1097#1098#0" expanded="false" />
+            <element signature="e#1127#1128#0" expanded="false" />
+            <element signature="e#1173#1174#0" expanded="false" />
+            <element signature="e#1211#1212#0" expanded="false" />
+            <element signature="e#1243#1244#0" expanded="false" />
+            <element signature="e#1270#1271#0" expanded="false" />
+            <element signature="e#1311#1312#0" expanded="false" />
+            <element signature="e#1343#1344#0" expanded="false" />
+            <element signature="e#1381#1382#0" expanded="false" />
+            <element signature="e#1415#1416#0" expanded="false" />
+            <element signature="e#1469#1470#0" expanded="false" />
+            <element signature="e#1515#1516#0" expanded="false" />
+            <element signature="e#1549#1550#0" expanded="false" />
+            <element signature="e#1579#1580#0" expanded="false" />
+            <element signature="e#1625#1626#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+            <element signature="e#1700#1701#0" expanded="false" />
+            <element signature="e#1736#1737#0" expanded="false" />
+            <element signature="e#1791#1792#0" expanded="false" />
+            <element signature="e#1841#1842#0" expanded="false" />
+            <element signature="e#1874#1875#0" expanded="false" />
+            <element signature="e#1903#1904#0" expanded="false" />
+            <element signature="e#1947#1948#0" expanded="false" />
+            <element signature="e#1983#1984#0" expanded="false" />
+            <element signature="e#2026#2027#0" expanded="false" />
+            <element signature="e#2057#2058#0" expanded="false" />
+            <element signature="e#2113#2114#0" expanded="false" />
+            <element signature="e#2153#2154#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1033#1034#0" expanded="false" />
+            <element signature="e#1058#1059#0" expanded="false" />
+            <element signature="e#1090#1091#0" expanded="false" />
+            <element signature="e#1118#1119#0" expanded="false" />
+            <element signature="e#1153#1154#0" expanded="false" />
+            <element signature="e#1185#1186#0" expanded="false" />
+            <element signature="e#1234#1235#0" expanded="false" />
+            <element signature="e#1276#1277#0" expanded="false" />
+            <element signature="e#1317#1318#0" expanded="false" />
+            <element signature="e#1351#1352#0" expanded="false" />
+            <element signature="e#1383#1384#0" expanded="false" />
+            <element signature="e#1411#1412#0" expanded="false" />
+            <element signature="e#1454#1455#0" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#2016#2017#0" expanded="false" />
+            <element signature="e#2070#2071#0" expanded="false" />
+            <element signature="e#2105#2106#0" expanded="false" />
+            <element signature="e#2136#2137#0" expanded="false" />
+            <element signature="e#2184#2185#0" expanded="false" />
+            <element signature="e#2224#2225#0" expanded="false" />
+            <element signature="e#2259#2260#0" expanded="false" />
+            <element signature="e#2290#2291#0" expanded="false" />
+            <element signature="e#2338#2339#0" expanded="false" />
+            <element signature="e#2378#2379#0" expanded="false" />
+            <element signature="e#2418#2419#0" expanded="false" />
+            <element signature="e#2448#2449#0" expanded="false" />
+            <element signature="e#2500#2501#0" expanded="false" />
+            <element signature="e#2538#2539#0" expanded="false" />
+            <element signature="e#2573#2574#0" expanded="false" />
+            <element signature="e#2604#2605#0" expanded="false" />
+            <element signature="e#2652#2653#0" expanded="false" />
+            <element signature="e#2692#2693#0" expanded="false" />
+            <element signature="e#2725#2726#0" expanded="false" />
+            <element signature="e#2754#2755#0" expanded="false" />
+            <element signature="e#2798#2799#0" expanded="false" />
+            <element signature="e#2834#2835#0" expanded="false" />
+            <element signature="e#2868#2869#0" expanded="false" />
+            <element signature="e#2898#2899#0" expanded="false" />
+            <element signature="e#2944#2945#0" expanded="false" />
+            <element signature="e#2982#2983#0" expanded="false" />
+            <element signature="e#3040#3041#0" expanded="false" />
+            <element signature="e#3082#3083#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/entities/Feedback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#437#438#0" expanded="false" />
+            <element signature="e#468#469#0" expanded="false" />
+            <element signature="e#516#517#0" expanded="false" />
+            <element signature="e#556#557#0" expanded="false" />
+            <element signature="e#593#594#0" expanded="false" />
+            <element signature="e#629#630#0" expanded="false" />
+            <element signature="e#684#685#0" expanded="false" />
+            <element signature="e#734#735#0" expanded="false" />
+            <element signature="e#775#776#0" expanded="false" />
+            <element signature="e#812#813#0" expanded="false" />
+            <element signature="e#872#873#0" expanded="false" />
+            <element signature="e#924#925#0" expanded="false" />
+            <element signature="e#963#964#0" expanded="false" />
+            <element signature="e#997#998#0" expanded="false" />
+            <element signature="e#1052#1053#0" expanded="false" />
+            <element signature="e#1098#1099#0" expanded="false" />
+            <element signature="e#1137#1138#0" expanded="false" />
+            <element signature="e#1172#1173#0" expanded="false" />
+            <element signature="e#1228#1229#0" expanded="false" />
+            <element signature="e#1276#1277#0" expanded="false" />
+            <element signature="e#1316#1317#0" expanded="false" />
+            <element signature="e#1352#1353#0" expanded="false" />
+            <element signature="e#1410#1411#0" expanded="false" />
+            <element signature="e#1460#1461#0" expanded="false" />
+            <element signature="e#1492#1493#0" expanded="false" />
+            <element signature="e#1559#1560#0" expanded="false" />
+            <element signature="e#1598#1599#0" expanded="false" />
+            <element signature="e#1633#1634#0" expanded="false" />
+            <element signature="e#1689#1690#0" expanded="false" />
+            <element signature="e#1737#1738#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/application/ApplicationEx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="94" column="24" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/Netwerk/Requests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="38" column="99" selection-start-line="38" selection-start-column="99" selection-end-line="38" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ExerciseFeedbackTabFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="40" />
+          <folding>
+            <element signature="e#1081#1091#0" expanded="false" />
+            <element signature="e#1649#1897#0" expanded="false" />
+            <element signature="e#1896#1897#0" expanded="false" />
+            <element signature="e#2131#2397#0" expanded="false" />
+            <element signature="e#2396#2397#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ExerciseTabFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/IndividualFeedbackActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/model/request/AddRecordRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_addexercise.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/MainPageActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+        <state relative-caret-position="413">
+          <caret line="143" column="43" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
           <folding>
-            <element signature="e#5033#5034#0" expanded="true" />
-            <element signature="e#5098#5099#0" expanded="true" />
+            <element signature="e#6146#6160#0" expanded="true" />
+            <element signature="e#6429#6443#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/fragments/ExerciseFillTabFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_individualfeedback.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="65" selection-end-column="66" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exerciseratingoverview.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <element signature="e#940#965#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ExerciseRatingOverviewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="48" column="72" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="72" />
+          <folding>
+            <element signature="e#1703#1735#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/AddExerciseActvitiy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="182" column="47" selection-start-line="182" selection-start-column="46" selection-end-line="182" selection-end-column="47" />
+          <folding>
+            <element signature="e#6962#7346#0" expanded="true" />
+            <element signature="e#7345#7346#0" expanded="true" />
+            <element signature="e#7453#7849#0" expanded="true" />
+            <element signature="e#7848#7849#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/ExerciseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        <state relative-caret-position="132">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="59" column="9" selection-start-line="57" selection-start-column="8" selection-end-line="59" selection-end-column="9" />
+          <folding>
+            <element signature="e#1021#1029#0" expanded="true" />
+            <element signature="e#3587#4482#0" expanded="true" />
+            <element signature="e#4481#4482#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/strost/logopedist/controller/activities/PatientActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="92" column="39" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="148" column="12" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="12" />
           <folding />
         </state>
       </provider>

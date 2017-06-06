@@ -32,10 +32,10 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/patient_page" />
+    <include layout="@layout/activity_patient" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fabChangePatient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
@@ -44,14 +44,23 @@
         app:srcCompat="@drawable/ic_create" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/addEx"
+        android:id="@+id/fabOverviewPatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom"
+        app:srcCompat="@drawable/ic_chart" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabAddExercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_gravity="end|bottom"
-        android:src="@drawable/ic_action_name"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_action_name" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,93 +1,81 @@
 package com.example.strost.logopedist.controller.activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.strost.logopedist.R;
 import com.example.strost.logopedist.model.entities.Caregiver;
 import com.example.strost.logopedist.PasswordEncryption;
-import com.example.strost.logopedist.model.request.GetCaregiverRequest;
 import com.example.strost.logopedist.model.request.UpdateCaregiverRequest;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ChangePasswordActivity extends AppCompatActivity {
-    private List<Caregiver> caregivers = new ArrayList<Caregiver>();
-    private int caregiverId;
-    private Caregiver caregiver;
+
+    private Caregiver mCaregiver;
+    private String mPassword = "";
+
+    private final String CAREGIVER_KEY = "Caregiver";
+    private Boolean mChangedGeneratedPassword = false;
+    private final String PASSWORD_KEY = "Password";
+    private final String EMAIL_KEY = "Email";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.changepassword_page);
+        setContentView(R.layout.activity_changepassword);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-        caregiverId = getIntent().getExtras().getInt("caregiverId");
-        getZorgverlender();
-        for (int i = 0; i < caregivers.size(); i++) {
-            if (caregiverId == caregivers.get(i).getId()) {
-                caregiver = caregivers.get(i);
-            }
-        }
-        final EditText oldPassword = (EditText)findViewById(R.id.oldpassword);
+        mCaregiver = (Caregiver) getIntent().getSerializableExtra(CAREGIVER_KEY);
+        mPassword = getIntent().getStringExtra(PASSWORD_KEY);
+        mChangedGeneratedPassword = mCaregiver.getChangedGenaratedPassword();
 
-        final EditText newPassword = (EditText)findViewById(R.id.new_password);
-        final EditText newPasswordCheck = (EditText)findViewById(R.id.newpasswordcheck);
+        final EditText mOldPassword = (EditText) findViewById(R.id.etOldPassword);
+        final EditText mNewPassword = (EditText) findViewById(R.id.etNewPassword);
+        final EditText mNewPasswordCheck = (EditText) findViewById(R.id.etRepeatNewPassword);
+        mOldPassword.setText(mPassword);
 
-        final Button changePassword = (Button) findViewById(R.id.change_password);
 
-        changePassword.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabAddPatient);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 PasswordEncryption pe = new PasswordEncryption();
-                if (!oldPassword.getText().toString().equals("") && !newPassword.getText().toString().equals("") && !newPasswordCheck.getText().toString().equals("")){
-                    if (caregiver.getPassword().equals(pe.encryptPassword(oldPassword.getText().toString()))) {
+                if (!mOldPassword.getText().toString().equals("") && !mNewPassword.getText().toString().equals("") && !mNewPasswordCheck.getText().toString().equals("")) {
+                    if (mCaregiver.getPassword().equals(pe.encryptPassword(mOldPassword.getText().toString()))) {
 
-                        if (newPassword.getText().toString().equals(newPasswordCheck.getText().toString())) {
+                        if (mNewPassword.getText().toString().equals(mNewPasswordCheck.getText().toString())) {
                             PasswordEncryption pE = new PasswordEncryption();
-                            caregiver.setPassword(pE.encryptPassword(newPassword.getText().toString()));
+                            mCaregiver.setPassword(pE.encryptPassword(mNewPassword.getText().toString()));
+                            mCaregiver.setChangedGenaratedPassword(true);
+                            Toast.makeText(ChangePasswordActivity.this, getString(R.string.password_is_changed), Toast.LENGTH_SHORT).show();
                             final UpdateCaregiverRequest uCR = new UpdateCaregiverRequest();
-                            Runnable runnable = new Runnable() {
-                                public void run() {
-                                    uCR.updateCaregiver(caregiver, caregiver);
-                                }
-                            };
-                            Thread mythread = new Thread(runnable);
-                            mythread.start();
-                            try {
-                                mythread.join();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                            uCR.updateCaregiver(mCaregiver);
+                            goBack();
                             finish();
                         } else {
-                            PasswordsAreNotTheSame();
+                            passwordsAreNotTheSame();
                         }
                     } else {
                         wrongOldPassword();
                     }
-            }else{
-                    EmptyEditText();
+                } else {
+                    emptyEditText();
+                }
             }
-
-            }
-
         });
-
-
-
     }
 
-    public void wrongOldPassword(){
+    public void wrongOldPassword() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Uw oude wachtwoord is fout!")
+        builder.setMessage(getString(R.string.password_is_wrong))
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //do things
                     }
@@ -96,12 +84,12 @@ public class ChangePasswordActivity extends AppCompatActivity {
         alert.show();
     }
 
-    public void PasswordsAreNotTheSame(){
+    public void passwordsAreNotTheSame() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Uw nieuwe wachtwoorden zijn niet hetzelfde!")
+        builder.setMessage(getString(R.string.passwords_are_not_the_same))
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //do things
                     }
@@ -110,11 +98,11 @@ public class ChangePasswordActivity extends AppCompatActivity {
         alert.show();
     }
 
-    public void EmptyEditText(){
+    public void emptyEditText() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Niet alle velden zijn ingevuld")
+        builder.setMessage(getString(R.string.fields_are_not_filled_in))
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //do things
                     }
@@ -123,22 +111,30 @@ public class ChangePasswordActivity extends AppCompatActivity {
         alert.show();
     }
 
-
-    public void getZorgverlender() {
-        final GetCaregiverRequest gzr = new GetCaregiverRequest();
-        Runnable runnable = new Runnable() {
-            public void run() {
-                caregivers = gzr.getCaregiver();
-            }
-        };
-
-        Thread mythread = new Thread(runnable);
-        mythread.start();
-        try {
-            mythread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+    public void goBack() {
+        if (mChangedGeneratedPassword == true) {
+            Intent detailIntent = new Intent(this, SettingsActivity.class);
+            detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
+            startActivity(detailIntent);
+        } else if (mChangedGeneratedPassword == false) {
+            Intent detailIntent = new Intent(this, MainActivity.class);
+            detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
+            startActivity(detailIntent);
         }
-
     }
+
+    @Override
+    public void onBackPressed() {
+        if (mChangedGeneratedPassword == true) {
+            goBack();
+        } else if (mChangedGeneratedPassword == false) {
+            Intent detailIntent = new Intent(this, LoginActivity.class);
+            detailIntent.putExtra(EMAIL_KEY, mCaregiver.getEmail());
+            startActivity(detailIntent);
+        }
+        finish();
+        return;
+    }
+
+
 }

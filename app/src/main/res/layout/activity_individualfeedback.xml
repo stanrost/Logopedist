@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.strost.logopedist.controller.activities.IndividualFeedbackActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tvId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDate"
+                android:layout_marginTop="10dp"
+                android:text="@string/difficulty_of_exercise" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvId"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivReallyHappy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:srcCompat="@drawable/pic_reallysad" />
+
+                <ImageView
+                    android:id="@+id/ivHappy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:srcCompat="@drawable/pic_sad" />
+
+                <ImageView
+                    android:id="@+id/ivNatural"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:srcCompat="@drawable/pic_natural" />
+
+                <ImageView
+                    android:id="@+id/ivSad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:srcCompat="@drawable/pic_happy" />
+
+                <ImageView
+                    android:id="@+id/ivReallySad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:srcCompat="@drawable/pic_reallyhappy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llRating"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/linearLayout"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/rgRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbReallyHappy"
+                        android:layout_width="77dp"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:enabled="false" />
+
+                    <RadioButton
+                        android:id="@+id/rbHappy"
+                        android:layout_width="77dp"
+                        android:layout_height="wrap_content"
+                        android:enabled="false" />
+
+                    <RadioButton
+                        android:id="@+id/rbNatural"
+                        android:layout_width="77dp"
+                        android:layout_height="wrap_content"
+                        android:enabled="false" />
+
+                    <RadioButton
+                        android:id="@+id/rbSad"
+                        android:layout_width="77dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:enabled="false" />
+
+                    <RadioButton
+                        android:id="@+id/rbReallySad"
+                        android:layout_width="77dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:enabled="false" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvFistName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/llRating"
+                android:layout_marginTop="12dp"
+                android:text="@string/result" />
+
+            <ImageView
+                android:id="@+id/ivPreviewImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvFistName"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/btnPlayAudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/ivPreviewImage"
+                android:layout_marginBottom="10dp"
+                android:text="@string/listen_to_record"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvMadeWithHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnPlayAudio"
+                android:text="@string/made_with_help" />
+
+            <Switch
+                android:id="@+id/swtchGotHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tvNote"
+                android:layout_marginLeft="60dp"
+                android:layout_toEndOf="@+id/tvMadeWithHelp"
+                android:layout_toRightOf="@+id/tvMadeWithHelp"
+                android:enabled="false" />
+
+            <TextView
+                android:id="@+id/tvNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMadeWithHelp"
+                android:layout_marginTop="35dp"
+                android:text="@string/note" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/tvNote"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:gravity="top"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/pbLoadingImage"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvFistName"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

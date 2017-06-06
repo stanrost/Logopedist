@@ -13,6 +13,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
+import retrofit2.Call;
 
 import static com.example.strost.logopedist.application.ApplicationEx.restAdapter;
 
@@ -21,39 +22,27 @@ import static com.example.strost.logopedist.application.ApplicationEx.restAdapte
  */
 
 public class GetCaregiverHttpRequest {
-    private CompositeDisposable mCompositeDisposable;
     List<Caregiver> caregivers = new ArrayList<Caregiver>();
 
     public List<Caregiver> getCaregiver() {
-        mCompositeDisposable = new CompositeDisposable();
-
-        mCompositeDisposable.add(restAdapter.getCaregivers()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribeWith(new DisposableObserver<CaregiverResponse>() {
-                    @Override
-                    public void onNext(CaregiverResponse value) {
-                        caregivers = value.getData();
-                        for (Caregiver ex :
-                                caregivers) {
-                            for (Patient p:
-                                    ex.getPatients() ) {
-                                Log.e("test patient", p.getName());
-                            }
-                            Log.e("test", ex.getName());
-                        }
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                }));
+        Runnable runnable = new Runnable() {
+            public void run() {
+                try {
+                    Call<CaregiverResponse> call = restAdapter.getCaregivers();
+                    CaregiverResponse result = call.execute().body();
+                    caregivers = result.getData();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        Thread mythread = new Thread(runnable);
+        mythread.start();
+        try {
+            mythread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         return caregivers;
     }

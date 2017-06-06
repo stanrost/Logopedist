@@ -6,11 +6,19 @@ import com.example.strost.logopedist.model.entities.Caregiver;
 
 public class UpdateCaregiverRequest {
 
-    public void updateCaregiver(final Caregiver oldCaregiver, final Caregiver newCaregiver) {
-        Caregiver caregiver = Backendless.Persistence.of( Caregiver.class ).findById( oldCaregiver.getObjectId() );
-            caregiver = newCaregiver;
-            Backendless.Persistence.save(caregiver);
-
+    public void updateCaregiver(final Caregiver caregiver) {
+        Runnable runnable = new Runnable() {
+            public void run() {
+                Backendless.Persistence.save(caregiver);
+            }
+        };
+        Thread mythread = new Thread(runnable);
+        mythread.start();
+        try {
+            mythread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
 

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context="com.example.strost.logopedist.controller.activities.MainActivity">
+
+    <EditText
+        android:id="@+id/etEmailText"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_above="@+id/etPasswordText"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:hint="@string/login_email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+
+    <EditText
+        android:id="@+id/etPasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_above="@+id/btnLogin"
+        android:layout_alignEnd="@+id/etEmailText"
+        android:layout_alignLeft="@+id/btnLogin"
+        android:layout_alignRight="@+id/etEmailText"
+        android:layout_alignStart="@+id/btnLogin"
+        android:layout_marginBottom="44dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:hint="@string/login_password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#e6e6e6"
+        android:backgroundTint="#f2f2f2"
+        android:foreground="?selectableItemBackground"
+        android:text="@string/login"
+        android:textColor="@color/colorPrimary" />
+
+
+    <TextView
+        android:id="@+id/tvForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/forgot_password"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>
