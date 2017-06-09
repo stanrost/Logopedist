@@ -44,6 +44,13 @@ public class CaregiverListActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        initRecyclerView();
+        getCaregivers();
+    }
+
     private void initRecyclerView() {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
@@ -76,19 +83,7 @@ public class CaregiverListActivity extends AppCompatActivity {
         detailIntent.putExtra(CAREGIVER_ID_KEY, newId);
         detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         startActivity(detailIntent);
-        finish();
-    }
 
-    public void goBack() {
-        Intent detailIntent = new Intent(this, MainPageActivity.class);
-        detailIntent.putExtra(CAREGIVER_ID_KEY, mCaregiver.getId());
-        this.startActivity(detailIntent);
-        finish();
-    }
-
-    @Override
-    public void onBackPressed() {
-        goBack();
     }
 
 }

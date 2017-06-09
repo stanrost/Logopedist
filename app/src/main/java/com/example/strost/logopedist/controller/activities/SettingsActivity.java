@@ -20,19 +20,15 @@ import com.example.strost.logopedist.model.entities.Caregiver;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private int mCaregiverId;
     private Caregiver mCaregiver;
 
     private final String CAREGIVER_KEY = "Caregiver";
-    private final String CAREGIVER_ID_KEY = "caregiverId";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         mCaregiver = (Caregiver) getIntent().getSerializableExtra(CAREGIVER_KEY);
-        mCaregiverId = mCaregiver.getId();
-
         final Button button = (Button) findViewById(R.id.btnLogout);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -43,12 +39,12 @@ public class SettingsActivity extends AppCompatActivity {
         Button changepassword = (Button) findViewById(R.id.btnChangePassword);
         changepassword.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-               goToChangePassword();
+                goToChangePassword();
             }
         });
     }
 
-    public void goToChangePassword(){
+    public void goToChangePassword() {
         Intent detailIntent = new Intent(this, ChangePasswordActivity.class);
         detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         startActivity(detailIntent);
@@ -77,7 +73,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 
-    public void logout(){
+    public void logout() {
         SaveSharedPreference sp = new SaveSharedPreference();
         sp.setCaretakerId(this, "");
         Intent detailIntent = new Intent(this, LoginActivity.class);
@@ -85,16 +81,4 @@ public class SettingsActivity extends AppCompatActivity {
         finish();
     }
 
-    public void goBack(){
-        Intent detailIntent = new Intent(this, MainPageActivity.class);
-        detailIntent.putExtra(CAREGIVER_ID_KEY, mCaregiverId);
-        startActivity(detailIntent);
-        finish();
-    }
-
-    @Override
-    public void onBackPressed() {
-        goBack();
-        return;
-    }
 }

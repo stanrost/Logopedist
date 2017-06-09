@@ -113,9 +113,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     public void goBack() {
         if (mChangedGeneratedPassword == true) {
-            Intent detailIntent = new Intent(this, SettingsActivity.class);
-            detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
-            startActivity(detailIntent);
         } else if (mChangedGeneratedPassword == false) {
             Intent detailIntent = new Intent(this, MainActivity.class);
             detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);

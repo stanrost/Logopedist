@@ -37,6 +37,11 @@ public class IndividualFeedbackActivity extends AppCompatActivity {
     private final String FEEDBACK_KEY = "Feedback";
     private final String PICTURE_KEY = "picture";
     private final String OFFLINE_PICTURE_KEY = "offlinePicture";
+    private final int REAllY_HAPPY_KEY = 1;
+    private final int HAPPY_KEY = 2;
+    private final int NATURAL_KEY = 3;
+    private final int SAD_KEY = 4;
+    private final int REAllY_SAD_KEY = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,13 +108,8 @@ public class IndividualFeedbackActivity extends AppCompatActivity {
     public void audioPlayer() {
         //set up MediaPlayer
         MediaPlayer mp = new MediaPlayer();
-        String patientRec = "";
         try {
             mp.setDataSource(mFeedback.getPatientRecord());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
             mp.prepare();
         } catch (IOException e) {
             e.printStackTrace();
@@ -163,23 +163,23 @@ public class IndividualFeedbackActivity extends AppCompatActivity {
 
     public void setIndexRating(int index) {
         switch (index) {
-            case 1:
+            case REAllY_HAPPY_KEY:
                 RadioButton test = (RadioButton) this.findViewById(R.id.rbReallyHappy);
                 test.setChecked(true);
                 break;
-            case 2:
+            case HAPPY_KEY:
                 RadioButton ra2 = (RadioButton) this.findViewById(R.id.rbHappy);
                 ra2.setChecked(true);
                 break;
-            case 3:
+            case NATURAL_KEY:
                 RadioButton ra3 = (RadioButton) this.findViewById(R.id.rbNatural);
                 ra3.setChecked(true);
                 break;
-            case 4:
+            case SAD_KEY:
                 RadioButton ra4 = (RadioButton) this.findViewById(R.id.rbSad);
                 ra4.setChecked(true);
                 break;
-            case 5:
+            case REAllY_SAD_KEY:
                 RadioButton ra5 = (RadioButton) this.findViewById(R.id.rbReallySad);
                 ra5.setChecked(true);
                 break;

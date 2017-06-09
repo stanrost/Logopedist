@@ -42,13 +42,20 @@ public class AddPatientActivity extends AppCompatActivity {
         mCaregiverId = mCaregiver.getId();
         mPatients = mCaregiver.getPatients();
 
+        mPasswordText = (EditText) findViewById(R.id.etPatientPassword);
+        mGender = (RadioGroup) findViewById(R.id.rgGender);
+        mNewCaregiver = mCaregiver;
+
+        setFABButton();
+    }
+
+    public void setFABButton(){
         final EditText firstName = (EditText) findViewById(R.id.etAddPatientFistName);
         final EditText lastName = (EditText) findViewById(R.id.etAddPatientLastName);
         final EditText problem = (EditText) findViewById(R.id.etAddPatientProblem);
         final EditText email = (EditText) findViewById(R.id.etAddPatientEmail);
 
-        mPasswordText = (EditText) findViewById(R.id.etPatientPassword);
-        mGender = (RadioGroup) findViewById(R.id.rgGender);
+        final PasswordEncryption pE = new PasswordEncryption();
 
         int maxId = 0;
         for (int i = 0; i < mPatients.size(); i++) {
@@ -58,8 +65,6 @@ public class AddPatientActivity extends AppCompatActivity {
         }
 
         final int id = maxId + 1;
-        mNewCaregiver = mCaregiver;
-        final PasswordEncryption pE = new PasswordEncryption();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabAddPatient);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +85,7 @@ public class AddPatientActivity extends AppCompatActivity {
                         Toast.makeText(AddPatientActivity.this, getString(R.string.added_patient), Toast.LENGTH_LONG).show();
                         addToFile();
                         sendEmail();
-                        goBack();
+                        finish();
                     } else {
                         Toast.makeText(AddPatientActivity.this, getString(R.string.email_is_not_correct), Toast.LENGTH_LONG).show();
                     }
@@ -101,18 +106,6 @@ public class AddPatientActivity extends AppCompatActivity {
         uzr.updateCaregiver(mNewCaregiver);
     }
 
-    public void goBack() {
-        Intent detailIntent = new Intent(this, MainPageActivity.class);
-        detailIntent.putExtra(CAREGIVER_ID_KEY, mCaregiverId);
-        startActivity(detailIntent);
-        finish();
-    }
-
-    @Override
-    public void onBackPressed() {
-        goBack();
-        return;
-    }
 
     public String getGender() {
         int rgid = mGender.getCheckedRadioButtonId();

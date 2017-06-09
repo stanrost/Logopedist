@@ -139,6 +139,7 @@ public class ExerciseActivity extends AppCompatActivity {
         try {
             if (!patientRec.equals("")) {
                 try {
+                    mp.setDataSource(mExercise.getRecord());
                     mp.prepare();
                     mp.start();
                 } catch (Exception e) {
@@ -151,19 +152,7 @@ public class ExerciseActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public void onBackPressed() {
-        goBack();
-        return;
-    }
 
-    public void goBack(){
-        Intent detailIntent = new Intent(this, PatientActivity.class);
-        detailIntent.putExtra(PATIENT_KEY, mPatient);
-        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
-        startActivity(detailIntent);
-        finish();
-    }
 
 
 }

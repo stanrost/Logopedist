@@ -63,6 +63,13 @@ public class MainPageActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        initRecyclerView();
+        getCaregivers();
+    }
+
 
     public void searchItem(String textToSearch) {
         for (int i = 0; i < mPatients.size(); i++) {
@@ -131,20 +138,18 @@ public class MainPageActivity extends AppCompatActivity {
         Intent detailIntent = new Intent(this, AddPatientActivity.class);
         detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         startActivity(detailIntent);
-        finish();
+
     }
 
     public void goToSettingsActvivity() {
         Intent detailIntent = new Intent(this, SettingsActivity.class);
         detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         startActivity(detailIntent);
-        finish();
     }
     public void goToCaregiverListActivity() {
         Intent detailIntent = new Intent(this, CaregiverListActivity.class);
         detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         startActivity(detailIntent);
-        finish();
     }
 
 

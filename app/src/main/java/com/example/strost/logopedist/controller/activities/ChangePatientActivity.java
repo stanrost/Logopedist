@@ -54,7 +54,7 @@ public class ChangePatientActivity extends AppCompatActivity {
                 Toast.makeText(ChangePatientActivity.this, getString(R.string.changed_patient), Toast.LENGTH_LONG).show();
                 changePatient();
                 addToFile();
-                goBack();
+                finish();
 
             }
         });
@@ -73,19 +73,6 @@ public class ChangePatientActivity extends AppCompatActivity {
         pPHR.putPatient(mPatient);
     }
 
-    public void goBack(){
-        Intent detailIntent = new Intent(this, PatientActivity.class);
-        detailIntent.putExtra(PATIENT_KEY, mPatient);
-        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
-        startActivity(detailIntent);
-        finish();
-    }
-
-    @Override
-    public void onBackPressed() {
-        goBack();
-        return;
-    }
 
 
     public String getGender() {

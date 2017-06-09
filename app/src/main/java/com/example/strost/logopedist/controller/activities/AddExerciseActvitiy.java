@@ -53,7 +53,7 @@ import java.util.Date;
 public class AddExerciseActvitiy extends AppCompatActivity {
     private Patient mPatient;
     private Caregiver mCaregiver;
-    EditText title, pickDate;
+    private EditText title, pickDate, description;
     // take picture
     private Button takePictureButton;
     private ImageView imageView;
@@ -76,8 +76,6 @@ public class AddExerciseActvitiy extends AppCompatActivity {
     private final String AUDIOFILE_TYPE = ".wma";
     private final String PICTURE_TYPE = ".png";
 
-    private final String PATIENT_KEY = "Patient";
-    private final String CAREGIVER_KEY = "Caregiver";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,26 +84,24 @@ public class AddExerciseActvitiy extends AppCompatActivity {
 
         mPatient = (Patient) getIntent().getSerializableExtra("Patient");
         mCaregiver = (Caregiver) getIntent().getSerializableExtra("Caregiver");
-
         title = (EditText) findViewById(R.id.exerciseTitle);
         pickDate = (EditText) findViewById(R.id.etPickDate);
         // help switch
-        final Switch helpSwitch = (Switch) findViewById(R.id.help_switch);
+        Switch helpSwitch = (Switch) findViewById(R.id.help_switch);
         // description
-        final EditText description = (EditText) findViewById(R.id.description_text);
+        description = (EditText) findViewById(R.id.description_text);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabAddPatient);
         // take picture
         takePictureButton = (Button) findViewById(R.id.button_image);
         imageView = (ImageView) findViewById(R.id.imageview);
 
-        int maxId = 0;
-        for (int i = 0; i < mPatient.getExercises().size(); i++) {
-            if (mPatient.getExercises().get(i).getId() > maxId) {
-                maxId = mPatient.getExercises().get(i).getId();
-            }
-        }
-        final int newId = maxId + 1;
+        setMediaPlayer();
+        setOnclickFAB(fab, helpSwitch);
+        checkPermission();
+        selectDate();
+    }
 
+    public void setMediaPlayer(){
         Button stop = (Button) findViewById(R.id.btnStop);
         Button play = (Button) findViewById(R.id.btnPlay);
         Button start = (Button) findViewById(R.id.btnStart);
@@ -128,6 +124,17 @@ public class AddExerciseActvitiy extends AppCompatActivity {
                 stopRecord();
             }
         });
+    }
+
+    public void setOnclickFAB(FloatingActionButton fab, final Switch helpSwitch){
+        int maxId = 0;
+        for (int i = 0; i < mPatient.getExercises().size(); i++) {
+            if (mPatient.getExercises().get(i).getId() > maxId) {
+                maxId = mPatient.getExercises().get(i).getId();
+            }
+        }
+        final int newId = maxId + 1;
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -161,17 +168,19 @@ public class AddExerciseActvitiy extends AppCompatActivity {
                 PutPatientHttpRequest pPR = new PutPatientHttpRequest();
                 pPR.putPatient(mPatient);
 
-                goBack();
+                finish();
             }
         });
+    }
 
-        //take picture
+    public void checkPermission(){
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             takePictureButton.setEnabled(false);
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO}, 0);
         }
+    }
 
-        //select date
+    public void selectDate(){
         pickDate.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -259,31 +268,18 @@ public class AddExerciseActvitiy extends AppCompatActivity {
                     }
                 }
             };
-            Thread mythread = new Thread(runnable);
-            mythread.start();
+            Thread myThread = new Thread(runnable);
+            myThread.start();
             try {
-                mythread.join();
+                myThread.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void goBack() {
-        Intent detailIntent = new Intent(this, PatientActivity.class);
-        detailIntent.putExtra(PATIENT_KEY, mPatient);
-        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
-        startActivity(detailIntent);
-        finish();
-    }
 
-    @Override
-    public void onBackPressed() {
-        goBack();
-        return;
-    }
-
-
+  
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == 0) {
@@ -435,10 +431,6 @@ public class AddExerciseActvitiy extends AppCompatActivity {
         MediaPlayer mp = new MediaPlayer();
         try {
             mp.setDataSource(mAudioFilename);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
             mp.prepare();
         } catch (IOException e) {
             e.printStackTrace();

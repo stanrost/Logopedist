@@ -146,13 +146,21 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".controller.activities.ExerciseRatingOverviewActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:label="Overzicht"/>
         <activity
             android:name=".controller.activities.NumberOfTimesOverviewActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".controller.activities.admin.CaregiverListActivity" />
-        <activity android:name=".controller.activities.admin.CaregiverActivity" />
-        <activity android:name=".controller.activities.admin.AddCaregiverActivity"></activity>
+            android:screenOrientation="portrait"
+            android:label="Overzicht"/>
+        <activity android:name=".controller.activities.admin.CaregiverListActivity"
+            android:screenOrientation="portrait"
+            android:label="Logopedisten"/>
+        <activity android:name=".controller.activities.admin.CaregiverActivity"
+            android:screenOrientation="portrait"
+            android:label="Logopedist"/>
+        <activity android:name=".controller.activities.admin.AddCaregiverActivity"
+            android:screenOrientation="portrait"
+            android:label="Logopedist toevoegen"></activity>
     </application>
 
 </manifest>

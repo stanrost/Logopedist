@@ -21,7 +21,7 @@ public class Exercise implements Serializable {
     private int numberOfTimes;
     private String objectId;
     private String record;
-    List<Feedback> feedback = new ArrayList<Feedback>();
+    private List<Feedback> feedback = new ArrayList<Feedback>();
 
     public String getObjectId() {
         return objectId;

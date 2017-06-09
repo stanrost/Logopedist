@@ -100,7 +100,7 @@ public class ExerciseTabFragment extends Fragment {
         try {
             if (!mExercise.getPicture().equals(null)) {
                 progress.setVisibility(View.VISIBLE);
-                Picasso.with(getContext()).load(mExercise.getPicture()).into(mImageView, new Callback() {
+                Picasso.with(getContext()).load(mExercise.getPicture()).fit().centerInside().into(mImageView, new Callback() {
                     @Override
                     public void onSuccess() {
                         progress.setVisibility(View.GONE);

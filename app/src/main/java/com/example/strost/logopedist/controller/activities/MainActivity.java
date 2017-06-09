@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         String appVersion = "v1";
         Backendless.initApp(this, "E5A95319-DFEE-9344-FF32-50448355EC00", "FE40A368-BB4B-7B9C-FF31-240C9C1AE700", appVersion);
 
-        if (SaveSharedPreference.getUserName(MainActivity.this).length() > 0) {
+        if (!SaveSharedPreference.getUserName(MainActivity.this).isEmpty()) {
             Intent detailIntent = new Intent(this, MainPageActivity.class);
             int id = Integer.parseInt(SaveSharedPreference.getUserName(MainActivity.this));
             detailIntent.putExtra(CAREGIVER_ID_KEY, id);

@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.strost.logopedist.R;
+import com.example.strost.logopedist.controller.activities.MainPageActivity;
 import com.example.strost.logopedist.controller.activities.PatientActivity;
+import com.example.strost.logopedist.controller.activities.admin.CaregiverListActivity;
 import com.example.strost.logopedist.model.entities.Caregiver;
 import com.example.strost.logopedist.model.entities.Patient;
 import java.util.ArrayList;
@@ -51,7 +53,6 @@ public class PatientDataAdapter extends RecyclerView.Adapter<PatientDataAdapter.
             detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
             detailIntent.putExtra(PATIENT_KEY, mPatientList.get(getPosition()));
             v.getContext().startActivity(detailIntent);
-
 
         }
     }

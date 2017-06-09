@@ -40,6 +40,10 @@ public class PatientActivity extends AppCompatActivity {
     private Patient mPatient, mOldPatient;
     private Caregiver mCaregiver, newCaregiver;
     private int mCaregiverId;
+    private FloatingActionButton mChangePatient;
+    private FloatingActionButton mFABPatientOverview;
+    private LinearLayout testContainer;
+    private ArrayAdapter exercisesAdapter;
 
     private final String EXERCISE_KEY = "Exercise";
     private final String CAREGIVER_KEY = "Caregiver";
@@ -59,9 +63,9 @@ public class PatientActivity extends AppCompatActivity {
         mCaregiverId = mCaregiver.getId();
 
         FloatingActionButton mAddExercise = (FloatingActionButton) findViewById(R.id.fabAddExercise);
-        LinearLayout testContainer = (LinearLayout) findViewById(R.id.llExercises);
-        FloatingActionButton mChangePatient = (FloatingActionButton) findViewById(R.id.fabChangePatient);
-        FloatingActionButton mFABPatientOverview = (FloatingActionButton) findViewById(R.id.fabOverviewPatient);
+        testContainer = (LinearLayout) findViewById(R.id.llExercises);
+        mChangePatient = (FloatingActionButton) findViewById(R.id.fabChangePatient);
+        mFABPatientOverview = (FloatingActionButton) findViewById(R.id.fabOverviewPatient);
 
 
         GetPatientHttpRequest gPR = new GetPatientHttpRequest();
@@ -100,7 +104,10 @@ public class PatientActivity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter exercisesAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, exercises);
+
+
+
+        exercisesAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, exercises);
 
         final int adapterCount = exercisesAdapter.getCount();
 
@@ -118,6 +125,8 @@ public class PatientActivity extends AppCompatActivity {
             );
         }
 
+
+
         mAddExercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,6 +141,7 @@ public class PatientActivity extends AppCompatActivity {
         });
 
 
+
         mFABPatientOverview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -140,6 +150,69 @@ public class PatientActivity extends AppCompatActivity {
         });
 
         setTitle(mPatient.getFirstName() + " " + mPatient.getLastName() );
+
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        exercises.clear();
+        testContainer.removeAllViews();
+        setTitle(mPatient.getFirstName() + " " + mPatient.getLastName() );
+
+        GetPatientHttpRequest gPR = new GetPatientHttpRequest();
+        mPatient = gPR.getPatient(mOldPatient);
+
+        try {
+            exercises = mPatient.getExercises();
+            if(mPatient.getExercises().size() == 0){
+                mFABPatientOverview.setVisibility(View.GONE);
+            }
+        }catch(NullPointerException e){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(getString(R.string.no_internet_connection))
+                    .setCancelable(false)
+                    .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
+            exercises = mOldPatient.getExercises();
+            mPatient = mOldPatient;
+            if(mOldPatient.getExercises().size() == 0){
+                mFABPatientOverview.setVisibility(View.GONE);
+            }
+        }
+
+
+        Collections.sort(exercises, new Comparator<Exercise>() {
+            @Override
+            public int compare(Exercise exercise1, Exercise exercise2) {
+                int exerciseId1 = exercise1.getId();
+                int exercieseId2 = exercise2.getId();
+                return exercieseId2 > exerciseId1 ? +1 : exercieseId2 < exerciseId1 ? -1 : 0;
+            }
+        });
+
+        exercisesAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, exercises);
+
+        final int adapterCount = exercisesAdapter.getCount();
+
+        for (int i = 0; i < adapterCount; i++) {
+            View item = exercisesAdapter.getView(i, null, null);
+
+            testContainer.addView(item);
+            final int exerciseIndex = i;
+            item.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            goToExerciseActivity(exercises.get(exerciseIndex));
+                                        }
+                                    }
+            );
+        }
 
     }
 
@@ -154,7 +227,6 @@ public class PatientActivity extends AppCompatActivity {
         detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         detailIntent.putExtra(PATIENT_KEY, mPatient);
         startActivity(detailIntent);
-        finish();
     }
 
     public void goToExerciseActivity(Exercise exercise) {
@@ -163,7 +235,6 @@ public class PatientActivity extends AppCompatActivity {
         detailIntent.putExtra(PATIENT_KEY, mPatient);
         detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         startActivity(detailIntent);
-        finish();
     }
 
     public void goToChangePatientActivity() {
@@ -171,7 +242,6 @@ public class PatientActivity extends AppCompatActivity {
         detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
         detailIntent.putExtra(PATIENT_KEY, mPatient);
         startActivity(detailIntent);
-        finish();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -197,13 +267,6 @@ public class PatientActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-    }
-
-    public void goBack() {
-        Intent detailIntent = new Intent(this, MainPageActivity.class);
-        detailIntent.putExtra(CAREGIVER_ID_KEY, mCaregiverId);
-        startActivity(detailIntent);
-        finish();
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -233,7 +296,7 @@ public class PatientActivity extends AppCompatActivity {
                         newCaregiver.removePatient(mPatient);
                         Toast.makeText(PatientActivity.this, getString(R.string.removed_patient), Toast.LENGTH_LONG).show();
                         addToFile();
-                        goBack();
+                        finish();
                         break;
 
                     case DialogInterface.BUTTON_NEGATIVE:
@@ -248,10 +311,4 @@ public class PatientActivity extends AppCompatActivity {
                 .setNegativeButton(getString(R.string.no), dialogClickListener).show();
     }
 
-    @Override
-    public void onBackPressed() {
-        goBack();
-        finish();
-        return;
-    }
 }

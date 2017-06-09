@@ -56,7 +56,7 @@ public class AddCaregiverActivity extends AppCompatActivity {
                         saveCaregiver();
                         Toast.makeText(AddCaregiverActivity.this, getString(R.string.added_caregiver), Toast.LENGTH_LONG).show();
                         sendEmail();
-                        goBack();
+                        finish();
                     }
                     else{
                         noEmailAdress();
@@ -148,15 +148,6 @@ public class AddCaregiverActivity extends AppCompatActivity {
         sec.sendEmail(mPassword, mNewCaregiver);
     }
 
-    public void goBack(){
-        Intent detailIntent = new Intent(this, CaregiverListActivity.class);
-        detailIntent.putExtra(CAREGIVER_KEY, mCaregiver);
-        startActivity(detailIntent);
-        finish();
-    }
 
-    @Override
-    public void onBackPressed() {
-        goBack();
-    }
+
 }

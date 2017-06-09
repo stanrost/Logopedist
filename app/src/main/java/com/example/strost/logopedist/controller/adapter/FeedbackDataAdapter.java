@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.strost.logopedist.R;
 import com.example.strost.logopedist.controller.activities.IndividualFeedbackActivity;
+import com.example.strost.logopedist.controller.activities.admin.CaregiverListActivity;
 import com.example.strost.logopedist.model.entities.Exercise;
 import com.example.strost.logopedist.model.entities.Feedback;
 

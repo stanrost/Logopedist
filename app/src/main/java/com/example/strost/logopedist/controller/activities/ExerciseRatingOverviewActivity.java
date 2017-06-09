@@ -39,18 +39,15 @@ public class ExerciseRatingOverviewActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exerciseratingoverview);
         mExercise = (Exercise) getIntent().getSerializableExtra(EXERCISE_KEY);
-        BarChart chart = (BarChart) findViewById(R.id.chart);
+
         TextView nRatingOverview = (TextView) findViewById(R.id.tvRatingOverview);
-
         nRatingOverview.setText(nRatingOverview.getText() + " " + getString(R.string.from_enddate) + " " + mExercise.getEndDate().replace("/", "-"));
-
         Collections.sort(mExercise.getFeedback(), new Comparator<Feedback>() {
             @Override
             public int compare(Feedback feedback1, Feedback feedback2) {
                 return feedback1.getFeedbackDate().compareToIgnoreCase(feedback2.getFeedbackDate());
             }
         });
-
         for (Feedback f : mExercise.getFeedback()) {
             DateFormat format = new SimpleDateFormat("dd/MM/yy");
             Date date = null;
@@ -66,6 +63,12 @@ public class ExerciseRatingOverviewActivity extends ActionBarActivity {
         for (Feedback f : mExercise.getFeedback()) {
             mRatingList.add(f.getPatientRating() + "");
         }
+        
+        createChart();
+    }
+
+    public void createChart(){
+        BarChart chart = (BarChart) findViewById(R.id.chart);
         BarData data = new BarData(getXAxisValues(), getDataSet());
         chart.setData(data);
         chart.setDescription("");
@@ -86,7 +89,6 @@ public class ExerciseRatingOverviewActivity extends ActionBarActivity {
             }
         };
         chart.getAxisLeft().setValueFormatter(d);
-
     }
 
     private ArrayList<BarDataSet> getDataSet() {

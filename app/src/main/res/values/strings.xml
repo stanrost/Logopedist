@@ -112,7 +112,7 @@
     <string name="last_five_exercises">laatste 5 opdrachten</string>
     <string name="last_ten_exercises">laatste 10 opdrachten</string>
     <string name="last_fifteen_exercises">laatste 15 opdrachten</string>
-    <string name="number_of_times">Aantal keer</string>
+    <string name="number_of_times">Aantal keer gemaakt per week</string>
     <!--patient page-->
     <string name="exercises">Opdrachten:</string>
     <!--settings-->

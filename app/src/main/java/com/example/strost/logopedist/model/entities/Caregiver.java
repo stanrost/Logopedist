@@ -22,7 +22,7 @@ public class Caregiver implements Serializable{
     private String password;
     private boolean isAdmin;
     private boolean activated;
-    List<Patient> patients = new ArrayList<Patient>();
+    private List<Patient> patients = new ArrayList<Patient>();
     private boolean changedGenaratedPassword;
 
     public boolean getChangedGenaratedPassword() {
